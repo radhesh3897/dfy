@@ -1,0 +1,33 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Done For You lead quality system overview">
+  <rect width="1200" height="630" fill="#11220B"/>
+  <path d="M0 540H1200V630H0V540Z" fill="#F6F5F1"/>
+  <g opacity="0.16">
+    <path d="M80 0V540" stroke="#FFFFFF"/>
+    <path d="M240 0V540" stroke="#FFFFFF"/>
+    <path d="M400 0V540" stroke="#FFFFFF"/>
+    <path d="M560 0V540" stroke="#FFFFFF"/>
+    <path d="M720 0V540" stroke="#FFFFFF"/>
+    <path d="M880 0V540" stroke="#FFFFFF"/>
+    <path d="M1040 0V540" stroke="#FFFFFF"/>
+    <path d="M0 90H1200" stroke="#FFFFFF"/>
+    <path d="M0 210H1200" stroke="#FFFFFF"/>
+    <path d="M0 330H1200" stroke="#FFFFFF"/>
+    <path d="M0 450H1200" stroke="#FFFFFF"/>
+  </g>
+  <rect x="80" y="76" width="96" height="96" fill="#8FD642"/>
+  <text x="128" y="135" text-anchor="middle" fill="#050505" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="32">DFY</text>
+  <text x="80" y="252" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="68">Better-quality B2B leads.</text>
+  <text x="80" y="330" fill="#D4D4D4" font-family="Arial, Helvetica, sans-serif" font-weight="400" font-size="32">Ads, landing pages, CRM, nurture, tracking, and sales feedback loops.</text>
+  <rect x="80" y="392" width="320" height="66" rx="33" fill="#8FD642"/>
+  <text x="240" y="434" text-anchor="middle" fill="#050505" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="22">Free Lead Quality Audit</text>
+  <rect x="725" y="112" width="365" height="318" fill="#18181B" stroke="#3F3F46"/>
+  <rect x="753" y="152" width="92" height="70" fill="#8FD642" fill-opacity="0.18" stroke="#8FD642"/>
+  <rect x="862" y="152" width="92" height="70" fill="#27272A" stroke="#52525B"/>
+  <rect x="971" y="152" width="92" height="70" fill="#27272A" stroke="#52525B"/>
+  <rect x="753" y="240" width="92" height="70" fill="#27272A" stroke="#52525B"/>
+  <rect x="862" y="240" width="92" height="70" fill="#8FD642" fill-opacity="0.18" stroke="#8FD642"/>
+  <rect x="971" y="240" width="92" height="70" fill="#27272A" stroke="#52525B"/>
+  <rect x="753" y="328" width="92" height="70" fill="#27272A" stroke="#52525B"/>
+  <rect x="862" y="328" width="92" height="70" fill="#27272A" stroke="#52525B"/>
+  <rect x="971" y="328" width="92" height="70" fill="#8FD642" fill-opacity="0.18" stroke="#8FD642"/>
+</svg>
