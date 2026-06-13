@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { locationPages } from "@/data/locationPages";
 
 const links = [
   { label: "Home", href: "/" },
@@ -35,16 +36,32 @@ export function SiteFooter() {
             sales readiness, and measurable funnel improvement.
           </p>
         </div>
-        <div className="grid gap-3 sm:grid-cols-2">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm font-semibold text-[#050505]/70 transition hover:text-[#050505]"
-            >
-              {link.label}
-            </Link>
-          ))}
+        <div className="grid gap-6 lg:grid-cols-[1fr_0.85fr]">
+          <div className="grid gap-3 sm:grid-cols-2">
+            {links.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-sm font-semibold text-[#050505]/70 transition hover:text-[#050505]"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+          <div>
+            <p className="text-sm font-black uppercase tracking-[0.16em] text-[#164E50]">Locations</p>
+            <div className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2 sm:grid-cols-4 lg:grid-cols-2">
+              {locationPages.map((location) => (
+                <Link
+                  key={location.slug}
+                  href={`/locations/${location.slug}`}
+                  className="text-sm font-semibold text-[#050505]/70 transition hover:text-[#050505]"
+                >
+                  {location.city}
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </footer>

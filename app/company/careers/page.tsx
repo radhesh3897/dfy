@@ -29,7 +29,7 @@ export default function CareersPage() {
         eyebrow="Careers"
         title="Join a team building better acquisition systems."
         subtitle="We are not hiring for public roles right now, but we are always open to strong operators, performance marketers, designers, and growth people."
-        primaryCta={{ label: "Send Your Profile", href: "mailto:hello@doneforyou.agency?subject=DFY%20Profile" }}
+        primaryCta={{ label: "Send Your Profile", href: "mailto:radhesh@doneforyou.in?subject=DFY%20Profile" }}
         secondaryCta={{ label: "Company Overview", href: "/company" }}
       />
 
@@ -50,7 +50,7 @@ export default function CareersPage() {
         title="Think you could help DFY build better growth systems?"
         text="Send your profile with a short note about the kind of work you do best."
         buttonLabel="Send Your Profile"
-        buttonHref="mailto:hello@doneforyou.agency?subject=DFY%20Profile"
+        buttonHref="mailto:radhesh@doneforyou.in?subject=DFY%20Profile"
       />
     </>
   );

@@ -3,10 +3,10 @@ import type { Metadata } from "next";
 export const site = {
   name: "Done For You",
   shortName: "DFY",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.doneforyou.agency",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.doneforyou.in",
   description:
     "Done For You helps B2B and service businesses improve lead quality with paid ads, landing pages, tracking, CRM, nurture, and sales feedback loops.",
-  email: "hello@doneforyou.agency",
+  email: "radhesh@doneforyou.in",
 };
 
 export function absoluteUrl(path = "/") {

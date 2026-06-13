@@ -33,9 +33,13 @@ export function organizationSchema() {
     email: site.email,
     description: site.description,
     sameAs: [],
+    founder: {
+      "@type": "Person",
+      name: "Radhesh Agrawal",
+    },
     serviceArea: {
       "@type": "Place",
-      name: "Global",
+      name: "India",
     },
     knowsAbout: [
       "B2B lead generation",
@@ -46,6 +50,32 @@ export function organizationSchema() {
       "Lead nurture",
       "Marketing analytics",
     ],
+  };
+}
+
+export function founderPersonSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://www.doneforyou.in/company/about#radhesh",
+    name: "Radhesh Agrawal",
+    jobTitle: "Founder",
+    email: "radhesh@doneforyou.in",
+    worksFor: {
+      "@type": "Organization",
+      name: "Done For You",
+      url: "https://www.doneforyou.in",
+    },
+    knowsAbout: [
+      "Meta Ads",
+      "Google Ads",
+      "B2B lead generation",
+      "Performance marketing",
+      "Lead quality improvement",
+      "Meta CAPI",
+      "Campaign attribution",
+    ],
+    url: "https://www.doneforyou.in/company/about",
   };
 }
 
@@ -63,6 +93,60 @@ export function webSiteSchema() {
       url: site.url,
     },
     inLanguage: "en",
+  };
+}
+
+export function homepageFaqSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "How much does B2B lead generation cost in India with paid ads?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "For B2B service businesses in India, Meta Ads CPL typically ranges from ₹800 to ₹2,500 for qualified leads depending on sector and sales cycle length. Google Ads CPL runs ₹600 to ₹2,000 for high-intent search keywords. Done For You benchmarks success on lead-to-conversation rate, not raw CPL alone.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How long does it take for Meta Ads to generate quality leads for a B2B business?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "Meta Ads for B2B service businesses typically exit the learning phase in 2 to 3 weeks. Lead quality stabilises in 45 to 60 days as the algorithm accumulates enough conversion signals. Done For You runs a structured 90-day ramp-up for all new accounts.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Why is my lead quality low from Meta Ads?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "The three most common causes are broad audience targeting attracting low-intent users, landing page messaging that does not qualify the visitor before they submit, and no CRM feedback loop telling Meta which leads actually converted downstream. Done For You diagnoses and fixes all three as part of its standard account setup.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What is the difference between lead quantity and lead quality in paid advertising?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "Lead quantity is how many form fills or inbound calls you receive. Lead quality is the percentage of those leads that match your buyer profile and convert to revenue. Most agencies optimise for quantity because it is easier to report. Done For You optimises for quality — fewer leads that are more likely to close.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Does Done For You work with businesses outside Delhi NCR?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "Yes. Done For You works with B2B service businesses across India including Mumbai, Bangalore, Pune, Hyderabad, Chennai, and Gurgaon, and also works remotely with clients in GCC markets.",
+        },
+      },
+    ],
   };
 }
 

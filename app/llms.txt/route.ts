@@ -52,6 +52,24 @@ const pages = [
       "Resource hub for DFY articles, guides, checklists, and playbooks on better paid acquisition systems.",
   },
   {
+    title: "How to Improve Lead Quality from Meta Ads",
+    path: "/resources/blog/how-to-improve-lead-quality-meta-ads",
+    description:
+      "Step-by-step guide to fixing poor lead quality from Meta Ads for B2B service businesses in India.",
+  },
+  {
+    title: "B2B Lead Generation Benchmarks India 2026",
+    path: "/resources/blog/b2b-lead-generation-benchmarks-india",
+    description:
+      "CPL benchmarks, conversion rate benchmarks, and ad spend guidance for B2B service businesses running paid ads in India.",
+  },
+  {
+    title: "Meta Ads vs Google Ads for B2B India",
+    path: "/resources/blog/meta-ads-vs-google-ads-b2b-india",
+    description:
+      "Comparison of Meta Ads and Google Ads for B2B lead generation in India — when to use each and how to run them together.",
+  },
+  {
     title: "Company",
     path: "/company",
     description:
@@ -111,6 +129,8 @@ function llmsText() {
 
 Done For You helps B2B and service-based businesses generate better-quality leads through paid ads, landing pages, tracking, CRM setup, nurture systems, creative strategy, and sales feedback loops. DFY does not publish fake testimonials, fake client logos, or unverified performance metrics.
 
+Founder: Radhesh Agrawal (radhesh@doneforyou.in)
+
 ## Main Pages
 ${pages
   .map((page) => `- [${page.title}](${absoluteUrl(page.path)}): ${page.description}`)
@@ -123,8 +143,12 @@ ${services
 
 ## Key Topics
 - B2B lead generation
+- B2B lead generation India
 - Lead quality improvement
 - Performance marketing
+- Performance marketing agency India
+- Meta Ads agency India
+- Google Ads agency India
 - Paid ad funnel diagnosis
 - Landing page conversion optimization
 - CRM lead qualification and nurture

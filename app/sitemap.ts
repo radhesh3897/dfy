@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { locationPages } from "@/data/locationPages";
 import { absoluteUrl } from "@/lib/site";
 
 const routes = [
@@ -21,6 +22,12 @@ const routes = [
   { path: "/company/process", changeFrequency: "monthly" as const, priority: 0.6 },
   { path: "/company/careers", changeFrequency: "monthly" as const, priority: 0.45 },
   { path: "/free-audit", changeFrequency: "monthly" as const, priority: 0.8 },
+  { path: "/locations", changeFrequency: "monthly" as const, priority: 0.78 },
+  ...locationPages.map((location) => ({
+    path: `/locations/${location.slug}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.72,
+  })),
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -284,6 +284,58 @@ const whyItems = [
   },
 ];
 
+const metaAdsFaqPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What Meta Ads budget does a B2B service business need in India?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text:
+          "A minimum of ₹50,000 per month ad spend is recommended for B2B service businesses running Meta Ads in India. Below this threshold the algorithm does not accumulate enough conversion data to exit the learning phase reliably. Done For You manages Meta Ads accounts from ₹50,000 to ₹5,00,000 per month.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How long before Meta Ads generate consistent leads for a service business?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text:
+          "Meta Ads for service businesses typically show initial lead flow within 2 to 3 weeks. Consistent, quality lead flow stabilises between 45 and 90 days as the algorithm learns which audiences convert downstream. The first 30 days should be treated as a data-collection phase, not a performance phase.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Should B2B service businesses use Lead Ads or website conversion campaigns on Meta?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text:
+          "Website conversion campaigns generally produce higher-quality leads for B2B service businesses because the visitor has to leave Meta and engage with your landing page before submitting. Lead Ads produce higher volume at lower CPL but lower intent. Done For You typically starts with website conversions for B2B and uses Lead Ads only with a strong qualification form.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is CBO vs ABO in Meta Ads and which should service businesses use?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text:
+          "CBO (Campaign Budget Optimisation) lets Meta distribute budget across ad sets automatically. ABO (Ad Set Budget Optimisation) gives manual control over each ad set's spend. Done For You uses ABO for testing new audiences and creatives, then moves proven combinations to CBO for scaling.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How does Done For You improve Meta Ads lead quality over time?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text:
+          "Done For You improves Meta Ads lead quality through three systems: tighter audience targeting using high-intent signals, landing pages built to qualify visitors before form submission, and a CRM feedback loop that sends downstream conversion data back to Meta via CAPI. This combination typically reduces poor-fit leads by 40 to 60 percent within 90 days.",
+      },
+    },
+  ],
+};
+
 export default function MetaAdsPage() {
   return (
     <>
@@ -310,6 +362,7 @@ export default function MetaAdsPage() {
           serviceType: "Meta Ads management",
         })}
       />
+      <JsonLd data={metaAdsFaqPageSchema} />
       <HeroSection />
       <ProblemSection />
       <MethodSection />
@@ -524,6 +577,9 @@ function MethodSection() {
             The DFY Meta Ads Method.
           </h2>
           <p className="mt-5 text-xl leading-8 text-[#465163]">A repeatable system built for qualified pipeline.</p>
+          <p className="mt-5 text-lg leading-8 text-[#465163]">
+            For service businesses running Meta Ads in India, typical CPL benchmarks by sector are: real estate ₹300–₹800, education ₹200–₹600, legal and consulting ₹500–₹1,500, and B2B SaaS ₹800–₹2,000. These ranges assume a properly structured campaign with qualified audience targeting and a dedicated landing page.
+          </p>
 
           <div className="mt-10 divide-y divide-dashed divide-[#dce5dc]">
             {methodPillars.map((pillar) => (

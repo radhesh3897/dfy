@@ -15,7 +15,7 @@ import { webPageSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Performance Marketing for Better-Quality Leads",
+  title: "B2B Lead Generation Agency India — Done For You | Meta Ads + Google Ads",
   description:
     "Done For You builds paid acquisition systems for B2B and service businesses using ads, landing pages, tracking, CRM, nurture, and sales feedback loops.",
   path: "/",
@@ -33,7 +33,7 @@ export default function Home() {
       />
       <Hero
         eyebrow="B2B Lead Generation Agency"
-        title="Consistent, High-Quality Leads in 30 Days"
+        title="B2B Lead Generation Agency India — Better Leads from Meta Ads and Google Ads"
         subtitle="Most agencies hand you a spreadsheet of leads and disappear. DFY builds a closed-loop ad system that learns from your actual sales data so every month, your cost per customer drops."
         primaryCta={{
           label: "Get Your Free Audit",

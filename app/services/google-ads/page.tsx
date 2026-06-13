@@ -47,6 +47,58 @@ const faqs = [
   },
 ];
 
+const googleAdsFaqPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What Google Ads budget does a B2B service business need in India?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text:
+          "For B2B service businesses in India, a minimum of ₹40,000 to ₹60,000 per month is needed to generate statistically meaningful data from Google Search Ads. Highly competitive keywords in sectors like legal, finance, and enterprise software may require ₹1,00,000 or more per month to compete effectively.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How long does it take for Google Ads to generate B2B leads in India?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text:
+          "Google Ads for B2B lead generation typically produces first leads within 1 to 2 weeks of launch. Quality optimisation takes 30 to 60 days as negative keywords accumulate and bidding strategies learn from conversion data. Done For You runs a structured 90-day account ramp-up for all new Google Ads clients.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is a good conversion rate for a B2B Google Ads landing page in India?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text:
+          "A well-optimised B2B landing page for Google Ads in India should convert at 8 to 15 percent for high-intent search traffic. Below 5 percent typically indicates a mismatch between ad messaging and landing page content, or a form that asks for too much information upfront.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the difference between Google Search Ads and Performance Max for B2B?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text:
+          "Google Search Ads target users actively searching for specific keywords, giving you precise control over when your ad appears. Performance Max automates placement across Search, Display, YouTube, and Gmail using AI. For B2B lead generation, Done For You starts with Search campaigns for direct intent capture and introduces Performance Max only after Search is profitable.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How does Done For You reduce wasted spend on Google Ads?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text:
+          "Done For You reduces wasted Google Ads spend through three methods: aggressive negative keyword management from day one, match type discipline starting with phrase and exact match before broad, and search term report reviews every 72 hours during the first 30 days. This typically reduces irrelevant clicks by 30 to 50 percent in the first month.",
+      },
+    },
+  ],
+};
+
 export const metadata: Metadata = pageMetadata({
   title: "Google Ads Agency for High-Intent Service Leads",
   description:
@@ -89,6 +141,7 @@ export default function GoogleAdsPage() {
         })}
       />
       <JsonLd data={faqSchema(faqs)} />
+      <JsonLd data={googleAdsFaqPageSchema} />
       <GoogleAdsServicePage faqs={faqs} />
     </>
   );
