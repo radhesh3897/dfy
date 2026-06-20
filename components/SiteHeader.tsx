@@ -54,8 +54,8 @@ const servicesColumns: Array<{ heading: string; items: MenuItem[] }> = [
     heading: "Services",
     items: [
       { label: "B2B Lead Generation", href: "/b2b-lead-generation-agency", icon: "target" },
-      { label: "Landing Page CRO", href: "/lead-quality-improvement", icon: "window" },
-      { label: "CRM, Tracking & Nurture", href: "/lead-quality-improvement", icon: "database" },
+      { label: "Landing Page CRO", href: "/services/landing-page-cro", icon: "window" },
+      { label: "CRM, Tracking & Nurture", href: "/services/crm-tracking-nurture", icon: "database" },
       { label: "Creative Strategy", href: "/services/meta-ads", icon: "bulb" },
     ],
   },

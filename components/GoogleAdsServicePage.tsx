@@ -720,8 +720,8 @@ function ResultsSection() {
                     </div>
                   ))}
                 </div>
-                <Link href="/results/edtech-lead-quality" className="mt-8 inline-flex items-center gap-3 text-lg font-medium text-[#164E50]">
-                  Read the full story
+                <Link href="/results" className="mt-8 inline-flex items-center gap-3 text-lg font-medium text-[#164E50]">
+                  View all results
                   <span aria-hidden="true">-&gt;</span>
                 </Link>
               </div>
