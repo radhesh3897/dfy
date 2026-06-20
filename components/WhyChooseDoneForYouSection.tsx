@@ -57,7 +57,7 @@ const benefits = [
 
 export function WhyChooseDoneForYouSection() {
   return (
-    <section className="bg-white py-16 text-[#050505] sm:py-20 lg:py-24">
+    <section className="bg-white pt-16 pb-4 text-[#050505] sm:pt-20 sm:pb-6 lg:pt-24 lg:pb-8">
       <div className="container-wide">
         <header className="max-w-[760px]">
           <h2 className="text-[clamp(2.45rem,7vw,4.6rem)] font-medium leading-[0.98] tracking-[-0.055em]">
