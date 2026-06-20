@@ -56,14 +56,19 @@ export async function POST(request: NextRequest) {
       </div>
     `;
 
-    await resend.emails.send({
+    const { data, error } = await resend.emails.send({
       from: "DFY Audit <onboarding@resend.dev>",
       to: TO_EMAIL,
       subject,
       html,
     });
 
-    return NextResponse.json({ success: true });
+    if (error) {
+      console.error("Resend error:", error);
+      return NextResponse.json({ success: false, error: error.message }, { status: 502 });
+    }
+
+    return NextResponse.json({ success: true, id: data?.id });
   } catch (error) {
     console.error("Audit submit error:", error);
     return NextResponse.json({ success: false }, { status: 500 });
