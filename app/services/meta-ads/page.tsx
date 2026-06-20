@@ -578,7 +578,7 @@ function MethodSection() {
           </h2>
           <p className="mt-5 text-xl leading-8 text-[#465163]">A repeatable system built for qualified pipeline.</p>
           <p className="mt-5 text-lg leading-8 text-[#465163]">
-            For service businesses running Meta Ads in India, typical CPL benchmarks by sector are: real estate ₹300–₹800, education ₹200–₹600, legal and consulting ₹500–₹1,500, and B2B SaaS ₹800–₹2,000. These ranges assume a properly structured campaign with qualified audience targeting and a dedicated landing page.
+            For service businesses running Meta Ads in India, typical CPL benchmarks by sector are: real estate ₹300-₹800, education ₹200-₹600, legal and consulting ₹500-₹1,500, and B2B SaaS ₹800-₹2,000. These ranges assume a properly structured campaign with qualified audience targeting and a dedicated landing page.
           </p>
 
           <div className="mt-10 divide-y divide-dashed divide-[#dce5dc]">

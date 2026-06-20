@@ -23,7 +23,7 @@ const routes: Route[] = [
   { path: "/results", changeFrequency: "monthly", priority: 0.78 },
   { path: "/resources", changeFrequency: "monthly", priority: 0.76 },
   { path: "/resources/blog", changeFrequency: "monthly", priority: 0.6 },
-  // Blog articles — previously missing from the sitemap.
+  // Blog articles previously missing from the sitemap.
   {
     path: "/resources/blog/how-to-improve-lead-quality-meta-ads",
     changeFrequency: "monthly",

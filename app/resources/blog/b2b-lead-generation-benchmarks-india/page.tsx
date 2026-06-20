@@ -108,11 +108,11 @@ export default function B2BLeadGenerationBenchmarksIndiaArticle() {
                 </thead>
                 <tbody>
                   {[
-                    ["Real estate", "₹300–₹800", "Residential projects"],
-                    ["Education", "₹200–₹600", "Ed-tech and coaching"],
-                    ["Legal and consulting", "₹500–₹1,500", "High-intent keywords"],
-                    ["B2B SaaS", "₹800–₹2,000", "Longer sales cycle"],
-                    ["Healthcare services", "₹400–₹1,000", "Clinic and hospital"],
+                    ["Real estate", "₹300-₹800", "Residential projects"],
+                    ["Education", "₹200-₹600", "Ed-tech and coaching"],
+                    ["Legal and consulting", "₹500-₹1,500", "High-intent keywords"],
+                    ["B2B SaaS", "₹800-₹2,000", "Longer sales cycle"],
+                    ["Healthcare services", "₹400-₹1,000", "Clinic and hospital"],
                   ].map(([sector, range, notes]) => (
                     <tr key={sector}>
                       <td className="border-b border-[#CDEECD] px-4 py-3 font-medium text-[#050505]">{sector}</td>

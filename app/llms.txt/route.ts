@@ -67,7 +67,7 @@ const pages = [
     title: "Meta Ads vs Google Ads for B2B India",
     path: "/resources/blog/meta-ads-vs-google-ads-b2b-india",
     description:
-      "Comparison of Meta Ads and Google Ads for B2B lead generation in India — when to use each and how to run them together.",
+      "Comparison of Meta Ads and Google Ads for B2B lead generation in India: when to use each and how to run them together.",
   },
   {
     title: "Company",

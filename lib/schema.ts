@@ -134,7 +134,7 @@ export function homepageFaqSchema() {
         acceptedAnswer: {
           "@type": "Answer",
           text:
-            "Lead quantity is how many form fills or inbound calls you receive. Lead quality is the percentage of those leads that match your buyer profile and convert to revenue. Most agencies optimise for quantity because it is easier to report. Done For You optimises for quality — fewer leads that are more likely to close.",
+            "Lead quantity is how many form fills or inbound calls you receive. Lead quality is the percentage of those leads that match your buyer profile and convert to revenue. Most agencies optimise for quantity because it is easier to report. Done For You optimises for quality: fewer leads that are more likely to close.",
         },
       },
       {

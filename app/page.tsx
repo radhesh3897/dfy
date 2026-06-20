@@ -38,7 +38,7 @@ export default function Home() {
       />
       <Hero
         eyebrow="B2B Lead Generation Agency"
-        title="B2B Lead Generation Agency India — Better Leads from Meta Ads and Google Ads"
+        title="B2B Lead Generation Agency India: Better Leads from Meta Ads and Google Ads"
         subtitle="Most agencies hand you a spreadsheet of leads and disappear. DFY builds a closed-loop ad system that learns from your actual sales data so every month, your cost per customer drops."
         primaryCta={{
           label: "Get Your Free Audit",
