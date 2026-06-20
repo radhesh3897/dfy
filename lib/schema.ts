@@ -32,7 +32,10 @@ export function organizationSchema() {
     url: site.url,
     email: site.email,
     description: site.description,
-    sameAs: [],
+    sameAs: [
+      "https://www.instagram.com/doneforyou.in",
+      "https://www.linkedin.com/company/done-for-you-in",
+    ],
     founder: {
       "@type": "Person",
       name: "Radhesh Agrawal",
