@@ -174,7 +174,7 @@ function StrategyVisual() {
       <div className="border-b border-[#dfe6df] px-5 py-3">
         <div className="flex items-center justify-between">
           <p className="text-sm font-medium text-[#111827]">Strategy plan</p>
-          <span className="text-[#8a92a3]">...</span>
+          <span className="text-[#5f6877]">...</span>
         </div>
       </div>
       <div className="p-5 lg:p-4 xl:p-5">
@@ -265,7 +265,7 @@ function ManagementVisual() {
           <div className="min-w-0 flex-1">
             <div className="flex items-center justify-between gap-3">
               <p className="font-medium text-[#111827]">Your Strategist</p>
-              <p className="text-xs text-[#8a92a3]">9:30 AM</p>
+              <p className="text-xs text-[#5f6877]">9:30 AM</p>
             </div>
             <p className="mt-2 text-sm text-[#242a33]">Here is your weekly update.</p>
             <div className="mt-4 space-y-3">

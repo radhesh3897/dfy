@@ -50,7 +50,7 @@ export function ProofStrip() {
     <section className="border-y border-[#e1e5ec] bg-white">
       <div className="container-wide grid min-h-[160px] items-center gap-8 py-8 lg:grid-cols-[340px_minmax(0,1fr)]">
         <p className="mx-auto max-w-[320px] text-center text-[1.12rem] font-semibold uppercase leading-7 tracking-[0.025em] text-[#164E50] sm:max-w-none sm:text-xl sm:leading-8 lg:mx-0 lg:max-w-[320px] lg:text-left lg:text-lg">
-          WORKED WITH <span className="text-[#4fae45]">100+</span> BRANDS ACROSS THE GLOBE
+          WORKED WITH <span className="text-[#2a7d26]">100+</span> BRANDS ACROSS THE GLOBE
         </p>
         <div className="overflow-hidden">
           <div className="space-y-3 sm:hidden">

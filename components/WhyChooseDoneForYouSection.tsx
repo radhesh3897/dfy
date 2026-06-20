@@ -173,7 +173,6 @@ function AudienceVisual() {
             </article>
           ))}
         </div>
-        <p className="mt-4 text-right text-xs font-medium text-[#7a838f]">Visual placeholder</p>
       </div>
     </div>
   );

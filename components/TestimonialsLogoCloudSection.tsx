@@ -137,7 +137,11 @@ export function TestimonialsLogoCloudSection() {
         <div className="mx-auto mt-8 w-full max-w-[900px] overflow-hidden rounded-[16px] border border-[#CDEECD] bg-white shadow-[0_22px_70px_rgba(22,78,80,0.08)] sm:mt-10">
           <div
             key={activeTestimonial.id}
-            className="tab-panel-enter px-5 py-9 text-center sm:px-10 sm:py-12 lg:px-16 lg:py-14"
+            id="testimonial-panel"
+            role="tabpanel"
+            aria-labelledby={`tab-${activeTestimonial.id}`}
+            tabIndex={0}
+            className="tab-panel-enter px-5 py-9 text-center outline-none sm:px-10 sm:py-12 lg:px-16 lg:py-14"
           >
             <blockquote className="mx-auto max-w-[730px] text-[clamp(1.35rem,5vw,2rem)] font-normal leading-[1.32] tracking-[-0.035em] text-[#164E50]">
               &quot;{activeTestimonial.quote}&quot;
@@ -178,10 +182,11 @@ export function TestimonialsLogoCloudSection() {
               return (
                 <button
                   key={testimonial.id}
+                  id={`tab-${testimonial.id}`}
                   type="button"
                   role="tab"
                   aria-selected={isActive}
-                  aria-controls={`testimonial-${testimonial.id}`}
+                  aria-controls="testimonial-panel"
                   aria-label={`Show testimonial from ${testimonial.name}`}
                   onClick={() => setActiveIndex(index)}
                   className={`min-w-0 border-r border-[#CDEECD] px-1 py-3 transition last:border-r-0 sm:px-5 sm:py-5 ${
