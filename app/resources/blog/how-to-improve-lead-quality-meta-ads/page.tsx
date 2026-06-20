@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ArticleByline } from "@/components/ArticleByline";
 import { CTASection } from "@/components/CTASection";
 import { FAQ } from "@/components/FAQ";
 import { JsonLd } from "@/components/JsonLd";
@@ -54,6 +55,7 @@ const articleSchema = {
     url: "https://www.doneforyou.in",
   },
   datePublished: "2026-06-13",
+  dateModified: "2026-06-20",
   description: "How to fix poor lead quality from Meta Ads for B2B service businesses in India.",
 };
 
@@ -75,6 +77,7 @@ export default function ImproveLeadQualityMetaAdsArticle() {
       <article>
         <Section tone="white" eyebrow="Meta Ads guide" title="How to Improve Lead Quality from Meta Ads">
           <div className="max-w-3xl space-y-6 text-lg leading-8 text-[#465163]">
+            <ArticleByline published="2026-06-13" updated="2026-06-20" />
             <p>
               Poor lead quality from Meta Ads is caused by three fixable problems: audience targeting that is too broad, landing pages that do not qualify the visitor, and no feedback loop between your CRM and your ad account. This guide covers each one with specific actions you can take this week.
             </p>

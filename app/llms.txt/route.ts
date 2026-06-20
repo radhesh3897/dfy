@@ -34,6 +34,36 @@ const pages = [
       "Service page for Google Ads strategy, search intent, landing page alignment, tracking, and lead quality optimization.",
   },
   {
+    title: "CRM Tracking and Lead Nurture",
+    path: "/services/crm-tracking-nurture",
+    description:
+      "Service page for CRM setup, lead attribution, source tagging, and nurture sequences that connect ad spend to real sales outcomes.",
+  },
+  {
+    title: "Landing Page CRO",
+    path: "/services/landing-page-cro",
+    description:
+      "Service page for landing page conversion rate optimization: offer clarity, form friction, ad-to-page alignment, and mobile speed.",
+  },
+  {
+    title: "EdTech Lead Generation",
+    path: "/services/edtech-lead-generation",
+    description:
+      "Industry page for EdTech lead generation in India using Meta Ads and Google Ads with enrolment-focused tracking and nurture.",
+  },
+  {
+    title: "Gym Lead Generation",
+    path: "/services/gym-lead-generation",
+    description:
+      "Industry page for gym and fitness studio lead generation in India using Meta Ads and Google Ads with membership-focused funnels.",
+  },
+  {
+    title: "Clinic Lead Generation",
+    path: "/services/clinic-lead-generation",
+    description:
+      "Industry page for clinic and healthcare lead generation in India using Meta Ads and Google Ads with appointment-focused funnels.",
+  },
+  {
     title: "Free Lead Quality Audit",
     path: "/free-audit",
     description:
@@ -68,6 +98,24 @@ const pages = [
     path: "/resources/blog/meta-ads-vs-google-ads-b2b-india",
     description:
       "Comparison of Meta Ads and Google Ads for B2B lead generation in India: when to use each and how to run them together.",
+  },
+  {
+    title: "CRM Tracking Setup for Service Businesses Running Paid Ads",
+    path: "/resources/blog/crm-tracking-setup-for-service-businesses",
+    description:
+      "How to set up a CRM feedback loop so paid ad campaigns learn from qualified leads and real sales outcomes, not just form fills.",
+  },
+  {
+    title: "Landing Page Conversion Rate Benchmarks India",
+    path: "/resources/blog/landing-page-conversion-rate-service-businesses",
+    description:
+      "Landing page conversion rate benchmarks by traffic source for service businesses in India, plus the highest-impact CRO fixes.",
+  },
+  {
+    title: "WhatsApp Lead Nurture for Service Businesses",
+    path: "/resources/blog/whatsapp-lead-nurture-service-businesses",
+    description:
+      "How to build a WhatsApp nurture sequence that converts paid ad enquiries into booked calls for service businesses in India.",
   },
   {
     title: "Company",
@@ -113,6 +161,18 @@ const services = [
     path: "/services/google-ads",
     description:
       "Google Ads systems for service businesses that need high-intent search leads and clearer pipeline reporting.",
+  },
+  {
+    title: "CRM Tracking and Lead Nurture",
+    path: "/services/crm-tracking-nurture",
+    description:
+      "CRM setup, lead attribution, source tagging, and nurture sequences that connect ad spend to real sales outcomes.",
+  },
+  {
+    title: "Landing Page CRO",
+    path: "/services/landing-page-cro",
+    description:
+      "Landing page conversion rate optimization covering offer clarity, form friction, ad-to-page alignment, and mobile speed.",
   },
   {
     title: "Lead Quality Audit",

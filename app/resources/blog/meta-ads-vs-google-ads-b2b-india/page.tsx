@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ArticleByline } from "@/components/ArticleByline";
 import { CTASection } from "@/components/CTASection";
 import { FAQ } from "@/components/FAQ";
 import { JsonLd } from "@/components/JsonLd";
@@ -54,6 +55,7 @@ const articleSchema = {
     url: "https://www.doneforyou.in",
   },
   datePublished: "2026-06-13",
+  dateModified: "2026-06-20",
   description,
 };
 
@@ -75,6 +77,7 @@ export default function MetaAdsVsGoogleAdsB2BIndiaArticle() {
       <article>
         <Section tone="white" eyebrow="Channel comparison" title="Meta Ads vs Google Ads for B2B Lead Generation India">
           <div className="max-w-3xl space-y-6 text-lg leading-8 text-[#465163]">
+            <ArticleByline published="2026-06-13" updated="2026-06-20" />
             <p>
               Meta Ads and Google Ads are not interchangeable for B2B lead generation. Google Ads captures buyers who are actively searching for what you offer. Meta Ads reaches buyers who match your ideal profile but are not searching yet. Most B2B service businesses in India should start with Google Ads if search volume exists, and add Meta Ads to scale volume once Google is profitable.
             </p>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ArticleByline } from "@/components/ArticleByline";
 import { CTASection } from "@/components/CTASection";
 import { FAQ } from "@/components/FAQ";
 import { JsonLd } from "@/components/JsonLd";
@@ -54,6 +55,7 @@ const articleSchema = {
     url: "https://www.doneforyou.in",
   },
   datePublished: "2026-06-13",
+  dateModified: "2026-06-20",
   description,
 };
 
@@ -75,6 +77,7 @@ export default function B2BLeadGenerationBenchmarksIndiaArticle() {
       <article>
         <Section tone="white" eyebrow="Benchmarks" title="B2B Lead Generation Benchmarks India 2026">
           <div className="max-w-3xl space-y-6 text-lg leading-8 text-[#465163]">
+            <ArticleByline published="2026-06-13" updated="2026-06-20" />
             <p>
               For B2B service businesses in India, a qualified lead from paid ads costs ₹600 to ₹2,500 depending on sector, sales cycle length, and campaign maturity. This page covers CPL benchmarks, conversion rate benchmarks, and what separates average performance from strong performance across Meta Ads and Google Ads.
             </p>

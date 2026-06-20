@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ArticleByline } from "@/components/ArticleByline";
 import { CTASection } from "@/components/CTASection";
 import { FAQ } from "@/components/FAQ";
 import { JsonLd } from "@/components/JsonLd";
@@ -59,6 +60,7 @@ const articleSchema = {
     url: "https://www.doneforyou.in",
   },
   datePublished: "2026-06-20",
+  dateModified: "2026-06-20",
   description,
 };
 
@@ -80,6 +82,7 @@ export default function LandingPageConversionRateArticle() {
       <article>
         <Section tone="white" eyebrow="Landing page CRO guide" title="Landing Page Conversion Rate Benchmarks for Service Businesses in India">
           <div className="max-w-3xl space-y-6 text-lg leading-8 text-[#465163]">
+            <ArticleByline published="2026-06-20" />
             <p>
               If your landing page converts at 2 percent and you are paying ₹30 per click, your cost per lead is ₹1,500. If you improve conversion to 8 percent with the same traffic, your cost per lead drops to ₹375. The ad spend did not change. The page did.
             </p>

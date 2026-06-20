@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ArticleByline } from "@/components/ArticleByline";
 import { CTASection } from "@/components/CTASection";
 import { FAQ } from "@/components/FAQ";
 import { JsonLd } from "@/components/JsonLd";
@@ -59,6 +60,7 @@ const articleSchema = {
     url: "https://www.doneforyou.in",
   },
   datePublished: "2026-06-20",
+  dateModified: "2026-06-20",
   description,
 };
 
@@ -80,6 +82,7 @@ export default function WhatsappLeadNurtureArticle() {
       <article>
         <Section tone="white" eyebrow="Lead nurture guide" title="WhatsApp Lead Nurture for Service Businesses: How to Convert More Enquiries to Clients">
           <div className="max-w-3xl space-y-6 text-lg leading-8 text-[#465163]">
+            <ArticleByline published="2026-06-20" />
             <p>
               In India, WhatsApp has a read rate above 90 percent and an average response time under 5 minutes. Email open rates for the same audience often sit below 20 percent. For service businesses converting paid ad enquiries into booked calls, WhatsApp is the most effective follow-up channel available.
             </p>

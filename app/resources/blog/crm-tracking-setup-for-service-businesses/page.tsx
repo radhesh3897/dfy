@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ArticleByline } from "@/components/ArticleByline";
 import { CTASection } from "@/components/CTASection";
 import { FAQ } from "@/components/FAQ";
 import { JsonLd } from "@/components/JsonLd";
@@ -59,6 +60,7 @@ const articleSchema = {
     url: "https://www.doneforyou.in",
   },
   datePublished: "2026-06-20",
+  dateModified: "2026-06-20",
   description,
 };
 
@@ -80,6 +82,7 @@ export default function CrmTrackingSetupArticle() {
       <article>
         <Section tone="white" eyebrow="CRM and tracking guide" title="CRM Tracking Setup for Service Businesses Running Paid Ads">
           <div className="max-w-3xl space-y-6 text-lg leading-8 text-[#465163]">
+            <ArticleByline published="2026-06-20" />
             <p>
               Most service businesses running Meta Ads or Google Ads track the wrong thing. They measure form fills, which tells the algorithm to find more people who fill forms. They do not measure qualified leads, booked calls, or customers, which is what the algorithm actually needs to find more buyers.
             </p>
