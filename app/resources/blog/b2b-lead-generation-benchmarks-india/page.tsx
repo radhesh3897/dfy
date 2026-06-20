@@ -11,7 +11,7 @@ const description =
   "Real B2B lead generation benchmarks for India in 2026. CPL ranges by sector, conversion rates, and what good performance actually looks like on Meta Ads and Google Ads.";
 
 export const metadata: Metadata = pageMetadata({
-  title: "B2B Lead Generation Benchmarks India 2026 — CPL, Conversion Rates, and Ad Spend by Sector",
+  title: "B2B Lead Generation Benchmarks India 2026",
   description,
   path,
 });

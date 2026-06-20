@@ -11,7 +11,7 @@ const description =
   "Meta Ads and Google Ads work differently for B2B lead generation in India. Here is how to decide which channel to use first and how to use both together.";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Meta Ads vs Google Ads for B2B Lead Generation in India — Which One Should You Use?",
+  title: "Meta Ads vs Google Ads for B2B in India",
   description,
   path,
 });

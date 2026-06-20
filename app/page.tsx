@@ -14,12 +14,17 @@ import { WhyChooseDoneForYouSection } from "@/components/WhyChooseDoneForYouSect
 import { webPageSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/site";
 
-export const metadata: Metadata = pageMetadata({
-  title: "B2B Lead Generation Agency India — Done For You | Meta Ads + Google Ads",
-  description:
-    "Done For You builds paid acquisition systems for B2B and service businesses using ads, landing pages, tracking, CRM, nurture, and sales feedback loops.",
-  path: "/",
-});
+export const metadata: Metadata = {
+  ...pageMetadata({
+    title: "B2B Lead Generation Agency in India | Meta + Google Ads",
+    description:
+      "Done For You builds paid acquisition systems for B2B and service businesses using ads, landing pages, tracking, CRM, nurture, and sales feedback loops.",
+    path: "/",
+  }),
+  // Absolute title avoids the "| Done For You" template suffix doubling the
+  // brand and pushing the tag past the ~60-char SERP display limit.
+  title: { absolute: "B2B Lead Generation Agency in India | Meta + Google Ads" },
+};
 
 export default function Home() {
   return (

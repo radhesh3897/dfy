@@ -68,7 +68,7 @@ export function pageMetadata({
       locale: "en_US",
       images: [
         {
-          url: absoluteUrl("/og/dfy-og-card.svg"),
+          url: absoluteUrl("/og/dfy-og-card.png"),
           width: 1200,
           height: 630,
           alt: "Done For You lead quality system overview",
@@ -79,7 +79,7 @@ export function pageMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: [absoluteUrl("/og/dfy-og-card.svg")],
+      images: [absoluteUrl("/og/dfy-og-card.png")],
     },
   };
 }

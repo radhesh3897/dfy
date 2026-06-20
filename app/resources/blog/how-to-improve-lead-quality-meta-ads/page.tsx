@@ -11,7 +11,7 @@ const description =
   "Poor lead quality from Meta Ads is almost always fixable. Here are the five specific changes that improve lead quality for B2B service businesses in India.";
 
 export const metadata: Metadata = pageMetadata({
-  title: "How to Improve Lead Quality from Meta Ads for B2B Service Businesses",
+  title: "How to Improve Lead Quality from Meta Ads",
   description,
   path,
 });

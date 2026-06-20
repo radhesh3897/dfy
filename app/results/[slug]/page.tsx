@@ -26,11 +26,16 @@ export async function generateMetadata({ params }: CaseStudyPageProps): Promise<
     return {};
   }
 
-  return pageMetadata({
-    title: `${story.title} Placeholder`,
-    description: `${story.summary} Verified project details will be added after client approval.`,
-    path: story.href,
-  });
+  return {
+    ...pageMetadata({
+      title: `${story.title} Placeholder`,
+      description: `${story.summary} Verified project details will be added after client approval.`,
+      path: story.href,
+    }),
+    // Placeholder content — keep out of the index until real, client-approved
+    // case studies replace it. Links are still followed.
+    robots: { index: false, follow: true },
+  };
 }
 
 export default async function CaseStudyPage({ params }: CaseStudyPageProps) {

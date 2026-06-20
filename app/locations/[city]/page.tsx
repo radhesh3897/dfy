@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
 
   return pageMetadata({
     title: `Lead Generation Agency in ${location.city}`,
-    description: `Done For You helps service businesses in ${location.city} generate better-quality leads through Google Ads, Meta Ads, landing pages, tracking, CRM setup, and creative strategy.`,
+    description: `Done For You helps service businesses in ${location.city} get better-quality leads through Google Ads, Meta Ads, landing pages, tracking, and CRM setup.`,
     path: `/locations/${location.slug}`,
     keywords: [
       `lead generation agency in ${location.city}`,

@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: absoluteUrl("/og/dfy-og-card.svg"),
+        url: absoluteUrl("/og/dfy-og-card.png"),
         width: 1200,
         height: 630,
         alt: "Done For You lead quality system overview",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Done For You | B2B Lead Generation and Performance Marketing",
     description: site.description,
-    images: [absoluteUrl("/og/dfy-og-card.svg")],
+    images: [absoluteUrl("/og/dfy-og-card.png")],
   },
 };
 

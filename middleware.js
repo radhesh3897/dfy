@@ -32,7 +32,9 @@ export function middleware(request) {
   homeUrl.pathname = "/";
   homeUrl.search = "";
 
-  return NextResponse.redirect(homeUrl);
+  // 308 (permanent) so unknown/legacy URLs like /home consolidate ranking
+  // signals to "/" instead of a soft 307 temporary redirect.
+  return NextResponse.redirect(homeUrl, 308);
 }
 
 export const config = {
