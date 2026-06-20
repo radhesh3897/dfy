@@ -8,7 +8,6 @@ import { JsonLd } from "@/components/JsonLd";
 import { PaidAdsSystemSection } from "@/components/PaidAdsSystemSection";
 import { ProcessSection } from "@/components/ProcessSection";
 import { ProofStrip } from "@/components/ProofStrip";
-import { ResultsSection } from "@/components/ResultsSection";
 import { TestimonialsLogoCloudSection } from "@/components/TestimonialsLogoCloudSection";
 import { WhyChooseDoneForYouSection } from "@/components/WhyChooseDoneForYouSection";
 import { webPageSchema } from "@/lib/schema";
@@ -62,7 +61,6 @@ export default function Home() {
         cta="Book Your Free Audit"
       />
       <WhyChooseDoneForYouSection />
-      <ResultsSection />
       <ProcessSection />
       <HomepageCTASection
         headline="Stop paying for leads that don't convert."
