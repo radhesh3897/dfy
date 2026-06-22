@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ArticleByline } from "@/components/ArticleByline";
+import { Cite, PullQuote, SourceList } from "@/components/Citations";
 import { CTASection } from "@/components/CTASection";
 import { FAQ } from "@/components/FAQ";
 import { JsonLd } from "@/components/JsonLd";
@@ -139,8 +140,38 @@ export default function ImproveLeadQualityMetaAdsArticle() {
           </div>
         </Section>
 
+        <Section tone="white" eyebrow="Evidence" title="What the data says about lead quality and tracking">
+          <div className="max-w-3xl space-y-5 text-lg leading-8 text-[#465163]">
+            <p>
+              Server-side tracking is no longer optional. After Apple introduced App Tracking Transparency, Meta estimated the change would cost its business around{" "}
+              <Cite href="https://www.cnbc.com/2022/02/02/facebook-says-apple-ios-privacy-change-will-cost-10-billion-this-year.html">10 billion dollars in 2022 alone</Cite>, because browser-based signals became far less reliable. Sending qualified conversions from your CRM through CAPI is how you restore the signal Meta needs to find real buyers.
+            </p>
+            <p>
+              Follow-up speed compounds everything upstream. Firms that contact a new lead within an hour are nearly{" "}
+              <Cite href="https://hbr.org/2011/03/the-short-life-of-online-sales-leads">seven times more likely to qualify it</Cite> than those that wait even one hour longer (Harvard Business Review). A strong lead with a slow response still converts like a weak one.
+            </p>
+            <p>
+              Nurture pays for itself too. Companies that excel at lead nurturing generate{" "}
+              <Cite href="https://blog.hubspot.com/blog/tabid/6307/bid/30901/30-thought-provoking-lead-nurturing-stats-you-can-t-ignore.aspx">50 percent more sales-ready leads at 33 percent lower cost</Cite> (Forrester). Lead quality is built after the click, not only at the targeting stage.
+            </p>
+            <PullQuote
+              quote="Most accounts do not have a lead quality problem. They have a feedback problem. Until the ad platform knows which leads actually became customers, it keeps optimising for the cheapest form fill."
+              attribution="Radhesh Agrawal, Founder, Done For You"
+            />
+          </div>
+        </Section>
+
         <Section tone="white" eyebrow="FAQ" title="What should you know before fixing Meta Ads lead quality?">
           <FAQ faqs={faqs} />
+        </Section>
+        <Section tone="white" eyebrow="Sources" title="Sources">
+          <SourceList
+            sources={[
+              { label: "Meta says Apple iOS privacy change will cost $10 billion this year — CNBC (2022)", href: "https://www.cnbc.com/2022/02/02/facebook-says-apple-ios-privacy-change-will-cost-10-billion-this-year.html" },
+              { label: "The Short Life of Online Sales Leads — Harvard Business Review (2011)", href: "https://hbr.org/2011/03/the-short-life-of-online-sales-leads" },
+              { label: "Lead nurturing statistics (Forrester) — HubSpot", href: "https://blog.hubspot.com/blog/tabid/6307/bid/30901/30-thought-provoking-lead-nurturing-stats-you-can-t-ignore.aspx" },
+            ]}
+          />
         </Section>
       </article>
 

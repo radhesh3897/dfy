@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ArticleByline } from "@/components/ArticleByline";
+import { Cite, PullQuote, SourceList } from "@/components/Citations";
 import { CTASection } from "@/components/CTASection";
 import { FAQ } from "@/components/FAQ";
 import { JsonLd } from "@/components/JsonLd";
@@ -165,8 +166,40 @@ export default function CrmTrackingSetupArticle() {
           </div>
         </Section>
 
+        <Section tone="white" eyebrow="Evidence" title="What the data says about closed-loop tracking">
+          <div className="max-w-3xl space-y-5 text-lg leading-8 text-[#465163]">
+            <p>
+              The return on closed-loop tracking is well documented. CRM returns{" "}
+              <Cite href="https://nucleusresearch.com/research/single/crm-returns-3-10-per-dollar-spent/">3.10 dollars for every dollar spent</Cite> (Nucleus Research, 2023), and advertisers who switch to data-driven attribution see a{" "}
+              <Cite href="https://blog.google/products/ads-commerce/turning-data-into-results-with-data-driven-attribution/">6 percent average lift in conversions</Cite> (Google).
+            </p>
+            <p>
+              It matters more since Apple introduced App Tracking Transparency and browser tracking became unreliable. Meta estimated a{" "}
+              <Cite href="https://www.cnbc.com/2022/02/02/facebook-says-apple-ios-privacy-change-will-cost-10-billion-this-year.html">10 billion dollar</Cite> impact in 2022, which is exactly why sending CRM events server-side through CAPI restores the signal.
+            </p>
+            <p>
+              Feeding qualified-lead data back also compounds. Strong nurturing produces{" "}
+              <Cite href="https://blog.hubspot.com/blog/tabid/6307/bid/30901/30-thought-provoking-lead-nurturing-stats-you-can-t-ignore.aspx">50 percent more sales-ready leads at 33 percent lower cost</Cite> (Forrester).
+            </p>
+            <PullQuote
+              quote="The CRM is not a sales tool. It is the training data for your ad account. If your pipeline stages are not flowing back to Meta and Google, you are paying the algorithm to learn the wrong lesson."
+              attribution="Radhesh Agrawal, Founder, Done For You"
+            />
+          </div>
+        </Section>
+
         <Section tone="white" eyebrow="FAQ" title="Common questions about CRM tracking for paid ads">
           <FAQ faqs={faqs} />
+        </Section>
+        <Section tone="white" eyebrow="Sources" title="Sources">
+          <SourceList
+            sources={[
+              { label: "CRM returns $3.10 per dollar spent — Nucleus Research (2023)", href: "https://nucleusresearch.com/research/single/crm-returns-3-10-per-dollar-spent/" },
+              { label: "Turning data into results with data-driven attribution — Google (2022)", href: "https://blog.google/products/ads-commerce/turning-data-into-results-with-data-driven-attribution/" },
+              { label: "Meta says Apple iOS privacy change will cost $10 billion this year — CNBC (2022)", href: "https://www.cnbc.com/2022/02/02/facebook-says-apple-ios-privacy-change-will-cost-10-billion-this-year.html" },
+              { label: "Lead nurturing statistics (Forrester) — HubSpot", href: "https://blog.hubspot.com/blog/tabid/6307/bid/30901/30-thought-provoking-lead-nurturing-stats-you-can-t-ignore.aspx" },
+            ]}
+          />
         </Section>
       </article>
 

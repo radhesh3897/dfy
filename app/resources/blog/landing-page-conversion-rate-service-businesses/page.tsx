@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ArticleByline } from "@/components/ArticleByline";
+import { Cite, PullQuote, SourceList } from "@/components/Citations";
 import { CTASection } from "@/components/CTASection";
 import { FAQ } from "@/components/FAQ";
 import { JsonLd } from "@/components/JsonLd";
@@ -172,8 +173,39 @@ export default function LandingPageConversionRateArticle() {
           </div>
         </Section>
 
+        <Section tone="white" eyebrow="Evidence" title="What the data says about conversion and speed">
+          <div className="max-w-3xl space-y-5 text-lg leading-8 text-[#465163]">
+            <p>
+              Benchmarks first. The median landing page converts at{" "}
+              <Cite href="https://unbounce.com/average-conversion-rates-landing-pages/">6.6 percent</Cite> across roughly 41,000 pages (Unbounce, 2024), while older Google Ads data put the average at{" "}
+              <Cite href="https://www.wordstream.com/blog/ws/2014/03/17/what-is-a-good-conversion-rate">2.35 percent, with the top 25 percent above 5.31 percent</Cite> (WordStream).
+            </p>
+            <p>
+              Speed is conversion. Google found that{" "}
+              <Cite href="https://blog.google/products/admanager/the-need-for-mobile-speed/">53 percent of mobile visits are abandoned if a page takes over 3 seconds to load</Cite>, and that the probability of a bounce rises{" "}
+              <Cite href="https://business.google.com/ca-en/think/marketing-strategies/mobile-page-speed-new-industry-benchmarks/">123 percent as load time goes from 1 to 10 seconds</Cite>. Deloitte measured that a 0.1 second mobile speed improvement lifted retail conversions{" "}
+              <Cite href="https://www.deloitte.com/ie/en/services/consulting/research/milliseconds-make-millions.html">8.4 percent</Cite>.
+            </p>
+            <PullQuote
+              quote="Most landing pages are built to look good in a deck, not to convert a stranger on a 4G phone. The cheapest growth lever in most accounts is not more spend. It is a page that answers the visitor's first three questions before the form."
+              attribution="Radhesh Agrawal, Founder, Done For You"
+            />
+          </div>
+        </Section>
+
         <Section tone="white" eyebrow="FAQ" title="Common questions about landing page conversion rates">
           <FAQ faqs={faqs} />
+        </Section>
+        <Section tone="white" eyebrow="Sources" title="Sources">
+          <SourceList
+            sources={[
+              { label: "Average conversion rates for landing pages — Unbounce (2024)", href: "https://unbounce.com/average-conversion-rates-landing-pages/" },
+              { label: "What is a good conversion rate? — WordStream", href: "https://www.wordstream.com/blog/ws/2014/03/17/what-is-a-good-conversion-rate" },
+              { label: "The need for mobile speed — Google (2016)", href: "https://blog.google/products/admanager/the-need-for-mobile-speed/" },
+              { label: "Mobile page speed industry benchmarks — Think with Google (2017)", href: "https://business.google.com/ca-en/think/marketing-strategies/mobile-page-speed-new-industry-benchmarks/" },
+              { label: "Milliseconds Make Millions — Deloitte (2020)", href: "https://www.deloitte.com/ie/en/services/consulting/research/milliseconds-make-millions.html" },
+            ]}
+          />
         </Section>
       </article>
 

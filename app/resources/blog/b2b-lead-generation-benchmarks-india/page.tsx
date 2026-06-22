@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ArticleByline } from "@/components/ArticleByline";
+import { Cite, PullQuote, SourceList } from "@/components/Citations";
 import { CTASection } from "@/components/CTASection";
 import { FAQ } from "@/components/FAQ";
 import { JsonLd } from "@/components/JsonLd";
@@ -173,8 +174,40 @@ export default function B2BLeadGenerationBenchmarksIndiaArticle() {
           </div>
         </Section>
 
+        <Section tone="white" eyebrow="Evidence" title="What the data says about benchmarks">
+          <div className="max-w-3xl space-y-5 text-lg leading-8 text-[#465163]">
+            <p>
+              External benchmarks help sanity-check your own. Across roughly 41,000 landing pages, the median conversion rate is{" "}
+              <Cite href="https://unbounce.com/average-conversion-rates-landing-pages/">6.6 percent</Cite> (Unbounce, 2024). Older Google Ads data put the average closer to{" "}
+              <Cite href="https://www.wordstream.com/blog/ws/2014/03/17/what-is-a-good-conversion-rate">2.35 percent, with the top 25 percent above 5.31 percent</Cite> (WordStream). If your page sits below 3 percent, the page, not the budget, is usually the constraint.
+            </p>
+            <p>
+              Alignment is the quiet multiplier. Firms with strong alignment across customer-facing teams report{" "}
+              <Cite href="https://www.forrester.com/press-newsroom/customer-obsessed-growth-engine-alignment/">2.4 times higher revenue growth</Cite> (Forrester, 2023). Benchmarks only matter once marketing and sales agree on what a qualified lead is.
+            </p>
+            <p>
+              Speed decides whether a good lead stays good. Contacting a lead within an hour makes it nearly{" "}
+              <Cite href="https://hbr.org/2011/03/the-short-life-of-online-sales-leads">seven times more likely to qualify</Cite> (Harvard Business Review).
+            </p>
+            <PullQuote
+              quote="A benchmark is a starting line, not a scorecard. The number that matters is not your CPL. It is your cost per qualified sales conversation, and almost no one tracks it."
+              attribution="Radhesh Agrawal, Founder, Done For You"
+            />
+          </div>
+        </Section>
+
         <Section tone="white" eyebrow="FAQ" title="What benchmark questions should B2B teams ask before scaling?">
           <FAQ faqs={faqs} />
+        </Section>
+        <Section tone="white" eyebrow="Sources" title="Sources">
+          <SourceList
+            sources={[
+              { label: "Average conversion rates for landing pages — Unbounce (2024)", href: "https://unbounce.com/average-conversion-rates-landing-pages/" },
+              { label: "What is a good conversion rate? — WordStream", href: "https://www.wordstream.com/blog/ws/2014/03/17/what-is-a-good-conversion-rate" },
+              { label: "Customer-obsessed growth engine alignment — Forrester (2023)", href: "https://www.forrester.com/press-newsroom/customer-obsessed-growth-engine-alignment/" },
+              { label: "The Short Life of Online Sales Leads — Harvard Business Review (2011)", href: "https://hbr.org/2011/03/the-short-life-of-online-sales-leads" },
+            ]}
+          />
         </Section>
       </article>
 

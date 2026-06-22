@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ArticleByline } from "@/components/ArticleByline";
+import { Cite, PullQuote, SourceList } from "@/components/Citations";
 import { CTASection } from "@/components/CTASection";
 import { FAQ } from "@/components/FAQ";
 import { JsonLd } from "@/components/JsonLd";
@@ -163,8 +164,40 @@ export default function WhatsappLeadNurtureArticle() {
           </div>
         </Section>
 
+        <Section tone="white" eyebrow="Evidence" title="What the data says about messaging and speed">
+          <div className="max-w-3xl space-y-5 text-lg leading-8 text-[#465163]">
+            <p>
+              The channel math favours messaging in India. WhatsApp and SMS see open rates around{" "}
+              <Cite href="https://www.twilio.com/en-us/blog/insights/best-practices/sms-vs-whatsapp-for-business">98 percent</Cite> (Twilio), versus roughly 21 percent for a typical marketing email. A WhatsApp reply gets seen when an email does not.
+            </p>
+            <p>
+              Adoption is already mainstream. Bain reports that{" "}
+              <Cite href="https://www.bain.com/insights/win-with-conversations/">15 million Indian SMBs use WhatsApp for Business</Cite> (2024), and{" "}
+              <Cite href="https://about.fb.com/news/2024/05/genai-powered-conversational-commerce-to-fuel-business-growth-in-india/">70 percent of large enterprises already engage half of their customers on conversational platforms</Cite> (Meta and Bain).
+            </p>
+            <p>
+              Speed still wins the lead. Contacting within an hour makes it nearly{" "}
+              <Cite href="https://hbr.org/2011/03/the-short-life-of-online-sales-leads">seven times more likely to qualify</Cite> (Harvard Business Review), and a two-minute WhatsApp reply is the easiest way to hit that window.
+            </p>
+            <PullQuote
+              quote="The fastest, cheapest win in Indian lead gen is replying on WhatsApp within two minutes. The channel already has the attention. Most businesses just lose the lead waiting until the next morning to call."
+              attribution="Radhesh Agrawal, Founder, Done For You"
+            />
+          </div>
+        </Section>
+
         <Section tone="white" eyebrow="FAQ" title="Common questions about WhatsApp lead nurture">
           <FAQ faqs={faqs} />
+        </Section>
+        <Section tone="white" eyebrow="Sources" title="Sources">
+          <SourceList
+            sources={[
+              { label: "SMS vs WhatsApp for business — Twilio", href: "https://www.twilio.com/en-us/blog/insights/best-practices/sms-vs-whatsapp-for-business" },
+              { label: "Win With Conversations — Bain & Company (2024)", href: "https://www.bain.com/insights/win-with-conversations/" },
+              { label: "GenAI-powered conversational commerce in India — Meta and Bain (2024)", href: "https://about.fb.com/news/2024/05/genai-powered-conversational-commerce-to-fuel-business-growth-in-india/" },
+              { label: "The Short Life of Online Sales Leads — Harvard Business Review (2011)", href: "https://hbr.org/2011/03/the-short-life-of-online-sales-leads" },
+            ]}
+          />
         </Section>
       </article>
 

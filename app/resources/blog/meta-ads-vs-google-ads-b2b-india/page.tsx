@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ArticleByline } from "@/components/ArticleByline";
+import { Cite, PullQuote, SourceList } from "@/components/Citations";
 import { CTASection } from "@/components/CTASection";
 import { FAQ } from "@/components/FAQ";
 import { JsonLd } from "@/components/JsonLd";
@@ -150,8 +151,33 @@ export default function MetaAdsVsGoogleAdsB2BIndiaArticle() {
           </div>
         </Section>
 
+        <Section tone="white" eyebrow="Evidence" title="What the data says about each channel">
+          <div className="max-w-3xl space-y-5 text-lg leading-8 text-[#465163]">
+            <p>
+              Measurement shapes the comparison. After Apple introduced App Tracking Transparency, Meta browser signals became less reliable and Meta estimated a{" "}
+              <Cite href="https://www.cnbc.com/2022/02/02/facebook-says-apple-ios-privacy-change-will-cost-10-billion-this-year.html">10 billion dollar</Cite> impact in 2022, which is why Meta now depends on server-side CRM data to optimise well. Google, measuring intent on its own search results, was less exposed.
+            </p>
+            <p>
+              On the Google side, advertisers who move to data-driven attribution typically see a{" "}
+              <Cite href="https://blog.google/products/ads-commerce/turning-data-into-results-with-data-driven-attribution/">6 percent average increase in conversions</Cite> (Google). Both channels reward better measurement, not just bigger budgets.
+            </p>
+            <PullQuote
+              quote="It is rarely Meta versus Google. Search captures demand that already exists. Meta creates demand that search cannot reach. The mistake is treating them as substitutes instead of stages."
+              attribution="Radhesh Agrawal, Founder, Done For You"
+            />
+          </div>
+        </Section>
+
         <Section tone="white" eyebrow="FAQ" title="What should you know before choosing Meta Ads or Google Ads?">
           <FAQ faqs={faqs} />
+        </Section>
+        <Section tone="white" eyebrow="Sources" title="Sources">
+          <SourceList
+            sources={[
+              { label: "Meta says Apple iOS privacy change will cost $10 billion this year — CNBC (2022)", href: "https://www.cnbc.com/2022/02/02/facebook-says-apple-ios-privacy-change-will-cost-10-billion-this-year.html" },
+              { label: "Turning data into results with data-driven attribution — Google (2022)", href: "https://blog.google/products/ads-commerce/turning-data-into-results-with-data-driven-attribution/" },
+            ]}
+          />
         </Section>
       </article>
 
