@@ -27,11 +27,20 @@ type ArticleSchemaInput = {
 export function organizationSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": ["Organization", "ProfessionalService"],
     name: site.name,
     url: site.url,
     email: site.email,
+    telephone: "+917054111631",
     description: site.description,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "TA-2, Jagadamba Road, Tughlakabad Extension, Kalkaji",
+      addressLocality: "New Delhi",
+      addressRegion: "Delhi",
+      postalCode: "110019",
+      addressCountry: "IN",
+    },
     sameAs: [
       "https://www.instagram.com/doneforyou.in",
       "https://www.linkedin.com/company/done-for-you-in",

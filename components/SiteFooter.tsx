@@ -35,6 +35,19 @@ export function SiteFooter() {
             Paid acquisition systems for B2B and service businesses that care about lead quality,
             sales readiness, and measurable funnel improvement.
           </p>
+          <address className="mt-6 not-italic text-sm leading-6 text-neutral-600">
+            <p className="font-semibold text-[#164E50]">Done For You</p>
+            <p>TA-2, Jagadamba Road, Tughlakabad Extension,<br />Kalkaji, New Delhi, Delhi 110019</p>
+            <p className="mt-2">
+              <a href="tel:+917054111631" className="font-semibold text-[#050505]/80 transition hover:text-[#050505]">
+                +91 70541 11631
+              </a>
+              <span className="px-2 text-[#050505]/30" aria-hidden="true">·</span>
+              <a href="mailto:radhesh@doneforyou.in" className="font-semibold text-[#050505]/80 transition hover:text-[#050505]">
+                radhesh@doneforyou.in
+              </a>
+            </p>
+          </address>
         </div>
         <div className="grid gap-6 lg:grid-cols-[1fr_0.85fr]">
           <div className="grid gap-3 sm:grid-cols-2">
