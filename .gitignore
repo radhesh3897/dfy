@@ -5,3 +5,6 @@ out
 *.log
 .env*.local
 .env.local
+
+# Local Claude config, skills, and research notes (not part of the site)
+.claude
