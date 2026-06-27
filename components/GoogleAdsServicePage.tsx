@@ -315,11 +315,11 @@ function HeroSection() {
           <GoogleAdsHeroVisual />
         </div>
         <div className="mt-10 flex flex-wrap items-center gap-3">
-          <span className="flex h-12 items-center justify-center rounded-[10px] border border-[#e4e8e5] bg-white px-3">
-            <Image src="/badges/meta-business-partner.png" alt="Meta Business Partner badge" width={400} height={205} className="h-8 w-auto" />
+          <span className="flex h-16 items-center justify-center rounded-[12px] border border-[#e4e8e5] bg-white px-4">
+            <Image src="/badges/meta-business-partner.png" alt="Meta Business Partner badge" width={400} height={205} className="h-11 w-auto" />
           </span>
-          <span className="flex h-12 items-center justify-center rounded-[10px] border border-[#e4e8e5] bg-white px-3">
-            <Image src="/badges/google-partner.png" alt="Google Partner badge" width={600} height={287} className="h-8 w-auto" />
+          <span className="flex h-16 items-center justify-center rounded-[12px] border border-[#e4e8e5] bg-white px-4">
+            <Image src="/badges/google-partner.png" alt="Google Partner badge" width={600} height={287} className="h-11 w-auto" />
           </span>
         </div>
         <div className="mt-6 grid gap-4 border-y border-[#e4e8e5] py-6 sm:grid-cols-2 lg:grid-cols-4">
