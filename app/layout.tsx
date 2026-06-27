@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { AuditFormAnchorScroll } from "@/components/AuditFormAnchorScroll";
@@ -82,6 +83,7 @@ export default function RootLayout({
         <main className="pt-[86px] sm:pt-[104px]">{children}</main>
         <SiteFooter />
       </body>
+      <GoogleAnalytics gaId="G-68TKGL7T7D" />
     </html>
   );
 }
