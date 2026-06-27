@@ -41,7 +41,7 @@ export function CaseStudyHighlight({ slug }: { slug: string }) {
               <span aria-hidden="true">-&gt;</span>
             </Link>
           </div>
-          <div className="overflow-hidden rounded-[14px] border border-[#dfe9dc] bg-white">
+          <div className="overflow-hidden rounded-[14px]">
             <Image
               src={study.heroImage.src}
               alt={study.heroImage.alt}

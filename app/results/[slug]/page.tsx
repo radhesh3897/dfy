@@ -113,7 +113,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               </ButtonLink>
             </div>
           </div>
-          <div className="overflow-hidden rounded-[18px] border border-[#CDEECD] shadow-[0_22px_70px_rgba(22,78,80,0.14)]">
+          <div className="overflow-hidden rounded-[18px] shadow-[0_22px_70px_rgba(22,78,80,0.14)]">
             <Image
               src={study.heroImage.src}
               alt={study.heroImage.alt}
