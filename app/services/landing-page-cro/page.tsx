@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { Section } from "@/components/Section";
 import { breadcrumbSchema, faqSchema, serviceSchema, webPageSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/site";
+import { CaseStudyHighlight } from "@/components/CaseStudyHighlight";
 
 export const metadata: Metadata = pageMetadata({
   title: "Landing Page CRO Agency for Service Businesses India",
@@ -148,6 +149,7 @@ export default function LandingPageCroPage() {
       <JsonLd data={croFaqSchema} />
 
       <HeroSection />
+      <CaseStudyHighlight slug="tranzission" />
 
       <section className="bg-[#08111F] py-16 text-white sm:py-20 lg:py-24">
         <div className="container-wide">

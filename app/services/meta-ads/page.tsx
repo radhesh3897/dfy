@@ -5,6 +5,7 @@ import { ButtonLink } from "@/components/ButtonLink";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema, serviceSchema, webPageSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/site";
+import { CaseStudyHighlight } from "@/components/CaseStudyHighlight";
 
 export const metadata: Metadata = pageMetadata({
   title: "Meta Ads Agency for Service Businesses",
@@ -364,6 +365,7 @@ export default function MetaAdsPage() {
       />
       <JsonLd data={metaAdsFaqPageSchema} />
       <HeroSection />
+      <CaseStudyHighlight slug="talentz" />
       <ProblemSection />
       <MethodSection />
       <AdFormatsSection />

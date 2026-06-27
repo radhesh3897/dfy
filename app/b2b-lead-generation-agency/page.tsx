@@ -8,6 +8,7 @@ import { Section } from "@/components/Section";
 import { ServiceCard } from "@/components/ServiceCard";
 import { breadcrumbSchema, faqSchema, serviceSchema, webPageSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/site";
+import { CaseStudyHighlight } from "@/components/CaseStudyHighlight";
 
 export const metadata: Metadata = pageMetadata({
   title: "B2B Lead Generation Agency for Sales-Ready Conversations",
@@ -191,6 +192,8 @@ export default function B2BLeadGenerationAgencyPage() {
       >
         <HeroProofCards />
       </Hero>
+
+      <CaseStudyHighlight slug="reliance-animation" />
 
       <Section
         tone="white"
