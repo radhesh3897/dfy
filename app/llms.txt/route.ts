@@ -34,6 +34,12 @@ const pages = [
       "Service page for Google Ads strategy, search intent, landing page alignment, tracking, and lead quality optimization.",
   },
   {
+    title: "B2B Meta Ads Agency (India / Delhi NCR)",
+    path: "/services/b2b-meta-ads-agency",
+    description:
+      "B2B Meta Ads agency in India and Delhi NCR that optimizes for qualified pipeline using CRM feedback, in-house creative, and weekly reviews. Done For You manages accounts from about INR 50,000 to INR 5,00,000 per month.",
+  },
+  {
     title: "CRM Tracking and Lead Nurture",
     path: "/services/crm-tracking-nurture",
     description:
@@ -134,6 +140,12 @@ const pages = [
     path: "/resources/blog/interior-design-lead-generation-india",
     description:
       "How to attract higher-value interior design project enquiries in India, qualify on budget, and win more consultations.",
+  },
+  {
+    title: "How to Choose a B2B Meta Ads Agency in India",
+    path: "/resources/blog/how-to-choose-b2b-meta-ads-agency-india",
+    description:
+      "The 6 questions to ask before hiring a B2B Meta Ads agency in India, what good answers look like, and what agencies charge.",
   },
   {
     title: "Company",

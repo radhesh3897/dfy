@@ -10,6 +10,14 @@ export type BlogPost = {
 // Used by the blog index (/resources/blog) and the resources hub (/resources).
 export const blogPosts: BlogPost[] = [
   {
+    title: "How to Choose a B2B Meta Ads Agency in India",
+    description:
+      "The 6 questions to ask before you hire a B2B Meta Ads agency in India, what a strong answer looks like, and what agencies charge.",
+    href: "/resources/blog/how-to-choose-b2b-meta-ads-agency-india",
+    category: "Agency selection",
+    date: "2026-06-27",
+  },
+  {
     title: "Real Estate Lead Generation in India: Qualified Buyer Leads",
     description:
       "How to get qualified real estate buyer leads from Meta and Google Ads in India, qualify them early, and book more site visits.",

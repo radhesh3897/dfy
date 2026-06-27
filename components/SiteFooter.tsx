@@ -8,6 +8,7 @@ const links = [
   { label: "Resources", href: "/resources" },
   { label: "Company", href: "/company" },
   { label: "B2B Lead Generation Agency", href: "/b2b-lead-generation-agency" },
+  { label: "B2B Meta Ads Agency", href: "/services/b2b-meta-ads-agency" },
   { label: "Meta Ads for Service Businesses", href: "/services/meta-ads" },
   { label: "Google Ads for Service Businesses", href: "/services/google-ads" },
   { label: "Lead Quality Improvement", href: "/lead-quality-improvement" },
