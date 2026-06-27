@@ -107,18 +107,19 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                 </div>
               ))}
             </div>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href="/free-audit" variant="primary">Book a Call</ButtonLink>
-              <ButtonLink href="/results" variant="secondary">Back to Results</ButtonLink>
+            <div className="mt-8">
+              <ButtonLink href="/free-audit" variant="primary" className="min-h-[58px] rounded-md px-8 text-base sm:min-h-[64px] sm:px-10 sm:text-lg">
+                Book a Call
+              </ButtonLink>
             </div>
           </div>
-          <div className="overflow-hidden rounded-[18px] border border-[#0d3a3c] bg-[#0e3d3f] p-3 shadow-[0_22px_70px_rgba(22,78,80,0.18)]">
+          <div className="overflow-hidden rounded-[18px] border border-[#CDEECD] shadow-[0_22px_70px_rgba(22,78,80,0.14)]">
             <Image
               src={study.heroImage.src}
               alt={study.heroImage.alt}
-              width={1200}
-              height={750}
-              className="h-auto w-full rounded-[12px]"
+              width={1368}
+              height={699}
+              className="block h-auto w-full"
               priority
             />
           </div>
