@@ -172,6 +172,42 @@ const pages = [
       "The 6 questions to ask before hiring a B2B Meta Ads agency in India, what good answers look like, and what agencies charge.",
   },
   {
+    title: "How Much Does a B2B Meta Ads Agency Cost in India?",
+    path: "/resources/blog/b2b-meta-ads-agency-cost-india",
+    description:
+      "Management fee versus ad budget, real rupee ranges by tier, agency pricing models, 18% GST, and what changes the price in India.",
+  },
+  {
+    title: "Qualified Leads vs Cost Per Lead for B2B",
+    path: "/resources/blog/qualified-leads-vs-cost-per-lead-b2b",
+    description:
+      "Why a low cost per lead means nothing if leads never buy, with the math on cost per qualified lead, CAC, and the maximum CPL you can afford.",
+  },
+  {
+    title: "How to Measure Marketing Agency Performance",
+    path: "/resources/blog/how-to-measure-marketing-agency-performance",
+    description:
+      "The KPIs that map to revenue, leading versus lagging metrics, the right review cadence, 30/60/90-day expectations, and reporting red flags.",
+  },
+  {
+    title: "Meta Ads Agency Red Flags",
+    path: "/resources/blog/meta-ads-agency-red-flags",
+    description:
+      "Six warning signs when hiring a Meta Ads agency: CPL-only reporting, ad account ownership grabs, guaranteed leads, no CRM loop, untested creative, and lock-in contracts.",
+  },
+  {
+    title: "Does Your B2B Ads Agency Need Industry Experience?",
+    path: "/resources/blog/does-your-b2b-ads-agency-need-industry-experience",
+    description:
+      "Where sector knowledge helps, where a strong process wins, the risks of specialists and generalists, and how to test an agency's grasp of your buyer.",
+  },
+  {
+    title: "CRM-Based Optimization: Optimize on SQLs, Not Form Fills",
+    path: "/resources/blog/crm-based-optimization-meta-ads-b2b",
+    description:
+      "How to feed CRM sales outcomes back to Meta and Google through the Conversions API and offline conversions so the algorithm finds buyers, not form fillers.",
+  },
+  {
     title: "Company",
     path: "/company",
     description:

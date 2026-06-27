@@ -18,6 +18,54 @@ export const blogPosts: BlogPost[] = [
     date: "2026-06-27",
   },
   {
+    title: "How Much Does a B2B Meta Ads Agency Cost in India?",
+    description:
+      "Management fee vs ad budget, real rupee ranges by tier, the pricing models agencies use, GST, and what actually changes the price.",
+    href: "/resources/blog/b2b-meta-ads-agency-cost-india",
+    category: "Agency selection",
+    date: "2026-06-27",
+  },
+  {
+    title: "Qualified Leads vs Cost Per Lead for B2B",
+    description:
+      "Why a low cost per lead means nothing if leads never buy, with real math on cost per qualified lead, CAC, and the max CPL you can afford.",
+    href: "/resources/blog/qualified-leads-vs-cost-per-lead-b2b",
+    category: "Lead quality",
+    date: "2026-06-27",
+  },
+  {
+    title: "How to Measure Marketing Agency Performance",
+    description:
+      "The KPIs that map to revenue, the right review cadence, 30/60/90-day expectations, and the reporting red flags that signal vanity metrics.",
+    href: "/resources/blog/how-to-measure-marketing-agency-performance",
+    category: "Agency management",
+    date: "2026-06-27",
+  },
+  {
+    title: "Meta Ads Agency Red Flags: 6 Signs to Walk Away",
+    description:
+      "CPL-only reporting, ad account ownership grabs, guaranteed leads, no CRM loop, untested creative, and lock-in contracts, and what good looks like.",
+    href: "/resources/blog/meta-ads-agency-red-flags",
+    category: "Agency selection",
+    date: "2026-06-27",
+  },
+  {
+    title: "Does Your B2B Ads Agency Need Industry Experience?",
+    description:
+      "Where sector knowledge helps, where a strong process wins, the risks of specialists and generalists, and how to test an agency's grasp of your buyer.",
+    href: "/resources/blog/does-your-b2b-ads-agency-need-industry-experience",
+    category: "Agency selection",
+    date: "2026-06-27",
+  },
+  {
+    title: "CRM-Based Optimization: Optimize on SQLs, Not Form Fills",
+    description:
+      "Feed CRM sales outcomes back to Meta and Google so the algorithm finds buyers, not form fillers. Why it works and how to set it up.",
+    href: "/resources/blog/crm-based-optimization-meta-ads-b2b",
+    category: "CRM & tracking",
+    date: "2026-06-27",
+  },
+  {
     title: "Real Estate Lead Generation in India: Qualified Buyer Leads",
     description:
       "How to get qualified real estate buyer leads from Meta and Google Ads in India, qualify them early, and book more site visits.",
