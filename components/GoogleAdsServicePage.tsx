@@ -185,35 +185,35 @@ const campaignTypes = [
 
 const results = [
   {
-    brand: "Project A",
-    headline: "Google Ads project placeholder for qualified search demand.",
-    text: "Verified project story will be added after audit or project review. No fake metrics or client names are being used.",
+    brand: "Tranzission",
+    headline: "Google Ads conversion rate more than doubled, and monthly net sales jumped 152%.",
+    text: "We rebuilt the campaign structure and conversion path and reviewed weekly against net sales, lifting Google Ads conversion rate from 3.76% to 9.24% and pushing qualified leads past 60%.",
     metrics: [
-      ["TBD", "qualified lead improvement"],
-      ["TBD", "cost per customer clarity"],
-      ["TBD", "pipeline visibility"],
+      ["+152%", "net sales in 30 days"],
+      ["3.76% → 9.24%", "Google Ads conversion rate"],
+      ["60%+", "qualified leads"],
     ],
     icon: "A",
   },
   {
-    brand: "Project B",
-    headline: "Landing page and search intent alignment placeholder.",
-    text: "This slot will hold an approved breakdown of how search intent, page copy, and lead qualification improved together.",
+    brand: "Reliance Animation",
+    headline: "₹1L of Google and Meta ad spend returned ₹14.5L in enrolment revenue.",
+    text: "One month of Google Search and Meta lead campaigns produced 2,645 paid clicks and 100+ enrolment leads, optimized toward enrolment quality instead of cheap clicks.",
     metrics: [
-      ["TBD", "message match"],
-      ["TBD", "conversion quality"],
-      ["TBD", "sales feedback signal"],
+      ["≈14×", "return on ad spend"],
+      ["₹14.5L", "revenue from ₹1L spend"],
+      ["100+", "enrolment leads"],
     ],
     icon: "B",
   },
   {
-    brand: "Project C",
-    headline: "Tracking and revenue reporting placeholder.",
-    text: "This slot is reserved for a verified story connecting Google Ads spend to CRM stages and real sales outcomes.",
+    brand: "TalentZ",
+    headline: "Qualified leads rose from 23% to 63% while reaching overseas markets.",
+    text: "Tighter qualification and overseas-intent targeting turned ₹1.34L of ad spend into ₹6.45L in revenue, a 4.8x ROI, with every new sign-up captured in real time.",
     metrics: [
-      ["TBD", "CRM visibility"],
-      ["TBD", "offline signal quality"],
-      ["TBD", "scaling confidence"],
+      ["23% → 63%", "qualified leads"],
+      ["4.8×", "ROI"],
+      ["₹6.45L", "revenue on ₹1.34L spend"],
     ],
     icon: "C",
   },
@@ -266,25 +266,25 @@ const benefits = [
 
 const testimonials = [
   {
-    brand: "Placeholder A",
+    brand: "Talent Z",
     quote:
-      "Approved Google Ads testimonial placeholder. Real customer quote will be added after review.",
-    name: "Placeholder Name",
-    role: "Business Owner",
+      "DFY helped us improve lead quality, not just lead volume. We started getting more relevant enquiries, stronger sales conversations, and a much clearer path to revenue.",
+    name: "Kritika Gupta",
+    role: "Talent Z",
   },
   {
-    brand: "Placeholder B",
+    brand: "NMIMS",
     quote:
-      "This space is reserved for a verified quote about lead quality, reporting, and sales-ready enquiries.",
-    name: "Placeholder Name",
-    role: "Growth Lead",
+      "What stood out most was the quality of the system DFY built for us. Lead quality improved, wasted spend reduced, and the revenue impact became much more visible.",
+    name: "Manish Agrawal",
+    role: "NMIMS",
   },
   {
-    brand: "Placeholder C",
+    brand: "CaseEase",
     quote:
-      "No fake testimonials are being used. Approved customer proof can replace this module later.",
-    name: "Placeholder Name",
-    role: "Founder",
+      "DFY brought real structure to our acquisition process. We started seeing better-quality leads, more serious prospects, and stronger revenue outcomes.",
+    name: "Raja Sharma",
+    role: "CaseEase",
   },
 ];
 
@@ -395,10 +395,10 @@ function GoogleAdsHeroVisual() {
         </div>
         <div className="grid gap-3">
           {[
-            ["Clicks", "TBD", "Search demand"],
-            ["Conversions", "TBD", "Lead actions"],
-            ["Cost / conv.", "TBD", "Efficiency"],
-            ["Qualified leads", "TBD", "CRM signal"],
+            ["Clicks", "Tracked", "Search demand"],
+            ["Conversions", "Tracked", "Lead actions"],
+            ["Cost / conv.", "Tracked", "Efficiency"],
+            ["Qualified leads", "Tracked", "CRM signal"],
           ].map(([label, value, sub], index) => (
             <article key={label} className={index === 3 ? "rounded-[14px] bg-[#164E50] p-4 text-white" : "rounded-[14px] border border-[#e4e8e5] bg-white p-4"}>
               <p className={index === 3 ? "text-sm text-white/70" : "text-sm text-[#667085]"}>{label}</p>
@@ -411,7 +411,7 @@ function GoogleAdsHeroVisual() {
       </div>
       <div className="mt-4 flex flex-wrap items-center gap-3 rounded-[12px] border border-[#CDEECD] bg-[#EEF8EE] p-4 text-sm font-medium text-[#164E50]">
         <span className="grid size-8 place-items-center rounded-full bg-white">G</span>
-        Google Ads system placeholder
+        Google Ads + CRM tracking
         <span className="rounded-full bg-white px-3 py-1 text-xs">Optimized for quality</span>
       </div>
     </div>
@@ -838,7 +838,7 @@ function TestimonialsSection() {
               <p className="mt-1 text-base text-[#667085]">{active.role}</p>
             </div>
           </div>
-          <div className="grid grid-cols-3 border-t border-[#CDEECD]" role="tablist" aria-label="Testimonial placeholders">
+          <div className="grid grid-cols-3 border-t border-[#CDEECD]" role="tablist" aria-label="Client testimonials">
             {testimonials.map((testimonial, index) => (
               <button
                 key={testimonial.brand}
