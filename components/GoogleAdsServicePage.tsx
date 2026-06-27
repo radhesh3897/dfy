@@ -350,7 +350,7 @@ function HeroSection() {
           <GoogleAdsHeroVisual />
         </div>
         <div className="mt-10 grid gap-4 border-y border-[#e4e8e5] py-6 sm:grid-cols-2 lg:grid-cols-4">
-          {["Google Partner placeholder", "Google Ads certification placeholder", "Tracking and CRM review", "Lead quality reporting"].map((item) => (
+          {["Google Partner", "Google Ads Certified", "Conversion & CRM tracking", "Qualified-lead reporting"].map((item) => (
             <div key={item} className="flex items-center gap-3 text-[#7a838f]">
               <IconBadge icon="check" small />
               <span className="text-sm font-medium uppercase tracking-[0.08em]">{item}</span>

@@ -39,8 +39,8 @@ const differentiators = [
     text: "Hooks, angles, statics, and video are built and tested in-house, because creative is the biggest B2B lever.",
   },
   {
-    title: "Built for B2B sales cycles",
-    text: "We plan for a qualified conversation that closes over weeks, not a same-day ecommerce purchase.",
+    title: "Built for long sales cycles and bigger deals",
+    text: "We plan for high-value deals that close over weeks or months, not a same-day ecommerce purchase, and optimize for pipeline quality over cheap leads.",
   },
   {
     title: "Transparent spend management",
@@ -57,6 +57,21 @@ const processSteps = [
   { title: "Strategy", text: "Define the buyer, offer, channel plan, qualification rules, and conversion path." },
   { title: "Launch", text: "Build or improve campaigns, creative, landing pages, CRM tracking, and nurture." },
   { title: "Improve", text: "Use sales feedback and CRM outcomes to sharpen lead quality every week." },
+];
+
+const reporting = [
+  {
+    title: "Weekly reviews tied to revenue",
+    text: "For the first 90 days we review campaigns weekly against qualified leads and sales feedback, then move to a monthly deep review with a weekly pulse.",
+  },
+  {
+    title: "A live dashboard, not a monthly PDF",
+    text: "You see qualified leads, cost per qualified lead, and ad spend in one place, in real time, so nothing about performance or budget is hidden.",
+  },
+  {
+    title: "A direct point of contact",
+    text: "You work with a person who knows your account and your sales feedback, not a ticket queue, so decisions happen fast.",
+  },
 ];
 
 const industries = [
@@ -158,6 +173,14 @@ export default function B2BMetaAdsAgencyPage() {
               <ButtonLink href="/free-audit" variant="primary">Book a Call</ButtonLink>
               <ButtonLink href="/results" variant="secondary">See Results</ButtonLink>
             </div>
+            <ul className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-semibold text-[#465163]">
+              {["Meta Business Partner", "Google Partner", "30+ B2B brands", "CRM-tracked pipeline"].map((item) => (
+                <li key={item} className="flex items-center gap-2">
+                  <span aria-hidden="true" className="text-[#164E50]">&#10003;</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
           <aside className="rounded-[18px] border border-[#CDEECD] bg-white p-6 shadow-[0_22px_70px_rgba(22,78,80,0.08)]">
             <p className="text-sm font-black uppercase tracking-[0.18em] text-[#164E50]">The difference</p>
@@ -243,6 +266,17 @@ export default function B2BMetaAdsAgencyPage() {
               <p className="text-sm font-black text-[#164E50]">{String(index + 1).padStart(2, "0")}</p>
               <h2 className="mt-4 text-xl font-black tracking-[-0.02em]">{step.title}</h2>
               <p className="mt-3 text-sm leading-6 text-[#4b4b4b]">{step.text}</p>
+            </article>
+          ))}
+        </div>
+      </Section>
+
+      <Section tone="white" eyebrow="Reporting" title="How we report, and what you can see">
+        <div className="grid gap-5 md:grid-cols-3">
+          {reporting.map((item) => (
+            <article key={item.title} className="rounded-[14px] border border-[#dfe9dc] bg-white p-6 shadow-[0_18px_45px_rgba(5,5,5,0.05)]">
+              <h2 className="text-xl font-black leading-tight tracking-[-0.02em] text-[#164E50]">{item.title}</h2>
+              <p className="mt-3 text-sm leading-6 text-[#4b4b4b]">{item.text}</p>
             </article>
           ))}
         </div>
