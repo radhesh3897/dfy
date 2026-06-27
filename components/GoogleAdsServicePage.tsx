@@ -393,16 +393,16 @@ function GoogleAdsHeroVisual() {
             ))}
           </div>
         </div>
-        <div className="grid gap-3">
+        <div className="grid grid-cols-2 gap-3 md:grid-cols-1">
           {[
             ["Clicks", "Tracked", "Search demand"],
             ["Conversions", "Tracked", "Lead actions"],
             ["Cost / conv.", "Tracked", "Efficiency"],
             ["Qualified leads", "Tracked", "CRM signal"],
           ].map(([label, value, sub], index) => (
-            <article key={label} className={index === 3 ? "rounded-[14px] bg-[#164E50] p-4 text-white" : "rounded-[14px] border border-[#e4e8e5] bg-white p-4"}>
+            <article key={label} className={index === 3 ? "rounded-[14px] bg-[#164E50] p-3 text-white sm:p-4" : "rounded-[14px] border border-[#e4e8e5] bg-white p-3 sm:p-4"}>
               <p className={index === 3 ? "text-sm text-white/70" : "text-sm text-[#667085]"}>{label}</p>
-              <p className="mt-2 text-3xl font-medium tracking-[-0.05em]">{value}</p>
+              <p className="mt-2 text-2xl font-medium tracking-[-0.05em] sm:text-3xl">{value}</p>
               <p className={index === 3 ? "mt-1 text-sm text-[#CDEECD]" : "mt-1 text-sm text-[#164E50]"}>{sub}</p>
               <MiniSparkline light={index === 3} />
             </article>
