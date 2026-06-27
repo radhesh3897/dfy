@@ -51,77 +51,38 @@ const methodPhases = [
   {
     title: "Audit & Foundation",
     summary:
-      "We inspect the account, funnel, tracking, and search demand before making campaign decisions.",
-    includes: [
-      "Account and conversion audit",
-      "Search term and match type review",
-      "Bid strategy and budget checks",
-      "Competitor and intent review",
-    ],
-    finding: "Where spend is leaking",
-    action: "Clean tracking and intent map",
-    note: "Foundation before scale",
+      "We audit the account, funnel, tracking, and search demand before touching spend, so decisions start from data, not guesses.",
     icon: "search",
   },
   {
     title: "Strategy & Architecture",
     summary:
-      "We structure the account around intent, service categories, budget control, and buyer readiness.",
-    includes: [
-      "Branded vs non-branded separation",
-      "Campaign grouping logic",
-      "Budget allocation model",
-      "Keyword and negative keyword plan",
-    ],
-    finding: "Which demand to capture first",
-    action: "Account architecture",
-    note: "Cleaner learning loops",
+      "We structure the account around real search intent, service categories, and budget control so it can learn cleanly.",
     icon: "structure",
   },
   {
     title: "Creative & Landing Pages",
     summary:
-      "Search ads need message match. We align ad copy, offers, landing pages, forms, and trust signals.",
-    includes: [
-      "Ad copy framework",
-      "Landing page message match",
-      "Offer and CTA clarity",
-      "Asset and creative planning",
-    ],
-    finding: "Where intent drops off",
-    action: "Page and ad alignment",
-    note: "Clicks need context",
+      "We match ad copy, offers, and landing pages so high-intent clicks land on a page built to convert.",
     icon: "page",
   },
   {
-    title: "Launch & Structured Testing",
+    title: "Launch & Testing",
     summary:
-      "Campaigns launch with a clear testing roadmap, early signal checks, and controlled changes.",
-    includes: [
-      "Launch QA",
-      "Experiment tracking",
-      "Early query monitoring",
-      "Bid and budget guardrails",
-    ],
-    finding: "Early signal quality",
-    action: "Testing roadmap",
-    note: "Controlled learning",
+      "Campaigns launch with a clear testing roadmap, early signal checks, and controlled changes, not set-and-forget.",
     icon: "launch",
   },
   {
-    title: "Optimization & Revenue Reporting",
+    title: "Optimization & Reporting",
     summary:
-      "We connect campaign data to lead quality, pipeline contribution, and sales feedback.",
-    includes: [
-      "Qualified lead reporting",
-      "CRM and offline signal review",
-      "Scaling based on quality",
-      "Weekly optimization loop",
-    ],
-    finding: "What is worth scaling",
-    action: "Revenue reporting loop",
-    note: "Optimize for outcomes",
+      "We tie spend to qualified leads and sales feedback, then optimize on what actually drives pipeline.",
     icon: "chart",
+  },
+  {
+    title: "Scaling & Compounding",
+    summary:
+      "Once a campaign proves it produces qualified pipeline, we scale budget and expand into new demand with control.",
+    icon: "rocket",
   },
 ];
 
@@ -272,20 +233,23 @@ const testimonials = [
       "DFY helped us improve lead quality, not just lead volume. We started getting more relevant enquiries, stronger sales conversations, and a much clearer path to revenue.",
     name: "Kritika Gupta",
     role: "Talent Z",
+    avatar: "/avatars/kritika-gupta.jpg",
   },
   {
     brand: "NMIMS",
     quote:
       "What stood out most was the quality of the system DFY built for us. Lead quality improved, wasted spend reduced, and the revenue impact became much more visible.",
     name: "Manish Agrawal",
-    role: "NMIMS",
+    role: "Owner, NMIMS",
+    avatar: "/avatars/manish-agrawal.jpg",
   },
   {
     brand: "CaseEase",
     quote:
       "DFY brought real structure to our acquisition process. We started seeing better-quality leads, more serious prospects, and stronger revenue outcomes.",
     name: "Raja Sharma",
-    role: "CaseEase",
+    role: "Owner, CaseEase",
+    avatar: "/avatars/raja-sharma.jpg",
   },
 ];
 
@@ -507,96 +471,31 @@ function ProblemSection() {
 }
 
 function MethodSection() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const active = methodPhases[activeIndex];
-
   return (
     <section id="google-ads-method" className="bg-white py-16 text-[#050505] sm:py-20 lg:py-24">
-      <div className="container-wide rounded-[18px] border border-[#dfe6df] bg-white p-5 shadow-[0_22px_70px_rgba(22,78,80,0.06)] sm:p-8">
+      <div className="container-wide">
         <header className="mx-auto max-w-[960px] text-center">
           <p className="text-sm font-medium uppercase tracking-[0.24em] text-[#164E50]">Our method</p>
           <h2 className="mt-6 text-[clamp(2.35rem,6.5vw,4.5rem)] font-medium leading-[1.02] tracking-[-0.055em]">
-            The DFY Google Ads Method: how we run search for <span className="text-[#88DE7B]">service businesses.</span>
+            How we run Google Ads for <span className="text-[#88DE7B]">service businesses.</span>
           </h2>
           <p className="mt-5 text-lg leading-8 text-[#465163] sm:text-xl">
-            A five-phase system for turning search demand into qualified pipeline.
+            A six-step system that turns search demand into qualified pipeline.
           </p>
         </header>
 
-        <div className="mt-12 grid gap-6 xl:grid-cols-[340px_1fr_320px]">
-          <div className="flex gap-3 overflow-x-auto pb-2 xl:block xl:space-y-3 xl:overflow-visible xl:pb-0">
-            {methodPhases.map((phase, index) => (
-              <button
-                key={phase.title}
-                type="button"
-                onClick={() => setActiveIndex(index)}
-                className={`relative min-h-[116px] w-[270px] min-w-[270px] shrink-0 overflow-hidden rounded-[14px] border p-4 text-left transition duration-200 xl:w-full xl:min-w-0 ${
-                  activeIndex === index
-                    ? "border-[#CDEECD] bg-white text-[#050505] shadow-[0_18px_50px_rgba(22,78,80,0.14)] ring-1 ring-[#88DE7B]"
-                    : "border-[#dfe6df] bg-[#fbfbf8] text-[#050505] hover:border-[#CDEECD] hover:bg-white hover:shadow-[0_14px_36px_rgba(22,78,80,0.1)]"
-                }`}
-              >
-                {activeIndex === index ? (
-                  <span aria-hidden="true" className="absolute inset-y-4 left-0 w-1 rounded-r-full bg-[#88DE7B]" />
-                ) : null}
-                <span className={`grid size-10 place-items-center rounded-full text-sm font-medium ${activeIndex === index ? "bg-[#88DE7B] text-[#164E50]" : "bg-[#EEF8EE] text-[#164E50]"}`}>
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <p className="mt-4 text-lg font-medium tracking-[-0.03em]">{phase.title}</p>
-              </button>
-            ))}
-          </div>
-
-          <article key={active.title} className="tab-panel-enter rounded-[16px] border border-[#dfe6df] bg-[#fbfbf8] p-6 sm:p-8">
-            <div className="flex items-start gap-5">
-              <IconBadge icon={active.icon} />
+        <div className="mt-12 grid gap-5 sm:grid-cols-2">
+          {methodPhases.map((phase, index) => (
+            <article key={phase.title} className="flex gap-5 rounded-[16px] border border-[#dfe6df] bg-[#fbfbf8] p-6 sm:p-7">
+              <span className="grid size-12 shrink-0 place-items-center rounded-full bg-[#164E50] text-base font-medium text-white">
+                {String(index + 1).padStart(2, "0")}
+              </span>
               <div>
-                <p className="text-sm font-medium uppercase tracking-[0.16em] text-[#164E50]">Phase {activeIndex + 1}</p>
-                <h3 className="mt-3 text-[clamp(2rem,5vw,3.2rem)] font-medium leading-[1.05] tracking-[-0.055em]">
-                  {active.title}
-                </h3>
-                <p className="mt-5 max-w-[720px] text-lg leading-8 text-[#465163]">{active.summary}</p>
+                <h3 className="text-xl font-medium tracking-[-0.035em] sm:text-2xl">{phase.title}</h3>
+                <p className="mt-3 text-base leading-7 text-[#465163]">{phase.summary}</p>
               </div>
-            </div>
-            <div className="mt-8 grid gap-3 sm:grid-cols-2">
-              {active.includes.map((item) => (
-                <div key={item} className="flex gap-3 rounded-[12px] border border-[#dfe6df] bg-white p-4">
-                  <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-[#EEF8EE] text-[#164E50]">
-                    <MiniIcon icon="check" className="size-4" />
-                  </span>
-                  <p className="text-base leading-6 text-[#20242b]">{item}</p>
-                </div>
-              ))}
-            </div>
-            <div className="mt-8 grid gap-4 sm:grid-cols-3">
-              {[
-                ["Findings", active.finding],
-                ["Actions", active.action],
-                ["Note", active.note],
-              ].map(([label, value]) => (
-                <div key={label} className="rounded-[12px] border border-[#CDEECD] bg-white p-5">
-                  <p className="text-sm font-medium uppercase tracking-[0.14em] text-[#164E50]">{label}</p>
-                  <p className="mt-3 text-xl font-medium tracking-[-0.035em]">{value}</p>
-                </div>
-              ))}
-            </div>
-          </article>
-
-          <aside className="rounded-[16px] border border-[#CDEECD] bg-[#164E50] p-6 text-white shadow-[0_22px_60px_rgba(22,78,80,0.16)]">
-            <IconBadge icon="chart" />
-            <h3 className="mt-6 text-2xl font-medium tracking-[-0.04em]">Proof belongs in the pipeline.</h3>
-            <p className="mt-4 text-base leading-7 text-white/72">
-              The reporting layer is designed to show which searches, pages, and follow-up paths create qualified opportunities.
-            </p>
-            <div className="mt-7 space-y-4">
-              {["Qualified leads", "Pipeline signal", "Sales feedback"].map((item) => (
-                <div key={item} className="rounded-[12px] border border-white/12 bg-white/8 p-4">
-                  <p className="text-sm text-white/60">{item}</p>
-                  <p className="mt-1 text-2xl font-medium text-[#88DE7B]">TBD</p>
-                </div>
-              ))}
-            </div>
-          </aside>
+            </article>
+          ))}
         </div>
       </div>
     </section>
@@ -671,7 +570,7 @@ function CampaignMixSection() {
         >
           {campaignTypes.map((campaign, index) => (
             <article key={campaign.title} className="w-[300px] shrink-0 snap-start rounded-[16px] border border-[#dfe6df] bg-white p-5 shadow-[0_18px_55px_rgba(22,78,80,0.06)] lg:w-[340px]">
-              <CampaignMockup icon={campaign.icon} index={index} />
+              <CampaignMockup icon={campaign.icon} title={campaign.title} index={index} />
               <div className="mt-5 flex items-start gap-4">
                 <span className="grid size-10 shrink-0 place-items-center rounded-full bg-[#164E50] text-sm font-medium text-white">
                   {index + 1}
@@ -682,7 +581,6 @@ function CampaignMixSection() {
                   <p className="mt-5 inline-flex rounded-full bg-[#EEF8EE] px-4 py-2 text-sm font-medium text-[#164E50]">
                     Best for: {campaign.bestFor}
                   </p>
-                  <p className="mt-3 text-sm leading-6 text-[#667085]">{campaign.useCase}</p>
                 </div>
               </div>
             </article>
@@ -840,8 +738,14 @@ function TestimonialsSection() {
               &quot;{active.quote}&quot;
             </blockquote>
             <div className="mt-8">
-              <span className="mx-auto grid size-16 place-items-center rounded-full bg-[#EEF8EE] text-lg font-medium text-[#164E50]">
-                {active.name.slice(0, 1)}
+              <span className="mx-auto grid size-16 place-items-center overflow-hidden rounded-full border border-[#CDEECD] bg-[#EEF8EE]">
+                <Image
+                  src={active.avatar}
+                  alt={`${active.name} profile photo`}
+                  width={64}
+                  height={64}
+                  className="h-full w-full object-cover"
+                />
               </span>
               <p className="mt-4 text-lg font-medium">{active.name}</p>
               <p className="mt-1 text-base text-[#667085]">{active.role}</p>
@@ -930,14 +834,15 @@ function FinalCtaSection() {
   );
 }
 
-function CampaignMockup({ icon, index }: { icon: string; index: number }) {
+function CampaignMockup({ icon, title, index }: { icon: string; title: string; index: number }) {
   return (
     <div className="rounded-[12px] border border-[#dfe6df] bg-[#fbfbf8] p-4">
       <div className="flex items-center gap-2">
-        <span className="text-lg font-medium text-[#164E50]">Google</span>
+        <span className="grid size-6 place-items-center rounded-full bg-[#EEF8EE] text-[11px] font-medium text-[#164E50]">G</span>
+        <span className="text-sm font-medium text-[#164E50]">{title}</span>
         <span className="ml-auto text-[#667085]">...</span>
       </div>
-      <div className="mt-4 grid min-h-[190px] place-items-center rounded-[10px] bg-white">
+      <div className="mt-4 grid min-h-[150px] place-items-center rounded-[10px] bg-white">
         <div className={`grid size-20 place-items-center rounded-[18px] ${index % 2 === 0 ? "bg-[#EEF8EE] text-[#164E50]" : "bg-[#164E50] text-white"}`}>
           <MiniIcon icon={icon} className="size-10" />
         </div>
@@ -968,7 +873,7 @@ function DashboardVisual() {
         {["Conversions", "Cost / conv.", "Qualified leads", "Pipeline signal"].map((item) => (
           <div key={item} className="rounded-[12px] border border-[#CDEECD] bg-white/90 p-4">
             <p className="text-sm text-[#667085]">{item}</p>
-            <p className="mt-2 text-2xl font-medium text-[#164E50]">TBD</p>
+            <p className="mt-2 text-2xl font-medium text-[#164E50]">Tracked</p>
           </div>
         ))}
       </div>
