@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState, type PointerEvent, type WheelEvent } from "react";
 import { ButtonLink } from "@/components/ButtonLink";
@@ -349,8 +350,16 @@ function HeroSection() {
           </div>
           <GoogleAdsHeroVisual />
         </div>
-        <div className="mt-10 grid gap-4 border-y border-[#e4e8e5] py-6 sm:grid-cols-2 lg:grid-cols-4">
-          {["Google Partner", "Google Ads Certified", "Conversion & CRM tracking", "Qualified-lead reporting"].map((item) => (
+        <div className="mt-10 flex flex-wrap items-center gap-3">
+          <span className="flex h-12 items-center justify-center rounded-[10px] border border-[#e4e8e5] bg-white px-3">
+            <Image src="/badges/meta-business-partner.png" alt="Meta Business Partner badge" width={400} height={205} className="h-8 w-auto" />
+          </span>
+          <span className="flex h-12 items-center justify-center rounded-[10px] border border-[#e4e8e5] bg-white px-3">
+            <Image src="/badges/google-partner.png" alt="Google Partner badge" width={600} height={287} className="h-8 w-auto" />
+          </span>
+        </div>
+        <div className="mt-6 grid gap-4 border-y border-[#e4e8e5] py-6 sm:grid-cols-2 lg:grid-cols-4">
+          {["Conversion & CRM tracking", "Qualified-lead reporting", "Search intent targeting", "Weekly optimization"].map((item) => (
             <div key={item} className="flex items-center gap-3 text-[#7a838f]">
               <IconBadge icon="check" small />
               <span className="text-sm font-medium uppercase tracking-[0.08em]">{item}</span>

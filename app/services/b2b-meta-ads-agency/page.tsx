@@ -173,8 +173,16 @@ export default function B2BMetaAdsAgencyPage() {
               <ButtonLink href="/free-audit" variant="primary">Book a Call</ButtonLink>
               <ButtonLink href="/results" variant="secondary">See Results</ButtonLink>
             </div>
-            <ul className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-semibold text-[#465163]">
-              {["Meta Business Partner", "Google Partner", "30+ B2B brands", "CRM-tracked pipeline"].map((item) => (
+            <div className="mt-7 flex flex-wrap items-center gap-3">
+              <span className="flex h-12 items-center justify-center rounded-[10px] border border-[#e4e8e5] bg-white px-3">
+                <Image src="/badges/meta-business-partner.png" alt="Meta Business Partner badge" width={400} height={205} className="h-8 w-auto" />
+              </span>
+              <span className="flex h-12 items-center justify-center rounded-[10px] border border-[#e4e8e5] bg-white px-3">
+                <Image src="/badges/google-partner.png" alt="Google Partner badge" width={600} height={287} className="h-8 w-auto" />
+              </span>
+            </div>
+            <ul className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-semibold text-[#465163]">
+              {["30+ B2B brands", "CRM-tracked pipeline", "Weekly reporting"].map((item) => (
                 <li key={item} className="flex items-center gap-2">
                   <span aria-hidden="true" className="text-[#164E50]">&#10003;</span>
                   {item}
