@@ -394,7 +394,7 @@ function HeroSection() {
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href="/#free-audit-form" className="min-h-[58px] rounded-md px-7 text-base sm:text-lg">
-                Get Free Audit
+                Book a Call
                 <span className="ml-3" aria-hidden="true">-&gt;</span>
               </ButtonLink>
               <ButtonLink href="#meta-method" variant="secondary" className="min-h-[58px] rounded-md border-[#164E50] px-7 text-base text-[#164E50] sm:text-lg">
@@ -734,10 +734,10 @@ function LogoCloudCtaSection() {
             Ready to make paid ads a predictable growth lever?
           </h2>
           <p className="mt-5 text-lg leading-8 text-white/72">
-            Get a free audit of your account and a clear plan to scale more profitably with Meta Ads.
+            Book a call and get a clear plan to scale more profitably with Meta Ads.
           </p>
           <ButtonLink href="/#free-audit-form" variant="light" className="mt-8 min-h-[58px] rounded-md px-8 text-base sm:text-lg">
-            Get Free Audit
+            Book a Call
             <span className="ml-3" aria-hidden="true">-&gt;</span>
           </ButtonLink>
         </div>
@@ -857,7 +857,7 @@ function WhyChooseSection() {
 
         <div className="mt-12 flex justify-center">
           <ButtonLink href="/#free-audit-form" className="min-h-[58px] rounded-md px-10 text-lg">
-            Book a call
+            Book a Call
           </ButtonLink>
         </div>
       </div>

@@ -39,9 +39,9 @@ export function AuditForm() {
             <path d="M5 13l4 4L19 7" stroke="#164E50" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
-        <h2 className="mt-6 text-3xl font-black leading-none">Request received.</h2>
+        <h2 className="mt-6 text-3xl font-black leading-none">Thanks, we have your details.</h2>
         <p className="mt-4 text-lg leading-8 text-[#4b4b4b]">
-          We&apos;ll review your funnel and get back to you within 24 hours.
+          An expert from our team will call you shortly, usually within a few hours.
         </p>
       </div>
     );
@@ -82,7 +82,7 @@ export function AuditForm() {
         disabled={status === "loading"}
         className="mt-7 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-[#164E50] px-5 text-sm font-black text-white shadow-[0_16px_32px_rgba(136,222,123,0.24)] transition hover:bg-[#103D3F] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#164E50] disabled:opacity-60 sm:w-auto"
       >
-        {status === "loading" ? "Sending…" : "Request My Free Audit"}
+        {status === "loading" ? "Sending…" : "Book a Call"}
       </button>
     </form>
   );

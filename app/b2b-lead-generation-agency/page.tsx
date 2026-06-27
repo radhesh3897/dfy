@@ -186,8 +186,8 @@ export default function B2BLeadGenerationAgencyPage() {
         eyebrow="B2B lead generation agency"
         title="B2B lead generation built for sales-ready conversations."
         subtitle="We help B2B and service businesses build acquisition systems that attract, qualify, nurture, and track leads from first click to sales conversation."
-        primaryCta={{ label: "Book a Strategy Call", href: "/#free-audit-form" }}
-        secondaryCta={{ label: "Get a Free Audit", href: "/#free-audit-form" }}
+        primaryCta={{ label: "Book a Call", href: "/#free-audit-form" }}
+        secondaryCta={{ label: "See Our Results", href: "/results" }}
       >
         <HeroProofCards />
       </Hero>
@@ -267,7 +267,7 @@ export default function B2BLeadGenerationAgencyPage() {
       <CTASection
         title="How can you inspect your B2B lead generation system?"
         text="A lead quality audit gives you a practical review of the current funnel before deciding what needs to change."
-        buttonLabel="Get a Free Lead Quality Audit"
+        buttonLabel="Book a Call"
         buttonHref="/#free-audit-form"
       />
     </>

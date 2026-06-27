@@ -11,7 +11,7 @@ import { breadcrumbSchema, serviceSchema, webPageSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Get a Free Lead Quality Audit",
+  title: "Book a Call",
   description:
     "Request a free review of your ads, landing page, tracking, CRM flow, follow-up process, and lead quality gaps.",
   path: "/free-audit",
@@ -28,7 +28,7 @@ const reviewItems = [
 ];
 
 const applyItems = [
-  { title: "You are spending on ads", description: "The audit is most useful when there is live or recent campaign data to inspect." },
+  { title: "You are spending on ads", description: "The call is most useful when there is live or recent campaign data to look at." },
   { title: "Leads are coming in, but quality is poor", description: "You have volume, but the conversations are not matching the business goal." },
   { title: "Sales says leads are not qualified", description: "There is a visible gap between what marketing reports and what sales experiences." },
   { title: "You do not know your real CAC", description: "Tracking or CRM gaps make it hard to see which leads are worth paying for." },
@@ -40,30 +40,30 @@ export default function GetFreeLeadQualityAuditPage() {
       <JsonLd
         data={webPageSchema(
           "/free-audit",
-          "Get a Free Lead Quality Audit",
-          "Conversion page for requesting a Done For You lead quality audit.",
+          "Book a Call",
+          "Conversion page for booking a strategy call with Done For You.",
         )}
       />
       <JsonLd
         data={breadcrumbSchema([
           { name: "Home", path: "/" },
-          { name: "Free Lead Quality Audit", path: "/free-audit" },
+          { name: "Book a Call", path: "/free-audit" },
         ])}
       />
       <JsonLd
         data={serviceSchema({
-          name: "Free Lead Quality Audit",
+          name: "Free Strategy Call",
           description:
             "A practical review of ads, landing pages, tracking, CRM flow, follow-up, and lead quality gaps.",
           path: "/free-audit",
-          serviceType: "Lead quality audit",
+          serviceType: "Marketing strategy call",
         })}
       />
       <Hero
-        eyebrow="Free lead quality audit"
-        title="Get a free lead quality audit for your current ad funnel."
+        eyebrow="Book a call"
+        title="Book a call about your current ad funnel."
         subtitle="We will review your ads, landing page, tracking, CRM flow, and lead quality gaps."
-        primaryCta={{ label: "Request My Free Audit", href: "#audit-form" }}
+        primaryCta={{ label: "Book a Call", href: "#audit-form" }}
         secondaryCta={{ label: "See What We Review", href: "#what-we-review" }}
       >
         <HeroProofCards />
@@ -96,7 +96,7 @@ export default function GetFreeLeadQualityAuditPage() {
       <section id="audit-form" className="scroll-mt-24 bg-white py-20 sm:py-28">
         <div className="container-wide grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
           <div className="sticky top-28 rounded-sm border border-[#050505]/12 bg-[#f6f5f1] p-7">
-            <p className="eyebrow eyebrow-default">Request the audit</p>
+            <p className="eyebrow eyebrow-default">Book your call</p>
             <h2 className="mt-4 text-4xl font-black leading-none sm:text-5xl">
               Tell us what you are seeing in the funnel.
             </h2>
@@ -106,7 +106,7 @@ export default function GetFreeLeadQualityAuditPage() {
             <div className="mt-8 border-t border-[#050505]/12 pt-6">
               <h3 className="text-2xl font-black">No fake promises.</h3>
               <p className="mt-3 text-base leading-7 text-[#4b4b4b]">
-                We will tell you what is broken and what needs fixing. If the current system needs better qualification, tracking, creative, landing page work, or CRM feedback, the audit will make that visible.
+                We will tell you what is broken and what needs fixing. If the current system needs better qualification, tracking, creative, landing page work, or CRM feedback, the call will make that visible.
               </p>
             </div>
           </div>
@@ -130,8 +130,8 @@ export default function GetFreeLeadQualityAuditPage() {
 
       <CTASection
         title="Ready to fix what is leaking lead quality?"
-        text="Submit the audit request and we will review the acquisition path from first click to follow-up."
-        buttonLabel="Request My Free Audit"
+        text="Book a call and we will review the acquisition path from first click to follow-up."
+        buttonLabel="Book a Call"
         buttonHref="#audit-form"
       />
     </>

@@ -157,7 +157,7 @@ export default function ClinicLeadGenerationPage() {
               Done For You builds patient acquisition systems for clinics, hospitals, and healthcare practices using Google Ads, Meta Ads, local targeting, and automated appointment follow-up that converts enquiries into confirmed consultations.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href="/free-audit" variant="primary">Get Free Audit</ButtonLink>
+              <ButtonLink href="/free-audit" variant="primary">Book a Call</ButtonLink>
               <ButtonLink href="/services/google-ads" variant="secondary">Google Ads Service</ButtonLink>
             </div>
           </div>
@@ -230,8 +230,8 @@ export default function ClinicLeadGenerationPage() {
 
       <CTASection
         title="Ready to bring more qualified patients through your clinic doors?"
-        text="Book a free audit of your current healthcare ads, local targeting, and follow-up system. We will show you exactly where patient enquiries are leaking."
-        buttonLabel="Get Free Audit"
+        text="Book a call about your current healthcare ads, local targeting, and follow-up system. We will show you exactly where patient enquiries are leaking."
+        buttonLabel="Book a Call"
         buttonHref="/free-audit"
       />
     </>

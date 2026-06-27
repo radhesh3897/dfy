@@ -33,10 +33,10 @@ export function AuditStartCard() {
             </svg>
           </div>
           <h2 className="mt-5 text-2xl font-medium tracking-[-0.03em] text-[#111827] sm:text-3xl">
-            Request received.
+            Thanks, we have your details.
           </h2>
           <p className="mt-4 text-base leading-7 text-[#5f6877]">
-            We&apos;ll review your campaigns and get back to you within 24 hours.
+            An expert from our team will call you shortly, usually within a few hours.
           </p>
         </div>
       ) : (
@@ -45,7 +45,7 @@ export function AuditStartCard() {
             Step 1 of 2
           </span>
           <h2 className="mt-7 text-2xl font-medium tracking-[-0.03em] text-[#111827] sm:mt-8 sm:text-3xl">
-            Start Your Free Audit
+            Book a Call
           </h2>
           <form className="mt-7 grid gap-5 sm:mt-8 sm:gap-6" onSubmit={handleSubmit}>
             <label className="grid gap-3 text-base font-medium text-[#111827]">
@@ -107,7 +107,7 @@ export function AuditStartCard() {
               disabled={status === "loading"}
               className="mt-2 inline-flex min-h-[58px] items-center justify-center gap-4 rounded-md bg-[#164E50] px-5 text-lg font-medium text-white shadow-[0_18px_36px_rgba(136,222,123,0.28)] transition hover:bg-[#103D3F] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#164E50] disabled:opacity-60 sm:min-h-[66px] sm:px-6 sm:text-xl"
             >
-              {status === "loading" ? "Sending…" : "Get My Free Audit"}
+              {status === "loading" ? "Sending…" : "Book a Call"}
               {status !== "loading" && <span aria-hidden="true">-&gt;</span>}
             </button>
           </form>

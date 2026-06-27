@@ -10,8 +10,8 @@ export async function POST(request: NextRequest) {
     const isHomepageForm = "businessName" in body;
 
     const subject = isHomepageForm
-      ? `New Audit Request — ${body.businessName || "Unknown"}`
-      : `New Audit Request — ${body.name || "Unknown"} (${body.company || "Unknown"})`;
+      ? `New Call Booking — ${body.businessName || "Unknown"}`
+      : `New Call Booking — ${body.name || "Unknown"} (${body.company || "Unknown"})`;
 
     const rows: [string, string][] = isHomepageForm
       ? [
@@ -45,19 +45,19 @@ export async function POST(request: NextRequest) {
       <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:600px;margin:0 auto">
         <div style="background:#164E50;padding:24px 28px;border-radius:8px 8px 0 0">
           <p style="margin:0;font-size:12px;font-weight:600;letter-spacing:0.08em;color:#88DE7B;text-transform:uppercase">Done For You</p>
-          <h1 style="margin:8px 0 0;font-size:22px;font-weight:700;color:#ffffff">New Audit Request</h1>
+          <h1 style="margin:8px 0 0;font-size:22px;font-weight:700;color:#ffffff">New Call Booking</h1>
         </div>
         <div style="border:1px solid #e5e7eb;border-top:none;border-radius:0 0 8px 8px;overflow:hidden">
           <table style="width:100%;border-collapse:collapse">
             ${tableRows}
           </table>
         </div>
-        <p style="margin:16px 0 0;font-size:12px;color:#9ca3af;text-align:center">doneforyou.in audit request</p>
+        <p style="margin:16px 0 0;font-size:12px;color:#9ca3af;text-align:center">doneforyou.in call booking</p>
       </div>
     `;
 
     const { data, error } = await resend.emails.send({
-      from: "DFY Audit <onboarding@resend.dev>",
+      from: "DFY Website <onboarding@resend.dev>",
       to: TO_EMAIL,
       subject,
       html,

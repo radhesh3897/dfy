@@ -181,8 +181,8 @@ export default function RealEstateLeadGenerationIndiaArticle() {
 
       <CTASection
         title="Want DFY to build your real estate lead system?"
-        text="Request a free audit and we will review your targeting, landing page, qualification questions, and follow-up speed to find where site visits are leaking."
-        buttonLabel="Get a Free Audit"
+        text="Book a call and we will review your targeting, landing page, qualification questions, and follow-up speed to find where site visits are leaking."
+        buttonLabel="Book a Call"
         buttonHref="/#free-audit-form"
       />
     </>

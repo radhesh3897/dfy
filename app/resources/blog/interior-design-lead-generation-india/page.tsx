@@ -184,8 +184,8 @@ export default function InteriorDesignLeadGenerationIndiaArticle() {
 
       <CTASection
         title="Want DFY to build your interior design lead system?"
-        text="Request a free audit and we will review your creative, landing page, budget qualification, and follow-up to find where high-value project enquiries are leaking."
-        buttonLabel="Get a Free Audit"
+        text="Book a call and we will review your creative, landing page, budget qualification, and follow-up to find where high-value project enquiries are leaking."
+        buttonLabel="Book a Call"
         buttonHref="/#free-audit-form"
       />
     </>

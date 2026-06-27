@@ -41,7 +41,7 @@ export default function LeadQualityChecklistPage() {
         eyebrow="Checklist"
         title="Check if your paid leads are actually worth following up."
         subtitle="Use this practical checklist to review buyer fit, need, budget, urgency, source quality, and follow-up readiness."
-        primaryCta={{ label: "Get a Free Audit", href: "/#free-audit-form" }}
+        primaryCta={{ label: "Book a Call", href: "/#free-audit-form" }}
         secondaryCta={{ label: "Lead Quality Service", href: "/lead-quality-improvement" }}
       />
 
@@ -55,8 +55,8 @@ export default function LeadQualityChecklistPage() {
 
       <CTASection
         title="Want DFY to review these gaps for you?"
-        text="Book a free audit and we will review the paid acquisition path from first click to follow-up."
-        buttonLabel="Request Your Free Audit"
+        text="Book a call and we will review the paid acquisition path from first click to follow-up."
+        buttonLabel="Book a Call"
         buttonHref="/#free-audit-form"
       />
     </>

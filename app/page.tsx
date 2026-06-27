@@ -40,7 +40,7 @@ export default function Home() {
         title="B2B Lead Generation Agency India: Better Leads from Meta Ads and Google Ads"
         subtitle="Most agencies hand you a spreadsheet of leads and disappear. DFY builds a closed-loop ad system that learns from your actual sales data so every month, your cost per customer drops."
         primaryCta={{
-          label: "Get Your Free Audit",
+          label: "Book a Call",
           href: "/#free-audit-form",
         }}
         secondaryCta={{
@@ -58,14 +58,14 @@ export default function Home() {
       <HomepageCTASection
         headline="Ready to make paid ads actually work for your business?"
         subheadline="Book a free 30-minute audit. We'll show you exactly where your ad spend is leaking and what it would take to fix it."
-        cta="Book Your Free Audit"
+        cta="Book a Call"
       />
       <WhyChooseDoneForYouSection />
       <ProcessSection />
       <HomepageCTASection
         headline="Stop paying for leads that don't convert."
-        subheadline="Book a free audit and we'll show you exactly what's leaking."
-        cta="Book a Free Audit ->"
+        subheadline="Book a call and we'll show you exactly what's leaking."
+        cta="Book a Call ->"
         tone="dark"
       />
     </>

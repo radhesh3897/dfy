@@ -148,7 +148,7 @@ export default function LeadQualityImprovementPage() {
         title="Your CPL may be low. Your lead quality may be lower."
         subtitle="We help businesses fix the system behind poor lead quality, from targeting and ad angles to landing pages, CRM stages, and sales feedback."
         primaryCta={{
-          label: "Get a Free Lead Quality Audit",
+          label: "Book a Call",
           href: "/#free-audit-form",
         }}
         secondaryCta={{
@@ -214,7 +214,7 @@ export default function LeadQualityImprovementPage() {
       <CTASection
         title="How can you find the gaps behind poor lead quality?"
         text="A lead quality audit finds the gaps by reviewing the full path from ad angle to CRM flow so you can see what needs fixing first."
-        buttonLabel="Get a Free Lead Quality Audit"
+        buttonLabel="Book a Call"
         buttonHref="/#free-audit-form"
       />
 

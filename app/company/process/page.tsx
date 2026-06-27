@@ -31,7 +31,7 @@ export default function CompanyProcessPage() {
         eyebrow="Our Process"
         title="Audit, strategy, launch, and compound."
         subtitle="A practical process for finding acquisition leaks, building the right system, launching cleanly, and improving from sales feedback."
-        primaryCta={{ label: "Start With an Audit", href: "/#free-audit-form" }}
+        primaryCta={{ label: "Book a Call", href: "/#free-audit-form" }}
         secondaryCta={{ label: "About DFY", href: "/company/about" }}
       />
 
@@ -48,7 +48,7 @@ export default function CompanyProcessPage() {
       <CTASection
         title="Ready to start with a proper audit?"
         text="We will review the system from ad click to follow-up and show you what should be fixed first."
-        buttonLabel="Request Your Free Audit"
+        buttonLabel="Book a Call"
         buttonHref="/#free-audit-form"
       />
     </>

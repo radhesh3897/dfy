@@ -108,7 +108,7 @@ export function WhyChooseDoneForYouSection() {
             variant="primary"
             className="min-h-[58px] rounded-md px-10 text-lg"
           >
-            Book a call
+            Book a Call
             <span className="ml-4" aria-hidden="true">
               -&gt;
             </span>

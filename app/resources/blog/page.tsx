@@ -47,7 +47,7 @@ export default function BlogPage() {
         eyebrow="Blog"
         title="Performance marketing insights for better lead quality."
         subtitle="Practical, data-backed guides on paid acquisition, funnel diagnosis, tracking, nurture, and sales feedback for B2B and service businesses in India."
-        primaryCta={{ label: "Get a Free Audit", href: "/#free-audit-form" }}
+        primaryCta={{ label: "Book a Call", href: "/#free-audit-form" }}
         secondaryCta={{ label: "Resources Hub", href: "/resources" }}
       />
 
@@ -79,7 +79,7 @@ export default function BlogPage() {
       <CTASection
         title="Need answers from your own ad account?"
         text="Request an audit and DFY will review the acquisition system behind your lead quality."
-        buttonLabel="Request Your Free Audit"
+        buttonLabel="Book a Call"
         buttonHref="/#free-audit-form"
       />
     </>

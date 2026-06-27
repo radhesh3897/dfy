@@ -205,8 +205,8 @@ export default function CrmTrackingSetupArticle() {
 
       <CTASection
         title="Want DFY to set up your CRM and tracking system?"
-        text="Request a free audit and we will review your current tracking setup, CRM configuration, and follow-up system."
-        buttonLabel="Get a Free Audit"
+        text="Book a call and we will review your current tracking setup, CRM configuration, and follow-up system."
+        buttonLabel="Book a Call"
         buttonHref="/#free-audit-form"
       />
     </>

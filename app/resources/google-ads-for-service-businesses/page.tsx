@@ -65,8 +65,8 @@ export default function GoogleAdsGuidePage() {
 
       <CTASection
         title="Want to see which search leads are worth paying for?"
-        text="Request a free audit and we will review campaigns, landing pages, tracking, CRM flow, and follow-up quality."
-        buttonLabel="Request Your Free Audit"
+        text="Book a call and we will review campaigns, landing pages, tracking, CRM flow, and follow-up quality."
+        buttonLabel="Book a Call"
         buttonHref="/#free-audit-form"
       />
     </>

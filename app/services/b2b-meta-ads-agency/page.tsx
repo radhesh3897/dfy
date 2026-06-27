@@ -155,8 +155,8 @@ export default function B2BMetaAdsAgencyPage() {
               and sales feedback so the spend finds real buyers, not the cheapest form fillers.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href="/free-audit" variant="primary">Get Free Audit</ButtonLink>
-              <ButtonLink href="/book-a-call" variant="secondary">Book a Call</ButtonLink>
+              <ButtonLink href="/free-audit" variant="primary">Book a Call</ButtonLink>
+              <ButtonLink href="/results" variant="secondary">See Results</ButtonLink>
             </div>
           </div>
           <aside className="rounded-[18px] border border-[#CDEECD] bg-white p-6 shadow-[0_22px_70px_rgba(22,78,80,0.08)]">
@@ -275,8 +275,8 @@ export default function B2BMetaAdsAgencyPage() {
 
       <CTASection
         title="Want a B2B Meta Ads agency that optimizes for pipeline?"
-        text="Get a free audit and we will review your targeting, creative, landing page, tracking, and CRM feedback loop, and show you where qualified pipeline is leaking."
-        buttonLabel="Get Free Audit"
+        text="Book a call and we will review your targeting, creative, landing page, tracking, and CRM feedback loop, and show you where qualified pipeline is leaking."
+        buttonLabel="Book a Call"
         buttonHref="/free-audit"
       />
     </>

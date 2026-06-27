@@ -30,7 +30,7 @@ export default function AboutPage() {
         eyebrow="About Done For You"
         title="Performance marketing built around sales, not surface-level leads."
         subtitle="DFY exists to help service businesses build acquisition systems that improve from real lead quality and sales feedback."
-        primaryCta={{ label: "Get a Free Audit", href: "/#free-audit-form" }}
+        primaryCta={{ label: "Book a Call", href: "/#free-audit-form" }}
         secondaryCta={{ label: "Company Overview", href: "/company" }}
       />
 
@@ -67,8 +67,8 @@ export default function AboutPage() {
 
       <CTASection
         title="Want to see where your acquisition system is leaking?"
-        text="Start with a free lead quality audit."
-        buttonLabel="Request Your Free Audit"
+        text="Start with a quick call."
+        buttonLabel="Book a Call"
         buttonHref="/#free-audit-form"
       />
     </>

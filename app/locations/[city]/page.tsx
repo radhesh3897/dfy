@@ -128,8 +128,8 @@ export default async function CityLocationPage({ params }: LocationPageProps) {
               Meta Ads, landing pages, CRM tracking, nurture systems, creative strategy, and sales feedback loops.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href="/free-audit" variant="primary">Get Free Audit</ButtonLink>
-              <ButtonLink href="/book-a-call" variant="secondary">Book a Call</ButtonLink>
+              <ButtonLink href="/free-audit" variant="primary">Book a Call</ButtonLink>
+              <ButtonLink href="/results" variant="secondary">See Results</ButtonLink>
             </div>
           </div>
           <aside className="rounded-[18px] border border-[#CDEECD] bg-white p-6 shadow-[0_22px_70px_rgba(22,78,80,0.08)]">
@@ -263,8 +263,8 @@ export default async function CityLocationPage({ params }: LocationPageProps) {
 
       <CTASection
         title={`Want better-quality leads in ${location.city}?`}
-        text="Get a free audit of your current ads, landing page, tracking, and follow-up system. We'll show you where the lead quality gaps are and what to fix first."
-        buttonLabel="Get Free Audit"
+        text="Book a call about your current ads, landing page, tracking, and follow-up system. We'll show you where the lead quality gaps are and what to fix first."
+        buttonLabel="Book a Call"
         buttonHref="/free-audit"
       />
     </>

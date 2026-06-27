@@ -205,7 +205,7 @@ export function SiteHeader() {
             variant="primary"
             className="min-h-[48px] shrink-0 rounded-md px-4 text-sm sm:min-h-[52px] sm:px-7 sm:text-base"
           >
-            Book a call
+            Book a Call
           </ButtonLink>
 
           <button

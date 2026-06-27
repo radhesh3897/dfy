@@ -41,7 +41,7 @@ export default function ResourcesPage() {
         eyebrow="Resources"
         title="Practical guidance for better paid acquisition systems."
         subtitle="Explore DFY articles, guides, and checklists for improving lead quality, tracking, CRM feedback, and sales-ready conversations."
-        primaryCta={{ label: "Get a Free Audit", href: "/#free-audit-form" }}
+        primaryCta={{ label: "Book a Call", href: "/#free-audit-form" }}
         secondaryCta={{ label: "Read the Blog", href: "/resources/blog" }}
       >
         <ResourceHeroCard />
@@ -86,8 +86,8 @@ export default function ResourcesPage() {
 
       <CTASection
         title="Want us to review your funnel instead?"
-        text="Book a free audit and we will show you what is leaking lead quality across ads, landing pages, tracking, CRM, and follow-up."
-        buttonLabel="Request Your Free Audit"
+        text="Book a call and we will show you what is leaking lead quality across ads, landing pages, tracking, CRM, and follow-up."
+        buttonLabel="Book a Call"
         buttonHref="/#free-audit-form"
       />
     </>

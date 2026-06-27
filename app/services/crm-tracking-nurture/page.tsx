@@ -239,8 +239,8 @@ export default function CrmTrackingNurturePage() {
 
       <CTASection
         title="Ready to close the loop between your ads and your revenue?"
-        text="Book a free audit. We will review your current tracking, CRM setup, and follow-up system and show you where lead quality is leaking."
-        buttonLabel="Get Free Audit"
+        text="Book a call. We will review your current tracking, CRM setup, and follow-up system and show you where lead quality is leaking."
+        buttonLabel="Book a Call"
         buttonHref="/free-audit"
       />
     </>
@@ -267,7 +267,7 @@ function HeroSection() {
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <ButtonLink href="/free-audit" className="min-h-[58px] rounded-md px-7 text-base sm:text-lg">
-              Get Free Audit
+              Book a Call
               <span className="ml-3" aria-hidden="true">-&gt;</span>
             </ButtonLink>
             <ButtonLink

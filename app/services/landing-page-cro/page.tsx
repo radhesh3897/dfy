@@ -238,8 +238,8 @@ export default function LandingPageCroPage() {
 
       <CTASection
         title="Your landing page is costing you leads you already paid for."
-        text="Book a free audit. We will review your page and show you exactly what is leaking conversion and how to fix it."
-        buttonLabel="Get Free Audit"
+        text="Book a call. We will review your page and show you exactly what is leaking conversion and how to fix it."
+        buttonLabel="Book a Call"
         buttonHref="/free-audit"
       />
     </>
@@ -266,7 +266,7 @@ function HeroSection() {
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <ButtonLink href="/free-audit" className="min-h-[58px] rounded-md px-7 text-base sm:text-lg">
-              Get Free Audit
+              Book a Call
               <span className="ml-3" aria-hidden="true">-&gt;</span>
             </ButtonLink>
             <ButtonLink

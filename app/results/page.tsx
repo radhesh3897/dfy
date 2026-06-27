@@ -70,7 +70,7 @@ export default function ResultsPage() {
               qualified pipeline. Every number below comes from a real client account.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href="/free-audit" variant="primary">Get Free Audit</ButtonLink>
+              <ButtonLink href="/free-audit" variant="primary">Book a Call</ButtonLink>
               <ButtonLink href="/b2b-lead-generation-agency" variant="secondary">Explore Services</ButtonLink>
             </div>
           </div>
@@ -149,8 +149,8 @@ export default function ResultsPage() {
 
       <CTASection
         title="Want results like these for your business?"
-        text="Start with a free audit. We will review your ads, landing page, tracking, CRM flow, and follow-up process, and show you where the gaps are."
-        buttonLabel="Get Free Audit"
+        text="Start with a quick call. We will review your ads, landing page, tracking, CRM flow, and follow-up process, and show you where the gaps are."
+        buttonLabel="Book a Call"
         buttonHref="/free-audit"
       />
     </>

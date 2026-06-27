@@ -30,7 +30,7 @@ export default function CompanyPage() {
         eyebrow="Company"
         title="We build acquisition systems that connect marketing with sales."
         subtitle="DFY helps service-based businesses generate better-quality leads through paid ads, landing pages, tracking, CRM setup, nurture systems, creative strategy, and sales feedback loops."
-        primaryCta={{ label: "Get a Free Audit", href: "/#free-audit-form" }}
+        primaryCta={{ label: "Book a Call", href: "/#free-audit-form" }}
         secondaryCta={{ label: "Our Process", href: "/company/process" }}
       />
 
@@ -79,8 +79,8 @@ export default function CompanyPage() {
 
       <CTASection
         title="Want to see where your own acquisition system is leaking?"
-        text="Start with a free audit. DFY will review the path from ad click to follow-up and show what should be fixed first."
-        buttonLabel="Request Your Free Audit"
+        text="Start with a quick call. DFY will review the path from ad click to follow-up and show what should be fixed first."
+        buttonLabel="Book a Call"
         buttonHref="/#free-audit-form"
       />
     </>

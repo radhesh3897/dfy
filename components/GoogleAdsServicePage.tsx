@@ -914,7 +914,7 @@ function FinalCtaSection() {
           </p>
         </div>
         <ButtonLink href="/#free-audit-form" className="min-h-[58px] shrink-0 rounded-md px-8 text-base sm:text-lg">
-          Book a call
+          Book a Call
         </ButtonLink>
       </div>
     </section>

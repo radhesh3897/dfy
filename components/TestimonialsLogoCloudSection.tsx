@@ -247,7 +247,7 @@ export function TestimonialsLogoCloudSection() {
               href="/#free-audit-form"
               className="brand-gradient mt-7 inline-flex w-full items-center justify-center gap-3 rounded-[7px] px-6 py-4 text-base font-medium text-white shadow-[0_18px_36px_rgba(136,222,123,0.26)] transition hover:translate-y-[-1px] sm:w-auto"
             >
-              Book Your Free Audit
+              Book a Call
               <span aria-hidden="true">-&gt;</span>
             </Link>
             <a

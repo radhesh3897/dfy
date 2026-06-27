@@ -183,8 +183,8 @@ export default function MetaAdsVsGoogleAdsB2BIndiaArticle() {
 
       <CTASection
         title="Want DFY to review which channel should come first?"
-        text="Request a free audit and we will review search demand, Meta audience fit, funnel readiness, and tracking gaps."
-        buttonLabel="Get a Free Audit"
+        text="Book a call and we will review search demand, Meta audience fit, funnel readiness, and tracking gaps."
+        buttonLabel="Book a Call"
         buttonHref="/#free-audit-form"
       />
     </>

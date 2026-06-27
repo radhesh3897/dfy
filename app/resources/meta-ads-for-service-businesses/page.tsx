@@ -65,8 +65,8 @@ export default function MetaAdsGuidePage() {
 
       <CTASection
         title="Want better signal from your Meta campaigns?"
-        text="Start with a free audit. We will review the campaign, creative, landing page, tracking, and lead quality loop."
-        buttonLabel="Request Your Free Audit"
+        text="Start with a quick call. We will review the campaign, creative, landing page, tracking, and lead quality loop."
+        buttonLabel="Book a Call"
         buttonHref="/#free-audit-form"
       />
     </>

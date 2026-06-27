@@ -143,7 +143,7 @@ export default function EdtechLeadGenerationPage() {
               Done For You builds paid acquisition systems for EdTech companies using Meta Ads, Google Ads, enrolment funnels, CRM tracking, and nurture sequences designed around your admission process and course calendar.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href="/free-audit" variant="primary">Get Free Audit</ButtonLink>
+              <ButtonLink href="/free-audit" variant="primary">Book a Call</ButtonLink>
               <ButtonLink href="/services/meta-ads" variant="secondary">Meta Ads Service</ButtonLink>
             </div>
           </div>
@@ -216,8 +216,8 @@ export default function EdtechLeadGenerationPage() {
 
       <CTASection
         title="Ready to grow enrolments with paid ads that actually convert?"
-        text="Book a free audit of your current EdTech campaigns, landing pages, and follow-up system. We will show you exactly where enrolments are leaking."
-        buttonLabel="Get Free Audit"
+        text="Book a call about your current EdTech campaigns, landing pages, and follow-up system. We will show you exactly where enrolments are leaking."
+        buttonLabel="Book a Call"
         buttonHref="/free-audit"
       />
     </>

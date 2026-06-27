@@ -157,7 +157,7 @@ export default function GymLeadGenerationPage() {
               Done For You builds local lead generation systems for gyms, fitness studios, and personal training businesses using Meta Ads, Google Ads, tightly targeted local campaigns, and WhatsApp nurture to turn enquiries into paid members.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href="/free-audit" variant="primary">Get Free Audit</ButtonLink>
+              <ButtonLink href="/free-audit" variant="primary">Book a Call</ButtonLink>
               <ButtonLink href="/services/meta-ads" variant="secondary">Meta Ads Service</ButtonLink>
             </div>
           </div>
@@ -230,8 +230,8 @@ export default function GymLeadGenerationPage() {
 
       <CTASection
         title="Ready to fill your gym with the right members?"
-        text="Book a free audit of your current gym ads, targeting, and follow-up system. We will show you where new member acquisition is leaking."
-        buttonLabel="Get Free Audit"
+        text="Book a call about your current gym ads, targeting, and follow-up system. We will show you where new member acquisition is leaking."
+        buttonLabel="Book a Call"
         buttonHref="/free-audit"
       />
     </>

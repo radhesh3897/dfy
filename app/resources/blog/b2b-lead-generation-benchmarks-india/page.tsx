@@ -213,8 +213,8 @@ export default function B2BLeadGenerationBenchmarksIndiaArticle() {
 
       <CTASection
         title="Want DFY to benchmark your current paid ads?"
-        text="Request a free audit and we will review CPL, lead quality, conversion rate, and sales feedback visibility."
-        buttonLabel="Get a Free Audit"
+        text="Book a call and we will review CPL, lead quality, conversion rate, and sales feedback visibility."
+        buttonLabel="Book a Call"
         buttonHref="/#free-audit-form"
       />
     </>

@@ -227,8 +227,8 @@ export default function HowToChooseB2bMetaAdsAgencyIndiaArticle() {
 
       <CTASection
         title="Looking for a B2B Meta Ads agency that passes all six?"
-        text="Done For You optimizes for qualified pipeline using CRM feedback, in-house creative, and weekly reviews. Request a free audit and see where your current funnel is leaking."
-        buttonLabel="Get a Free Audit"
+        text="Done For You optimizes for qualified pipeline using CRM feedback, in-house creative, and weekly reviews. Book a call and see where your current funnel is leaking."
+        buttonLabel="Book a Call"
         buttonHref="/#free-audit-form"
       />
     </>

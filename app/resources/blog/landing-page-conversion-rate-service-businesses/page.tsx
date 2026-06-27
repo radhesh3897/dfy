@@ -211,8 +211,8 @@ export default function LandingPageConversionRateArticle() {
 
       <CTASection
         title="Want DFY to audit and improve your landing page?"
-        text="Request a free audit and we will review your page structure, offer clarity, form friction, and ad-to-page alignment."
-        buttonLabel="Get a Free Audit"
+        text="Book a call and we will review your page structure, offer clarity, form friction, and ad-to-page alignment."
+        buttonLabel="Book a Call"
         buttonHref="/#free-audit-form"
       />
     </>

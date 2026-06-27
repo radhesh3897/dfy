@@ -183,8 +183,8 @@ export default function B2bSaasLeadGenerationIndiaArticle() {
 
       <CTASection
         title="Want DFY to build your SaaS demo pipeline?"
-        text="Request a free audit and we will review your targeting, landing pages, demo form, and CRM feedback loop to find where qualified pipeline is leaking."
-        buttonLabel="Get a Free Audit"
+        text="Book a call and we will review your targeting, landing pages, demo form, and CRM feedback loop to find where qualified pipeline is leaking."
+        buttonLabel="Book a Call"
         buttonHref="/#free-audit-form"
       />
     </>

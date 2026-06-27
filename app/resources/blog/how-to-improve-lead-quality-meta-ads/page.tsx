@@ -177,8 +177,8 @@ export default function ImproveLeadQualityMetaAdsArticle() {
 
       <CTASection
         title="Want DFY to review your Meta Ads lead quality?"
-        text="Request a free audit and we will review your targeting, landing page, CRM feedback loop, and CAPI setup."
-        buttonLabel="Get a Free Audit"
+        text="Book a call and we will review your targeting, landing page, CRM feedback loop, and CAPI setup."
+        buttonLabel="Book a Call"
         buttonHref="/#free-audit-form"
       />
     </>

@@ -53,8 +53,8 @@ export default function LocationsPage() {
               landing pages, CRM tracking, nurture systems, creative strategy, and sales feedback loops.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href="/free-audit" variant="primary">Get Free Audit</ButtonLink>
-              <ButtonLink href="/book-a-call" variant="secondary">Book a Call</ButtonLink>
+              <ButtonLink href="/free-audit" variant="primary">Book a Call</ButtonLink>
+              <ButtonLink href="/results" variant="secondary">See Results</ButtonLink>
             </div>
           </div>
         </div>
@@ -127,8 +127,8 @@ export default function LocationsPage() {
 
       <CTASection
         title="Want to see where your lead quality is leaking?"
-        text="Get a free audit of your current ads, landing page, tracking, and follow-up system."
-        buttonLabel="Get Free Audit"
+        text="Book a call about your current ads, landing page, tracking, and follow-up system."
+        buttonLabel="Book a Call"
         buttonHref="/free-audit"
       />
     </>

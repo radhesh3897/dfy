@@ -70,10 +70,10 @@ const pages = [
       "Industry page for clinic and healthcare lead generation in India using Meta Ads and Google Ads with appointment-focused funnels.",
   },
   {
-    title: "Free Lead Quality Audit",
+    title: "Book a Call",
     path: "/free-audit",
     description:
-      "Conversion page for requesting a practical review of ads, landing pages, tracking, CRM flow, and follow-up gaps.",
+      "Book a free strategy call: a practical review of ads, landing pages, tracking, CRM flow, and follow-up gaps, after which an expert from the team calls you.",
   },
   {
     title: "Results and Case Studies",
@@ -229,10 +229,10 @@ const services = [
       "Landing page conversion rate optimization covering offer clarity, form friction, ad-to-page alignment, and mobile speed.",
   },
   {
-    title: "Lead Quality Audit",
+    title: "Book a Call",
     path: "/free-audit",
     description:
-      "Free audit for businesses spending on ads that want to understand what is reducing lead quality.",
+      "Free strategy call for businesses spending on ads that want to understand what is reducing lead quality.",
   },
 ];
 

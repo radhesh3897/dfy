@@ -203,8 +203,8 @@ export default function WhatsappLeadNurtureArticle() {
 
       <CTASection
         title="Want DFY to build your lead nurture and follow-up system?"
-        text="Request a free audit and we will review your current follow-up process and show you where leads are going cold between form submit and booked call."
-        buttonLabel="Get a Free Audit"
+        text="Book a call and we will review your current follow-up process and show you where leads are going cold between form submit and booked call."
+        buttonLabel="Book a Call"
         buttonHref="/#free-audit-form"
       />
     </>

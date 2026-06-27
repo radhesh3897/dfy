@@ -108,7 +108,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               ))}
             </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href="/free-audit" variant="primary">Get Free Audit</ButtonLink>
+              <ButtonLink href="/free-audit" variant="primary">Book a Call</ButtonLink>
               <ButtonLink href="/results" variant="secondary">Back to Results</ButtonLink>
             </div>
           </div>
@@ -206,8 +206,8 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
 
       <CTASection
         title={`Want results like ${study.brand}?`}
-        text="Get a free audit and we will review your ads, landing page, tracking, and CRM feedback loop, and show you where qualified pipeline is leaking."
-        buttonLabel="Get Free Audit"
+        text="Book a call and we will review your ads, landing page, tracking, and CRM feedback loop, and show you where qualified pipeline is leaking."
+        buttonLabel="Book a Call"
         buttonHref="/free-audit"
       />
     </>
