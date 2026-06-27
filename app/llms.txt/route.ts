@@ -118,6 +118,24 @@ const pages = [
       "How to build a WhatsApp nurture sequence that converts paid ad enquiries into booked calls for service businesses in India.",
   },
   {
+    title: "Real Estate Lead Generation in India",
+    path: "/resources/blog/real-estate-lead-generation-india",
+    description:
+      "How to get qualified real estate buyer leads from Meta and Google Ads in India, qualify them early, and book more site visits.",
+  },
+  {
+    title: "B2B SaaS Lead Generation in India",
+    path: "/resources/blog/b2b-saas-lead-generation-india",
+    description:
+      "How to run B2B SaaS lead generation in India that produces demos that close and connects ad spend to real pipeline.",
+  },
+  {
+    title: "Interior Design Lead Generation in India",
+    path: "/resources/blog/interior-design-lead-generation-india",
+    description:
+      "How to attract higher-value interior design project enquiries in India, qualify on budget, and win more consultations.",
+  },
+  {
     title: "Company",
     path: "/company",
     description:

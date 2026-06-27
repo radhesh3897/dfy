@@ -10,6 +10,30 @@ export type BlogPost = {
 // Used by the blog index (/resources/blog) and the resources hub (/resources).
 export const blogPosts: BlogPost[] = [
   {
+    title: "Real Estate Lead Generation in India: Qualified Buyer Leads",
+    description:
+      "How to get qualified real estate buyer leads from Meta and Google Ads in India, qualify them early, and book more site visits.",
+    href: "/resources/blog/real-estate-lead-generation-india",
+    category: "Real estate",
+    date: "2026-06-27",
+  },
+  {
+    title: "B2B SaaS Lead Generation in India: Demos That Close",
+    description:
+      "How to run B2B SaaS lead generation in India that produces demos that close and connects ad spend to real pipeline.",
+    href: "/resources/blog/b2b-saas-lead-generation-india",
+    category: "B2B SaaS",
+    date: "2026-06-27",
+  },
+  {
+    title: "Interior Design Lead Generation in India: Better Project Leads",
+    description:
+      "How to attract higher-value interior design project enquiries in India, qualify on budget, and win more consultations.",
+    href: "/resources/blog/interior-design-lead-generation-india",
+    category: "Interior design",
+    date: "2026-06-27",
+  },
+  {
     title: "WhatsApp Lead Nurture for Service Businesses",
     description:
       "Build a WhatsApp nurture sequence that converts paid ad enquiries into booked calls for service businesses in India.",
