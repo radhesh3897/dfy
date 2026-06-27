@@ -27,6 +27,10 @@ const routes: Route[] = [
   { path: "/services/clinic-lead-generation", changeFrequency: "monthly", priority: 0.8 },
   { path: "/lead-quality-improvement", changeFrequency: "monthly", priority: 0.82 },
   { path: "/results", changeFrequency: "monthly", priority: 0.78 },
+  { path: "/results/hobfit", changeFrequency: "monthly", priority: 0.75, lastModified: "2026-06-27" },
+  { path: "/results/tranzission", changeFrequency: "monthly", priority: 0.74, lastModified: "2026-06-27" },
+  { path: "/results/talentz", changeFrequency: "monthly", priority: 0.74, lastModified: "2026-06-27" },
+  { path: "/results/reliance-animation", changeFrequency: "monthly", priority: 0.74, lastModified: "2026-06-27" },
   { path: "/resources", changeFrequency: "monthly", priority: 0.76 },
   { path: "/resources/blog", changeFrequency: "monthly", priority: 0.6 },
   // Blog articles previously missing from the sitemap.
@@ -104,9 +108,6 @@ const routes: Route[] = [
     changeFrequency: "monthly",
     priority: 0.72,
   })),
-  // NOTE: /results/case-study-1..3 are intentionally excluded while they are
-  // placeholders (they are also set to noindex). Add them back once real,
-  // client-approved case studies replace the placeholder content.
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -72,25 +72,32 @@ const servicesColumns: Array<{ heading: string; items: MenuItem[] }> = [
 
 const resultCards: ResultCard[] = [
   {
-    title: "Case Study 1",
-    tag: "Case Study 1",
-    text: "Verified project story will be added after client approval.",
-    href: "/results/case-study-1",
+    title: "Hobfit",
+    tag: "Shark Tank India",
+    text: "3.8× ROAS and ₹28L+ profit for a fitness brand.",
+    href: "/results/hobfit",
+    icon: "chart",
+  },
+  {
+    title: "Reliance Animation",
+    tag: "14× ROAS",
+    text: "₹1L of ad spend returned ₹14.5L and 100+ enrolment leads.",
+    href: "/results/reliance-animation",
     icon: "education",
   },
   {
-    title: "Case Study 2",
-    tag: "Case Study 2",
-    text: "Reserved story slot for an approved acquisition system breakdown.",
-    href: "/results/case-study-2",
-    icon: "plus",
+    title: "Tranzission",
+    tag: "+152% net sales",
+    text: "Monthly revenue doubled as conversion rate climbed.",
+    href: "/results/tranzission",
+    icon: "bars",
   },
   {
-    title: "Case Study 3",
-    tag: "Case Study 3",
-    text: "Placeholder for a verified story about lead quality and CRM visibility.",
-    href: "/results/case-study-3",
-    icon: "bars",
+    title: "TalentZ",
+    tag: "23% → 63% qualified",
+    text: "Overseas recruitment leads at 4.8× ROI.",
+    href: "/results/talentz",
+    icon: "plus",
   },
 ];
 
@@ -99,7 +106,7 @@ const resourceItems: MenuItem[] = [
   { label: "Lead Quality Checklist", href: "/resources/lead-quality-checklist", icon: "clipboard" },
   { label: "Meta Ads Guide", href: "/resources/meta-ads-for-service-businesses", icon: "chart" },
   { label: "Google Ads Guide", href: "/resources/google-ads-for-service-businesses", icon: "google" },
-  { label: "Playbooks", href: "/resources#playbooks", icon: "book" },
+  { label: "Case Studies", href: "/results", icon: "book" },
 ];
 
 const companyItems: MenuItem[] = [

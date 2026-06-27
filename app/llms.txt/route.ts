@@ -76,10 +76,34 @@ const pages = [
       "Conversion page for requesting a practical review of ads, landing pages, tracking, CRM flow, and follow-up gaps.",
   },
   {
-    title: "Results",
+    title: "Results and Case Studies",
     path: "/results",
     description:
-      "Results hub with honest case-study placeholders that will be populated only after client approval.",
+      "Real Done For You client results: Hobfit (Shark Tank India fitness brand) at 3.8x ROAS and ₹28L+ profit, Tranzission revenue doubled (+152%) in a month, TalentZ qualified leads 23% to 63%, and Reliance Animation at 14x ROAS on enrolment leads.",
+  },
+  {
+    title: "Hobfit Case Study (Shark Tank India)",
+    path: "/results/hobfit",
+    description:
+      "Fitness brand featured on Shark Tank India reached 3.8x ROAS, ₹28L+ profit, and ₹15L+ managed ad spend with Meta Ads optimized for real member sign-ups.",
+  },
+  {
+    title: "Tranzission Case Study",
+    path: "/results/tranzission",
+    description:
+      "Monthly net sales doubled (+152%, ₹1.45L to ₹2.88L) as Google Ads conversion rate rose from 3.76% to 9.24% and qualified leads passed 60%.",
+  },
+  {
+    title: "TalentZ Case Study",
+    path: "/results/talentz",
+    description:
+      "Overseas recruitment lead generation: qualified leads rose from 23% to 63% at 4.8x ROI, turning ₹1.34L ad spend into ₹6.45L revenue.",
+  },
+  {
+    title: "Reliance Animation Case Study",
+    path: "/results/reliance-animation",
+    description:
+      "EdTech enrolment lead generation: ₹1L of ad spend returned ₹14.5L revenue (about 14x ROAS) with 100+ enrolment leads from Meta and Google Ads.",
   },
   {
     title: "Resources",

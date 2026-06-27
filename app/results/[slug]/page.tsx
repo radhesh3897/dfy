@@ -1,141 +1,215 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ButtonLink } from "@/components/ButtonLink";
 import { CTASection } from "@/components/CTASection";
-import { Hero } from "@/components/Hero";
 import { JsonLd } from "@/components/JsonLd";
 import { Section } from "@/components/Section";
-import { ServiceCard } from "@/components/ServiceCard";
-import { resultStories } from "@/data/marketingPages";
+import { caseStudies, getCaseStudy } from "@/data/caseStudies";
 import { breadcrumbSchema, webPageSchema } from "@/lib/schema";
-import { pageMetadata } from "@/lib/site";
+import { absoluteUrl, pageMetadata } from "@/lib/site";
 
 type CaseStudyPageProps = {
   params: Promise<{ slug: string }>;
 };
 
 export function generateStaticParams() {
-  return resultStories.map((story) => ({ slug: story.slug }));
+  return caseStudies.map((study) => ({ slug: study.slug }));
 }
 
 export async function generateMetadata({ params }: CaseStudyPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const story = resultStories.find((item) => item.slug === slug);
-
-  if (!story) {
+  const study = getCaseStudy(slug);
+  if (!study) {
     return {};
   }
-
-  return {
-    ...pageMetadata({
-      title: `${story.title} Placeholder`,
-      description: `${story.summary} Verified project details will be added after client approval.`,
-      path: story.href,
-    }),
-    // Placeholder content, kept out of the index until real, client-approved
-    // case studies replace it. Links are still followed.
-    robots: { index: false, follow: true },
-  };
+  return pageMetadata({
+    title: study.metaTitle,
+    description: study.metaDescription,
+    path: `/results/${study.slug}`,
+    keywords: [
+      `${study.brand} case study`,
+      study.sector,
+      "Done For You results",
+      "Meta Ads case study India",
+    ],
+  });
 }
 
 export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
   const { slug } = await params;
-  const story = resultStories.find((item) => item.slug === slug);
-
-  if (!story) {
+  const study = getCaseStudy(slug);
+  if (!study) {
     notFound();
   }
 
-  const relatedStories = resultStories.filter((item) => item.slug !== story.slug);
+  const related = caseStudies.filter((item) => item.slug !== study.slug).slice(0, 3);
+  const path = `/results/${study.slug}`;
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: study.title,
+    description: study.metaDescription,
+    url: absoluteUrl(path),
+    image: absoluteUrl(study.heroImage.src),
+    author: { "@type": "Organization", name: "Done For You", url: "https://www.doneforyou.in" },
+    publisher: { "@type": "Organization", name: "Done For You", url: "https://www.doneforyou.in" },
+    datePublished: study.datePublished,
+    dateModified: study.datePublished,
+    about: study.brand,
+  };
+
+  const reviewSchema = study.quote
+    ? {
+        "@context": "https://schema.org",
+        "@type": "Review",
+        reviewBody: study.quote.text,
+        author: { "@type": "Person", name: study.quote.name },
+        itemReviewed: { "@type": "Organization", name: "Done For You", url: "https://www.doneforyou.in" },
+      }
+    : null;
 
   return (
     <>
-      <JsonLd
-        data={webPageSchema(
-          story.href,
-          `${story.title} Placeholder`,
-          "DFY case-study placeholder page. Verified proof will be added after client approval.",
-        )}
-      />
+      <JsonLd data={webPageSchema(path, study.title, study.metaDescription)} />
+      <JsonLd data={articleSchema} />
+      {reviewSchema ? <JsonLd data={reviewSchema} /> : null}
       <JsonLd
         data={breadcrumbSchema([
           { name: "Home", path: "/" },
           { name: "Results", path: "/results" },
-          { name: story.title, path: story.href },
+          { name: study.brand, path },
         ])}
       />
-      <Hero
-        eyebrow={story.eyebrow}
-        title={`${story.title}: verified story placeholder.`}
-        subtitle={story.summary}
-        primaryCta={{ label: "Request Your Audit", href: "/#free-audit-form" }}
-        secondaryCta={{ label: "Back to Results", href: "/results" }}
-      >
-        <ProofPlaceholder />
-      </Hero>
 
-      <Section tone="white" eyebrow="Project summary" title="What this page will include after approval.">
-        <div className="grid gap-5 md:grid-cols-3">
-          <ServiceCard title="Challenge" description={story.challenge} index={0} />
-          <ServiceCard title="What DFY did" description={story.work} index={1} />
-          <ServiceCard title="Results placeholder" description={story.result} index={2} />
+      <section className="bg-[#fbfbf8] py-16 text-[#050505] sm:py-20">
+        <div className="container-wide grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-center">
+          <div>
+            <div className="flex flex-wrap items-center gap-3">
+              <p className="eyebrow text-[#164E50]">{study.sector}</p>
+              {study.badge ? (
+                <span className="rounded-full bg-[#164E50] px-3 py-1 text-xs font-semibold text-white">
+                  {study.badge}
+                </span>
+              ) : null}
+            </div>
+            <h1 className="mt-5 text-[clamp(2.3rem,5.5vw,4rem)] font-black leading-[1.02] tracking-[-0.04em]">
+              {study.title}
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-[#465163]">{study.summary}</p>
+            <div className="mt-8 grid gap-3 sm:grid-cols-3">
+              {study.metrics.map((metric) => (
+                <div key={metric.label} className="rounded-[12px] border border-[#CDEECD] bg-white p-4">
+                  <p className="text-2xl font-black tracking-[-0.03em] text-[#164E50]">{metric.value}</p>
+                  <p className="mt-1 text-sm leading-5 text-[#465163]">{metric.label}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <ButtonLink href="/free-audit" variant="primary">Get Free Audit</ButtonLink>
+              <ButtonLink href="/results" variant="secondary">Back to Results</ButtonLink>
+            </div>
+          </div>
+          <div className="overflow-hidden rounded-[18px] border border-[#0d3a3c] bg-[#0e3d3f] p-3 shadow-[0_22px_70px_rgba(22,78,80,0.18)]">
+            <Image
+              src={study.heroImage.src}
+              alt={study.heroImage.alt}
+              width={1200}
+              height={750}
+              className="h-auto w-full rounded-[12px]"
+              priority
+            />
+          </div>
+        </div>
+      </section>
+
+      <Section tone="white" eyebrow="The challenge" title={`What ${study.brand} was up against`}>
+        <div className="max-w-3xl text-lg leading-8 text-[#465163]">
+          <p>{study.challenge}</p>
         </div>
       </Section>
 
-      <Section
-        eyebrow="Proof placeholder"
-        title="Screenshots and evidence will be added only when verified."
-        intro="This section is intentionally reserved. It can later hold approved ad account screenshots, CRM views, before/after notes, and client-approved context."
-      >
-        <div className="rounded-[18px] border border-[#dfe6df] bg-white p-6 shadow-[0_18px_45px_rgba(5,5,5,0.06)]">
-          <div className="grid gap-4 md:grid-cols-3">
-            {["Ad account screenshot", "CRM lead quality view", "Approved result notes"].map((label) => (
-              <div key={label} className="grid min-h-[180px] place-items-center rounded-sm border border-[#050505]/12 bg-[#f6f5f1] p-5 text-center">
-                <p className="text-sm font-black uppercase tracking-[0.16em] text-[#164E50]">{label}</p>
+      <Section tone="light" eyebrow="What DFY did" title="The approach">
+        <div className="grid gap-4 md:grid-cols-2">
+          {study.approach.map((step, index) => (
+            <article key={step} className="rounded-[14px] border border-[#dfe9dc] bg-white p-5 shadow-[0_18px_45px_rgba(5,5,5,0.05)]">
+              <p className="text-sm font-black text-[#164E50]">{String(index + 1).padStart(2, "0")}</p>
+              <p className="mt-3 text-base leading-7 text-[#465163]">{step}</p>
+            </article>
+          ))}
+        </div>
+      </Section>
+
+      <section className="bg-[#0e3d3f] py-16 text-white sm:py-20">
+        <div className="container-wide">
+          <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#88DE7B]">The results</p>
+          <h2 className="mt-5 max-w-3xl text-[clamp(2rem,5vw,3.2rem)] font-black leading-[1.05] tracking-[-0.04em]">
+            {study.result}
+          </h2>
+          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+            {study.metrics.map((metric) => (
+              <div key={metric.label} className="rounded-[14px] border border-white/12 bg-white/[0.04] p-6">
+                <p className="text-[clamp(2rem,5vw,3rem)] font-black leading-none tracking-[-0.04em] text-[#88DE7B]">{metric.value}</p>
+                <p className="mt-3 text-base leading-6 text-white/75">{metric.label}</p>
               </div>
             ))}
           </div>
-        </div>
-      </Section>
 
-      <Section tone="white" eyebrow="Related case studies" title="More approved story slots.">
-        <div className="grid gap-5 md:grid-cols-2">
-          {relatedStories.map((related, index) => (
+          {study.proofImages.length > 0 || study.quote ? (
+            <div className="mt-10 grid gap-6 lg:grid-cols-[1.4fr_1fr] lg:items-center">
+              {study.proofImages.length > 0 ? (
+                <div className="overflow-hidden rounded-[16px] border border-white/10 bg-white/[0.03] p-3">
+                  <Image
+                    src={study.proofImages[0].src}
+                    alt={study.proofImages[0].alt}
+                    width={1200}
+                    height={700}
+                    className="h-auto w-full rounded-[10px]"
+                  />
+                </div>
+              ) : null}
+              {study.quote ? (
+                <blockquote className="rounded-[16px] border border-white/12 bg-white/[0.04] p-7">
+                  <p className="text-xl font-medium leading-8 text-white">&ldquo;{study.quote.text}&rdquo;</p>
+                  <footer className="mt-5 text-sm font-medium text-[#88DE7B]">
+                    {study.quote.name}
+                    <span className="text-white/60"> &middot; {study.quote.role}</span>
+                  </footer>
+                </blockquote>
+              ) : null}
+            </div>
+          ) : null}
+        </div>
+      </section>
+
+      <Section tone="white" eyebrow="More results" title="Other DFY case studies">
+        <div className="grid gap-5 md:grid-cols-3">
+          {related.map((item) => (
             <Link
-              key={related.slug}
-              href={related.href}
-              className="rounded-sm border border-[#050505]/12 bg-white p-6 shadow-[0_18px_45px_rgba(5,5,5,0.06)] transition hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(5,5,5,0.09)]"
+              key={item.slug}
+              href={`/results/${item.slug}`}
+              className="group flex flex-col rounded-sm border border-[#050505]/12 bg-white p-6 shadow-[0_18px_45px_rgba(5,5,5,0.06)] transition hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(5,5,5,0.09)]"
             >
-              <p className="text-sm font-black text-[#164E50]">{String(index + 1).padStart(2, "0")}</p>
-              <h2 className="mt-8 text-3xl font-black leading-none">{related.title}</h2>
-              <p className="mt-5 text-base leading-7 text-[#4b4b4b]">{related.summary}</p>
-              <span className="mt-8 inline-flex text-sm font-black text-[#164E50]">Open related story</span>
+              <p className="text-xs font-black uppercase tracking-[0.16em] text-[#164E50]">{item.sector}</p>
+              <h3 className="mt-4 text-2xl font-black leading-tight tracking-[-0.02em]">{item.brand}</h3>
+              <p className="mt-3 text-sm font-semibold text-[#164E50]">{item.cardMetric}</p>
+              <p className="mt-3 text-sm leading-6 text-[#4b4b4b]">{item.summary}</p>
+              <span className="mt-auto inline-flex pt-6 text-sm font-black text-[#164E50] transition group-hover:text-[#050505]">
+                Read case study
+              </span>
             </Link>
           ))}
         </div>
       </Section>
 
       <CTASection
-        title="Want a clear view of your own lead quality?"
-        text="Book a free audit and we will show you where your current acquisition system is leaking."
-        buttonLabel="Request Your Free Audit"
-        buttonHref="/#free-audit-form"
+        title={`Want results like ${study.brand}?`}
+        text="Get a free audit and we will review your ads, landing page, tracking, and CRM feedback loop, and show you where qualified pipeline is leaking."
+        buttonLabel="Get Free Audit"
+        buttonHref="/free-audit"
       />
     </>
-  );
-}
-
-function ProofPlaceholder() {
-  return (
-    <div className="rounded-[18px] border border-[#dfe6df] bg-[#fbfbf8] p-6 shadow-[0_22px_70px_rgba(15,23,42,0.06)]">
-      <p className="text-sm font-medium uppercase tracking-[0.16em] text-[#164E50]">Honest proof slot</p>
-      <div className="mt-6 grid gap-3">
-        {["Client or project context", "Challenge and diagnosis", "Approved screenshots", "Verified outcome"].map((item) => (
-          <div key={item} className="rounded-sm border border-[#050505]/12 bg-white px-4 py-3 text-sm font-semibold text-[#465163]">
-            {item}
-          </div>
-        ))}
-      </div>
-    </div>
   );
 }
