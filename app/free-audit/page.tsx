@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { AuditForm } from "@/components/AuditForm";
+import { AuditStartCard } from "@/components/AuditStartCard";
 import { ButtonLink } from "@/components/ButtonLink";
 import { CTASection } from "@/components/CTASection";
 import { Hero } from "@/components/Hero";
@@ -110,7 +110,7 @@ export default function GetFreeLeadQualityAuditPage() {
               </p>
             </div>
           </div>
-          <AuditForm />
+          <AuditStartCard />
         </div>
       </section>
 
