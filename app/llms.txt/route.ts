@@ -208,6 +208,36 @@ const pages = [
       "How to feed CRM sales outcomes back to Meta and Google through the Conversions API and offline conversions so the algorithm finds buyers, not form fillers.",
   },
   {
+    title: "How to Evaluate a Marketing Agency's Case Studies",
+    path: "/resources/blog/how-to-evaluate-marketing-agency-case-studies",
+    description:
+      "How to separate vanity metrics from real business outcomes in an agency's case studies, the exact questions to ask, and the red flags that hide weak results.",
+  },
+  {
+    title: "What Media Buying Expertise Looks Like in a B2B Ads Agency",
+    path: "/resources/blog/media-buying-expertise-b2b-ads-agency",
+    description:
+      "The account structure, conversion tracking depth via the Conversions API, and creative testing that separate a real B2B media buyer from a button pusher.",
+  },
+  {
+    title: "Full-Service vs Ads-Only Marketing Agency",
+    path: "/resources/blog/full-service-vs-ads-only-marketing-agency",
+    description:
+      "Lead quality is a connected system, so an ads-only agency cannot fix leaks on the landing page or in the CRM. When full-service wins and when a specialist is enough.",
+  },
+  {
+    title: "Deal Size and Sales Cycle: Choosing an Agency",
+    path: "/resources/blog/deal-size-sales-cycle-choosing-agency",
+    description:
+      "Why high-ticket, long-cycle B2B accounts need pipeline tracking rather than same-day ROAS, and how to pick an agency that fits your deal economics.",
+  },
+  {
+    title: "Do Meta Business Partner and Google Partner Badges Matter?",
+    path: "/resources/blog/do-meta-google-partner-badges-matter",
+    description:
+      "What the Meta Business Partner and Google Partner badges require, what they signal, what they do not guarantee, and how to use them as one filter among several.",
+  },
+  {
     title: "Company",
     path: "/company",
     description:

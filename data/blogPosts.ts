@@ -66,6 +66,46 @@ export const blogPosts: BlogPost[] = [
     date: "2026-06-27",
   },
   {
+    title: "How to Evaluate a Marketing Agency's Case Studies",
+    description:
+      "How to tell real proof from vanity metrics in an agency's case studies, the questions to ask, and the red flags that hide weak results.",
+    href: "/resources/blog/how-to-evaluate-marketing-agency-case-studies",
+    category: "Agency selection",
+    date: "2026-06-28",
+  },
+  {
+    title: "What Media Buying Expertise Looks Like in an Agency",
+    description:
+      "Beyond running ads: the account structure, conversion tracking depth, and creative testing that separate a real B2B media buyer from a button pusher.",
+    href: "/resources/blog/media-buying-expertise-b2b-ads-agency",
+    category: "Agency selection",
+    date: "2026-06-28",
+  },
+  {
+    title: "Full-Service vs Ads-Only Marketing Agency",
+    description:
+      "Lead quality is a connected system, so an ads-only agency cannot fix leaks on your page or in your CRM. When full-service wins and when a specialist is enough.",
+    href: "/resources/blog/full-service-vs-ads-only-marketing-agency",
+    category: "Agency selection",
+    date: "2026-06-28",
+  },
+  {
+    title: "Deal Size and Sales Cycle: Choosing an Agency",
+    description:
+      "Why high-ticket, long-cycle B2B accounts need pipeline tracking, not same-day ROAS, and how to pick an agency that fits your economics.",
+    href: "/resources/blog/deal-size-sales-cycle-choosing-agency",
+    category: "Agency selection",
+    date: "2026-06-28",
+  },
+  {
+    title: "Do Meta and Google Partner Badges Matter?",
+    description:
+      "What Meta Business Partner and Google Partner badges actually require, what they signal, what they do not guarantee, and how to use them as a filter.",
+    href: "/resources/blog/do-meta-google-partner-badges-matter",
+    category: "Agency selection",
+    date: "2026-06-28",
+  },
+  {
     title: "Real Estate Lead Generation in India: Qualified Buyer Leads",
     description:
       "How to get qualified real estate buyer leads from Meta and Google Ads in India, qualify them early, and book more site visits.",
