@@ -1,5 +1,6 @@
 "use client";
 
+import { sendGAEvent } from "@next/third-parties/google";
 import { useState } from "react";
 
 type Status = "idle" | "loading" | "success" | "error";
@@ -17,7 +18,18 @@ export function AuditStartCard() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-      setStatus(res.ok ? "success" : "error");
+      if (res.ok) {
+        // GA4 lead-conversion event. Mark "generate_lead" as a Key Event in
+        // GA4 Admin so form submissions show up as conversions.
+        sendGAEvent("event", "generate_lead", {
+          form_location: "audit_start_card",
+          monthly_ad_spend: typeof data.monthlyAdSpend === "string" ? data.monthlyAdSpend : "",
+          vertical: typeof data.vertical === "string" ? data.vertical : "",
+        });
+        setStatus("success");
+      } else {
+        setStatus("error");
+      }
     } catch {
       setStatus("error");
     }
