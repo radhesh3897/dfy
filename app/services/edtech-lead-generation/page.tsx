@@ -7,7 +7,7 @@ import { breadcrumbSchema, faqSchema, serviceSchema, webPageSchema } from "@/lib
 import { pageMetadata } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
-  title: "EdTech Lead Generation Agency India | Done For You",
+  title: "EdTech Lead Generation Agency India: More Enrolments",
   description:
     "Done For You builds Meta Ads and Google Ads systems for EdTech companies in India that generate qualified enrolment leads, reduce CPL, and improve show-up rates.",
   path: "/services/edtech-lead-generation",

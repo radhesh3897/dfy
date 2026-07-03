@@ -10,7 +10,7 @@ import { pageMetadata } from "@/lib/site";
 
 const path = "/resources/blog/b2b-lead-generation-benchmarks-india";
 const description =
-  "Real B2B lead generation benchmarks for India in 2026. CPL ranges by sector, conversion rates, and what good performance actually looks like on Meta Ads and Google Ads.";
+  "What is a good CPL and conversion rate for B2B lead generation in India? Real 2026 benchmarks by sector on Meta and Google Ads, and how to beat them.";
 
 export const metadata: Metadata = pageMetadata({
   title: "B2B Lead Generation Benchmarks India 2026",

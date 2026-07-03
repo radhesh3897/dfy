@@ -7,7 +7,7 @@ import { breadcrumbSchema, serviceSchema, webPageSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Gym Lead Generation Agency India | Done For You",
+  title: "Gym Lead Generation Agency in India: Fill Classes",
   description:
     "Done For You builds Meta Ads and Google Ads systems for gyms and fitness studios in India that generate qualified membership leads and reduce cost per member acquisition.",
   path: "/services/gym-lead-generation",
