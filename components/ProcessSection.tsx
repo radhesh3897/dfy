@@ -194,7 +194,7 @@ function StrategyVisual() {
               <span className="h-3 overflow-hidden rounded-full bg-[#EEF8EE]">
                 <span className="block h-full rounded-full bg-[#164E50]" style={{ width: bar.width }} />
               </span>
-              <span className="text-right text-[#242a33]">TBD</span>
+              <span className="text-right text-[#242a33]">Tracked</span>
             </div>
           ))}
         </div>
@@ -237,7 +237,7 @@ function LaunchVisual() {
                 <span key={`${campaign}-${index}`} className="w-2 rounded-t-sm bg-[#CDEECD]" style={{ height }} />
               ))}
             </div>
-            <p className="text-sm font-medium text-[#164E50]">TBD</p>
+            <p className="text-sm font-medium text-[#164E50]">Tracked</p>
           </div>
         </div>
       ))}
@@ -246,7 +246,7 @@ function LaunchVisual() {
         {["Spend", "Signals", "Quality"].map((metric) => (
           <div key={metric} className="rounded-[12px] border border-[#dfe6df] bg-white p-4 lg:p-3 xl:p-4">
             <p className="text-xs text-[#667085]">{metric}</p>
-            <p className="mt-2 text-lg font-medium text-[#111827]">TBD</p>
+            <p className="mt-2 text-lg font-medium text-[#111827]">Tracked</p>
           </div>
         ))}
       </div>

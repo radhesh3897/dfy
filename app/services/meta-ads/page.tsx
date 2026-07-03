@@ -488,7 +488,7 @@ function CampaignPerformanceCard() {
         {["Leads", "Qualified", "Cost/customer", "Booked calls"].map((metric) => (
           <div key={metric} className="rounded-[12px] border border-[#e4e8e5] bg-white p-3">
             <p className="text-xs font-medium text-[#667085]">{metric}</p>
-            <p className="mt-2 text-2xl font-medium tracking-[-0.04em] text-[#164E50]">TBD</p>
+            <p className="mt-2 text-2xl font-medium tracking-[-0.04em] text-[#164E50]">Tracked</p>
           </div>
         ))}
       </div>
@@ -757,10 +757,10 @@ function ResultsProofSection() {
             Proof placeholders
           </p>
           <h2 className="mt-7 text-[clamp(2.35rem,6.5vw,4.5rem)] font-medium leading-[1.02] tracking-[-0.055em]">
-            The proof will live in the pipeline.
+            The proof is in the pipeline.
           </h2>
           <p className="mx-auto mt-5 max-w-[760px] text-lg leading-8 text-[#465163] sm:text-xl">
-            Real project stories will be added only after approval. Until then, this section shows the structure for future Meta Ads breakdowns.
+            Here is a real Meta Ads result. You can see more on our results page.
           </p>
         </header>
 
@@ -768,23 +768,27 @@ function ResultsProofSection() {
           <article className="rounded-[18px] border border-[#dfe6df] bg-white p-6 shadow-[0_22px_70px_rgba(22,78,80,0.07)] lg:p-8">
             <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
               <div>
-                <p className="text-sm font-medium uppercase tracking-[0.14em] text-[#164E50]">Meta Ads case study slot</p>
+                <p className="text-sm font-medium uppercase tracking-[0.14em] text-[#164E50]">Meta Ads case study</p>
                 <h3 className="mt-6 text-[clamp(2rem,5vw,3.2rem)] font-medium leading-[1.08] tracking-[-0.055em]">
-                  Verified performance story will be added after audit/project review.
+                  TalentZ: qualified leads from 23% to 63% tapping overseas markets.
                 </h3>
                 <p className="mt-5 text-lg leading-8 text-[#465163]">
-                  This space is reserved for approved results, project context, and customer-safe details. No fake results are being shown.
+                  TalentZ wanted to reach overseas markets like Canada, but only 23% of leads were qualified. We targeted overseas intent, tightened qualification, and captured every new sign-up in real time, turning ₹1.34L of ad spend into ₹6.45L in revenue.
                 </p>
                 <div className="mt-8 grid gap-4 sm:grid-cols-3">
-                  {["Qualified leads", "Cost/customer", "Revenue signal"].map((item) => (
+                  {[
+                    ["23% → 63%", "Qualified leads"],
+                    ["4.8×", "ROI"],
+                    ["₹6.45L", "Revenue on ₹1.34L spend"],
+                  ].map(([value, item]) => (
                     <div key={item} className="rounded-[12px] border border-[#CDEECD] bg-[#fbfdf9] p-4">
-                      <p className="text-3xl font-medium tracking-[-0.05em] text-[#164E50]">TBD</p>
+                      <p className="text-3xl font-medium tracking-[-0.05em] text-[#164E50]">{value}</p>
                       <p className="mt-2 text-sm leading-5 text-[#465163]">{item}</p>
                     </div>
                   ))}
                 </div>
-                <ButtonLink href="/#free-audit-form" className="mt-8 min-h-[56px] rounded-md px-7 text-base">
-                  Request audit
+                <ButtonLink href="/results/talentz" className="mt-8 min-h-[56px] rounded-md px-7 text-base">
+                  Read the TalentZ case study
                   <span className="ml-3" aria-hidden="true">-&gt;</span>
                 </ButtonLink>
               </div>
@@ -792,7 +796,7 @@ function ResultsProofSection() {
                 <CreativePattern />
                 <div className="absolute bottom-6 left-6 right-6 rounded-[12px] border border-[#CDEECD] bg-white p-5 shadow-[0_18px_45px_rgba(22,78,80,0.14)]">
                   <p className="text-sm font-medium text-[#465163]">Lead quality score</p>
-                  <p className="mt-2 text-5xl font-medium tracking-[-0.06em] text-[#164E50]">TBD</p>
+                  <p className="mt-2 text-5xl font-medium tracking-[-0.06em] text-[#164E50]">63%</p>
                   <div className="mt-4 h-3 rounded-full bg-[#EEF8EE]">
                     <div className="h-full w-2/3 rounded-full bg-[#88DE7B]" />
                   </div>
@@ -870,7 +874,7 @@ function WhyChooseSection() {
 function PlaceholderMetric({ label, centered = false }: { label: string; centered?: boolean }) {
   return (
     <div className={centered ? "text-center" : ""}>
-      <p className="text-[clamp(2.5rem,6vw,4rem)] font-medium leading-none tracking-[-0.06em] text-[#164E50]">TBD</p>
+      <p className="text-[clamp(2.5rem,6vw,4rem)] font-medium leading-none tracking-[-0.06em] text-[#164E50]">Tracked</p>
       <p className="mt-2 text-base leading-6 text-[#465163]">{label}</p>
     </div>
   );
@@ -986,7 +990,7 @@ function CampaignOverview() {
         {["New leads", "Cost/lead", "Booked jobs", "Revenue"].map((item) => (
           <div key={item} className="rounded-[10px] border border-[#e4e8e5] p-3">
             <p className="text-xs text-[#667085]">{item}</p>
-            <p className="mt-2 text-xl font-medium text-[#164E50]">TBD</p>
+            <p className="mt-2 text-xl font-medium text-[#164E50]">Tracked</p>
           </div>
         ))}
       </div>

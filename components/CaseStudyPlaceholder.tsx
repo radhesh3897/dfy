@@ -157,7 +157,7 @@ function AuditCta({ className = "" }: { className?: string }) {
       href="/#free-audit-form"
       className={`inline-flex min-h-[52px] items-center justify-center rounded-md bg-[#164E50] px-6 text-base font-medium text-white shadow-[0_18px_36px_rgba(136,222,123,0.26)] transition hover:bg-[#103D3F] ${className}`}
     >
-      Request audit <span aria-hidden="true" className="ml-2">&rarr;</span>
+      Book a Call <span aria-hidden="true" className="ml-2">&rarr;</span>
     </Link>
   );
 }
