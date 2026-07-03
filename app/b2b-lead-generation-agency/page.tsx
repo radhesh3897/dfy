@@ -11,7 +11,7 @@ import { pageMetadata } from "@/lib/site";
 import { CaseStudyHighlight } from "@/components/CaseStudyHighlight";
 
 export const metadata: Metadata = pageMetadata({
-  title: "B2B Lead Generation Agency for Sales-Ready Conversations",
+  title: "B2B Lead Generation Company for Sales-Ready Conversations",
   description:
     "A B2B lead generation agency building paid ad campaigns, landing pages, lead qualification, CRM setup, nurture flows, and sales feedback loops.",
   path: "/b2b-lead-generation-agency",
