@@ -12,10 +12,10 @@ import { pageMetadata } from "@/lib/site";
 const path = "/resources/blog/b2b-meta-ads-agency-cost-india";
 
 const description =
-  "Meta ads agency cost in India explained: management fee vs ad budget, real rupee ranges by tier, pricing models, and what changes the price.";
+  "How much do Meta ads cost in India? Real 2026 price ranges: ad spend vs agency fees, minimum budget, GST, and what actually changes the price.";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Meta Ads Agency Cost in India: Real Rupee Ranges",
+  title: "Meta Ads Cost in India: Price, Budget & Agency Fees",
   description,
   path,
 });
