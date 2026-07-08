@@ -2,12 +2,50 @@ import { Resend } from "resend";
 import { NextRequest, NextResponse } from "next/server";
 
 const TO_EMAIL = "radhesh3897@gmail.com";
+const INGEST_URL = "https://rkmngnkgesteohigvsxe.supabase.co/functions/v1/ingest-lead";
+
+// Normalise an India-first phone number to E.164 (+<country><number>).
+function normalizePhone(raw: string): string | null {
+  const digits = (raw || "").replace(/\D/g, "");
+  if (!digits) return null;
+  const d = digits.length === 10 ? "91" + digits : digits; // assume India if 10 digits
+  return d.length >= 11 ? "+" + d : null;
+}
+
+// Push a website lead into the WABA CRM (creates the contact, fires the WhatsApp
+// welcome + alert). Best-effort — never blocks the form response or the email.
+async function pushToWabaCrm(body: Record<string, unknown>, isHomepageForm: boolean) {
+  const phone = normalizePhone((body.phoneNumber as string) || (body.phone as string) || "");
+  if (!phone) return; // no WhatsApp number → can't create a WhatsApp contact
+  try {
+    await fetch(INGEST_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "x-ingest-secret": process.env.INGEST_SECRET ?? "" },
+      body: JSON.stringify({
+        phone,
+        name: (body.businessName as string) || (body.name as string) || undefined,
+        company: (body.businessName as string) || (body.company as string) || undefined,
+        email: (body.email as string) || undefined,
+        source: isHomepageForm ? "Website - Homepage" : "Website - Free Audit",
+        monthly_ad_spend: (body.monthlyAdSpend as string) || (body.adSpend as string) || undefined,
+        vertical: (body.vertical as string) || undefined,
+        website: (body.website as string) || undefined,
+        main_problem: (body.mainProblem as string) || undefined,
+      }),
+    });
+  } catch (e) {
+    console.error("WABA ingest failed", e);
+  }
+}
 
 export async function POST(request: NextRequest) {
   const resend = new Resend(process.env.RESEND_API_KEY);
   try {
     const body = await request.json();
     const isHomepageForm = "businessName" in body;
+
+    // Fire the CRM push (awaited but wrapped so it can't break the form).
+    await pushToWabaCrm(body, isHomepageForm);
 
     const subject = isHomepageForm
       ? `New Call Booking — ${body.businessName || "Unknown"}`
