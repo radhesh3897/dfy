@@ -5,13 +5,30 @@ import { useState } from "react";
 
 type Status = "idle" | "loading" | "success" | "error";
 
+// [country abbreviation, dial code]. India is the default selection.
+const COUNTRY_CODES: [string, string][] = [
+  ["IN", "+91"], ["US", "+1"], ["CA", "+1"], ["GB", "+44"], ["AU", "+61"],
+  ["AE", "+971"], ["SA", "+966"], ["QA", "+974"], ["KW", "+965"], ["OM", "+968"],
+  ["BH", "+973"], ["SG", "+65"], ["MY", "+60"], ["ID", "+62"], ["PH", "+63"],
+  ["TH", "+66"], ["VN", "+84"], ["LK", "+94"], ["BD", "+880"], ["NP", "+977"],
+  ["PK", "+92"], ["NZ", "+64"], ["DE", "+49"], ["FR", "+33"], ["IT", "+39"],
+  ["ES", "+34"], ["NL", "+31"], ["IE", "+353"], ["SE", "+46"], ["CH", "+41"],
+  ["ZA", "+27"], ["NG", "+234"], ["KE", "+254"], ["EG", "+20"], ["BR", "+55"],
+  ["MX", "+52"], ["JP", "+81"], ["CN", "+86"], ["HK", "+852"], ["KR", "+82"],
+];
+
 export function AuditStartCard() {
   const [status, setStatus] = useState<Status>("idle");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("loading");
-    const data = Object.fromEntries(new FormData(e.currentTarget));
+    const data = Object.fromEntries(new FormData(e.currentTarget)) as Record<string, string>;
+    // Combine the chosen country code with the local number into one value.
+    const countryCode = data.countryCode || "+91";
+    const localDigits = (data.phoneNumber || "").replace(/\D/g, "").replace(/^0+/, "");
+    data.phoneNumber = `${countryCode}${localDigits}`;
+    delete data.countryCode;
     try {
       const res = await fetch("/api/audit-submit", {
         method: "POST",
@@ -94,6 +111,19 @@ export function AuditStartCard() {
               />
             </label>
             <label className="grid gap-3 text-base font-medium text-[#111827]">
+              Are you running Meta or Google Ads?
+              <select
+                name="runningAds"
+                required
+                defaultValue=""
+                className="min-h-[56px] rounded-md border border-[#cfd6e2] bg-white px-4 text-base font-normal text-[#111827] outline-none transition focus:border-[#164E50] focus:ring-4 focus:ring-[#164E50]/10 sm:min-h-[62px] sm:px-5 sm:text-lg"
+              >
+                <option value="" disabled>Select yes or no</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </label>
+            <label className="grid gap-3 text-base font-medium text-[#111827]">
               Monthly Ad Spend
               <select
                 name="monthlyAdSpend"
@@ -126,13 +156,27 @@ export function AuditStartCard() {
             </label>
             <label className="grid gap-3 text-base font-medium text-[#111827]">
               Phone Number
-              <input
-                name="phoneNumber"
-                type="tel"
-                required
-                placeholder="+91 98765 43210"
-                className="min-h-[56px] rounded-md border border-[#cfd6e2] bg-white px-4 text-base font-normal text-[#111827] outline-none transition placeholder:text-[#7b8494] focus:border-[#164E50] focus:ring-4 focus:ring-[#164E50]/10 sm:min-h-[62px] sm:px-5 sm:text-lg"
-              />
+              <div className="flex gap-3">
+                <select
+                  name="countryCode"
+                  defaultValue="+91"
+                  aria-label="Country code"
+                  className="min-h-[56px] w-[104px] shrink-0 rounded-md border border-[#cfd6e2] bg-white px-3 text-base font-normal text-[#111827] outline-none transition focus:border-[#164E50] focus:ring-4 focus:ring-[#164E50]/10 sm:min-h-[62px] sm:text-lg"
+                >
+                  {COUNTRY_CODES.map(([country, code]) => (
+                    <option key={`${country}-${code}`} value={code}>
+                      {country} {code}
+                    </option>
+                  ))}
+                </select>
+                <input
+                  name="phoneNumber"
+                  type="tel"
+                  required
+                  placeholder="98765 43210"
+                  className="min-h-[56px] w-full rounded-md border border-[#cfd6e2] bg-white px-4 text-base font-normal text-[#111827] outline-none transition placeholder:text-[#7b8494] focus:border-[#164E50] focus:ring-4 focus:ring-[#164E50]/10 sm:min-h-[62px] sm:px-5 sm:text-lg"
+                />
+              </div>
             </label>
             {status === "error" && (
               <p className="text-sm text-red-600">Something went wrong. Please try again or WhatsApp us directly.</p>
