@@ -59,7 +59,20 @@ export function AuditStartCard() {
           <h2 className="mt-7 text-2xl font-medium tracking-[-0.03em] text-[#111827] sm:mt-8 sm:text-3xl">
             Book a Call
           </h2>
-          <form className="mt-7 grid gap-5 sm:mt-8 sm:gap-6" onSubmit={handleSubmit}>
+          <p className="mt-3 text-sm leading-6 text-[#5f6877]">
+            We run your Meta and Google Ads to generate your own leads. We do not sell leads, lead lists, or databases.
+          </p>
+          <form className="mt-6 grid gap-5 sm:mt-7 sm:gap-6" onSubmit={handleSubmit}>
+            <label className="grid gap-3 text-base font-medium text-[#111827]">
+              Full Name
+              <input
+                name="fullName"
+                type="text"
+                required
+                placeholder="Your name"
+                className="min-h-[56px] rounded-md border border-[#cfd6e2] bg-white px-4 text-base font-normal text-[#111827] outline-none transition placeholder:text-[#7b8494] focus:border-[#164E50] focus:ring-4 focus:ring-[#164E50]/10 sm:min-h-[62px] sm:px-5 sm:text-lg"
+              />
+            </label>
             <label className="grid gap-3 text-base font-medium text-[#111827]">
               Business Name
               <input
@@ -67,6 +80,16 @@ export function AuditStartCard() {
                 type="text"
                 required
                 placeholder="Your business name"
+                className="min-h-[56px] rounded-md border border-[#cfd6e2] bg-white px-4 text-base font-normal text-[#111827] outline-none transition placeholder:text-[#7b8494] focus:border-[#164E50] focus:ring-4 focus:ring-[#164E50]/10 sm:min-h-[62px] sm:px-5 sm:text-lg"
+              />
+            </label>
+            <label className="grid gap-3 text-base font-medium text-[#111827]">
+              Email
+              <input
+                name="email"
+                type="email"
+                required
+                placeholder="you@company.com"
                 className="min-h-[56px] rounded-md border border-[#cfd6e2] bg-white px-4 text-base font-normal text-[#111827] outline-none transition placeholder:text-[#7b8494] focus:border-[#164E50] focus:ring-4 focus:ring-[#164E50]/10 sm:min-h-[62px] sm:px-5 sm:text-lg"
               />
             </label>

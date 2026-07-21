@@ -23,7 +23,7 @@ async function pushToWabaCrm(body: Record<string, unknown>, isHomepageForm: bool
       headers: { "Content-Type": "application/json", "x-ingest-secret": process.env.INGEST_SECRET ?? "" },
       body: JSON.stringify({
         phone,
-        name: (body.businessName as string) || (body.name as string) || undefined,
+        name: (body.fullName as string) || (body.businessName as string) || (body.name as string) || undefined,
         company: (body.businessName as string) || (body.company as string) || undefined,
         email: (body.email as string) || undefined,
         source: isHomepageForm ? "Website - Homepage" : "Website - Free Audit",
@@ -48,12 +48,14 @@ export async function POST(request: NextRequest) {
     await pushToWabaCrm(body, isHomepageForm);
 
     const subject = isHomepageForm
-      ? `New Call Booking — ${body.businessName || "Unknown"}`
+      ? `New Call Booking — ${body.fullName || body.businessName || "Unknown"}`
       : `New Call Booking — ${body.name || "Unknown"} (${body.company || "Unknown"})`;
 
     const rows: [string, string][] = isHomepageForm
       ? [
+          ["Name", body.fullName],
           ["Business Name", body.businessName],
+          ["Email", body.email],
           ["Monthly Ad Spend", body.monthlyAdSpend],
           ["Vertical", body.vertical],
           ["Phone Number", body.phoneNumber],
