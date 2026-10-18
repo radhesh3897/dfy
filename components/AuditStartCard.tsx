@@ -17,7 +17,7 @@ const COUNTRY_CODES: [string, string][] = [
   ["MX", "+52"], ["JP", "+81"], ["CN", "+86"], ["HK", "+852"], ["KR", "+82"],
 ];
 
-export function AuditStartCard() {
+export function AuditStartCard({ sourcePath = "/" }: { sourcePath?: "/" | "/free-audit" }) {
   const [status, setStatus] = useState<Status>("idle");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -40,6 +40,7 @@ export function AuditStartCard() {
         // GA4 Admin so form submissions show up as conversions.
         sendGAEvent("event", "generate_lead", {
           form_location: "audit_start_card",
+          source_path: sourcePath,
           monthly_ad_spend: typeof data.monthlyAdSpend === "string" ? data.monthlyAdSpend : "",
           vertical: typeof data.vertical === "string" ? data.vertical : "",
         });
@@ -80,6 +81,7 @@ export function AuditStartCard() {
             We run your Meta and Google Ads to generate your own leads. We do not sell leads, lead lists, or databases.
           </p>
           <form className="mt-6 grid gap-5 sm:mt-7 sm:gap-6" onSubmit={handleSubmit}>
+            <input type="hidden" name="sourcePath" value={sourcePath} />
             <label className="grid gap-3 text-base font-medium text-[#111827]">
               Full Name
               <input
@@ -172,9 +174,12 @@ export function AuditStartCard() {
                 <input
                   name="phoneNumber"
                   type="tel"
+                  aria-label="Phone number"
+                  autoComplete="tel-national"
+                  maxLength={20}
                   required
                   placeholder="98765 43210"
-                  className="min-h-[56px] w-full rounded-md border border-[#cfd6e2] bg-white px-4 text-base font-normal text-[#111827] outline-none transition placeholder:text-[#7b8494] focus:border-[#164E50] focus:ring-4 focus:ring-[#164E50]/10 sm:min-h-[62px] sm:px-5 sm:text-lg"
+                  className="min-h-[56px] min-w-0 w-full rounded-md border border-[#cfd6e2] bg-white px-4 text-base font-normal text-[#111827] outline-none transition placeholder:text-[#7b8494] focus:border-[#164E50] focus:ring-4 focus:ring-[#164E50]/10 sm:min-h-[62px] sm:px-5 sm:text-lg"
                 />
               </div>
             </label>
