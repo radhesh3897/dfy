@@ -15,11 +15,11 @@ type Route = {
 };
 
 const routes: Route[] = [
-  { path: "/", changeFrequency: "weekly", priority: 1 },
+  { path: "/", changeFrequency: "weekly", priority: 1, lastModified: "2026-10-19" },
   { path: "/b2b-lead-generation-agency", changeFrequency: "monthly", priority: 0.85 },
   { path: "/services/meta-ads", changeFrequency: "monthly", priority: 0.85 },
   { path: "/services/google-ads", changeFrequency: "monthly", priority: 0.85 },
-  { path: "/services/b2b-meta-ads-agency", changeFrequency: "monthly", priority: 0.84 },
+  { path: "/services/b2b-meta-ads-agency", changeFrequency: "monthly", priority: 0.84, lastModified: "2026-10-19" },
   { path: "/services/crm-tracking-nurture", changeFrequency: "monthly", priority: 0.82 },
   { path: "/services/landing-page-cro", changeFrequency: "monthly", priority: 0.82 },
   { path: "/services/edtech-lead-generation", changeFrequency: "monthly", priority: 0.8 },
@@ -27,12 +27,12 @@ const routes: Route[] = [
   { path: "/services/clinic-lead-generation", changeFrequency: "monthly", priority: 0.8 },
   { path: "/lead-quality-improvement", changeFrequency: "monthly", priority: 0.82 },
   { path: "/results", changeFrequency: "monthly", priority: 0.78 },
-  { path: "/results/hobfit", changeFrequency: "monthly", priority: 0.75, lastModified: "2026-06-27" },
+  { path: "/results/hobfit", changeFrequency: "monthly", priority: 0.75, lastModified: "2026-10-19" },
   { path: "/results/tranzission", changeFrequency: "monthly", priority: 0.74, lastModified: "2026-06-27" },
   { path: "/results/talentz", changeFrequency: "monthly", priority: 0.74, lastModified: "2026-06-27" },
   { path: "/results/reliance-animation", changeFrequency: "monthly", priority: 0.74, lastModified: "2026-06-27" },
-  { path: "/resources", changeFrequency: "monthly", priority: 0.76 },
-  { path: "/resources/blog", changeFrequency: "monthly", priority: 0.6 },
+  { path: "/resources", changeFrequency: "monthly", priority: 0.76, lastModified: "2026-10-19" },
+  { path: "/resources/blog", changeFrequency: "monthly", priority: 0.6, lastModified: "2026-10-19" },
   // Blog articles previously missing from the sitemap.
   {
     path: "/resources/blog/how-to-improve-lead-quality-meta-ads",
@@ -98,7 +98,7 @@ const routes: Route[] = [
     path: "/resources/blog/b2b-meta-ads-agency-cost-india",
     changeFrequency: "monthly",
     priority: 0.67,
-    lastModified: "2026-10-18",
+    lastModified: "2026-10-19",
   },
   {
     path: "/resources/blog/qualified-leads-vs-cost-per-lead-b2b",
@@ -173,6 +173,7 @@ const routes: Route[] = [
     path: `/locations/${location.slug}`,
     changeFrequency: "monthly",
     priority: 0.72,
+    lastModified: location.slug === "pune" ? "2026-10-19" : LAST_UPDATED,
   })),
 ];
 
