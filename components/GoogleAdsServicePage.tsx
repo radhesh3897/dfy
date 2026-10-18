@@ -2,13 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState, type PointerEvent, type WheelEvent } from "react";
+import { useEffect, useRef, useState, type PointerEvent, type ReactNode, type WheelEvent } from "react";
 import { ButtonLink } from "@/components/ButtonLink";
 import { FAQ } from "@/components/FAQ";
 import type { Faq } from "@/lib/schema";
 
 type GoogleAdsServicePageProps = {
   faqs: Faq[];
+  planningGuides?: ReactNode;
 };
 
 const problemCards = [
@@ -268,7 +269,7 @@ const fitItems = {
   ],
 };
 
-export function GoogleAdsServicePage({ faqs }: GoogleAdsServicePageProps) {
+export function GoogleAdsServicePage({ faqs, planningGuides }: GoogleAdsServicePageProps) {
   return (
     <>
       <HeroSection />
@@ -280,6 +281,7 @@ export function GoogleAdsServicePage({ faqs }: GoogleAdsServicePageProps) {
       <TestimonialsSection />
       <FitSection />
       <FaqSection faqs={faqs} />
+      {planningGuides}
       <FinalCtaSection />
     </>
   );

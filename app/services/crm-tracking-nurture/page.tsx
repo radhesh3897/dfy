@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ButtonLink } from "@/components/ButtonLink";
 import { CTASection } from "@/components/CTASection";
+import { PlanningGuides } from "@/components/PlanningGuides";
 import { JsonLd } from "@/components/JsonLd";
 import { Section } from "@/components/Section";
 import { breadcrumbSchema, faqSchema, serviceSchema, webPageSchema } from "@/lib/schema";
@@ -239,6 +240,12 @@ export default function CrmTrackingNurturePage() {
           ))}
         </div>
       </Section>
+
+      <PlanningGuides title="Choose the workflow before choosing more software." slugs={[
+        "whatsapp-business-api-tools-india",
+        "whatsapp-lead-nurture-service-businesses",
+        "good-leads-but-no-sales",
+      ]} />
 
       <CTASection
         title="Ready to close the loop between your ads and your revenue?"
