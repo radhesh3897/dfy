@@ -10,7 +10,7 @@ import { ProcessSection } from "@/components/ProcessSection";
 import { ProofStrip } from "@/components/ProofStrip";
 import { TestimonialsLogoCloudSection } from "@/components/TestimonialsLogoCloudSection";
 import { WhyChooseDoneForYouSection } from "@/components/WhyChooseDoneForYouSection";
-import { webPageSchema } from "@/lib/schema";
+import { homepageReviewsSchema, webPageSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -28,6 +28,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
+      <JsonLd data={homepageReviewsSchema()} />
       <JsonLd
         data={webPageSchema(
           "/",

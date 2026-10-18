@@ -1,113 +1,79 @@
+import { BlogArticle, BlogSection } from "@/components/BlogArticle";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArticleByline } from "@/components/ArticleByline";
-import { Cite, PullQuote, SourceList } from "@/components/Citations";
-import { CTASection } from "@/components/CTASection";
+import { Cite, SourceList } from "@/components/Citations";
 import { FAQ } from "@/components/FAQ";
-import { JsonLd } from "@/components/JsonLd";
-import { Section } from "@/components/Section";
-import { breadcrumbSchema, faqSchema, webPageSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/site";
-
 const path = "/resources/blog/how-to-measure-marketing-agency-performance";
 const title = "How to Measure Marketing Agency Performance";
-const description =
-  "Learn how to measure marketing agency performance: the KPIs that map to revenue, the right review cadence, 30/60/90-day expectations, and reporting red flags.";
-
+const description = "Learn how to measure marketing agency performance: the KPIs that map to revenue, the right review cadence, 30/60/90-day expectations, and reporting red flags.";
 export const metadata: Metadata = pageMetadata({ title, description, path });
-
 const faqs = [
-  {
-    question: "How do I know if my marketing agency is doing a good job?",
-    answer:
-      "Judge the agency on metrics that map to money, not on impressions or clicks. Ask for qualified leads, cost per qualified lead, pipeline created, and how many leads turned into customers. If the agency cannot tie its work to your sales numbers, you do not have enough to judge it on.",
-  },
-  {
-    question: "What KPIs should a marketing agency report?",
-    answer:
-      "A good report shows leading indicators (qualified leads, cost per qualified lead, lead quality) and lagging indicators (pipeline created, customers won, CAC, ROI). Spend and impressions can stay in the report, but they should never be the headline. The headline should always be what happened to your revenue.",
-  },
-  {
-    question: "How long before a marketing agency shows results?",
-    answer:
-      "The first 30 days are setup and learning. By 60 days you should see lead volume and cost per lead stabilising. By 90 days you should be able to judge lead quality and early pipeline. Expecting profit in week two is the fastest way to kill a campaign that needs data to learn.",
-  },
-  {
-    question: "What are vanity metrics?",
-    answer:
-      "Vanity metrics look good on a slide but do not inform any decision: impressions, reach, raw clicks, likes, and follower counts. They rise when spend rises, so they always look like progress. The test is simple. If the number changing would not change what you do next, it is a vanity metric.",
-  },
-  {
-    question: "How often should my agency send reports?",
-    answer:
-      "Weekly during the first 90 days, because that is when decisions are being made fast and you need to catch problems early. After the account stabilises, a monthly deep review plus a short weekly pulse works well. Daily dashboards are useful, but a daily report usually means noise, not signal.",
-  },
+    {
+        question: "How do I know if my marketing agency is doing a good job?",
+        answer: "Judge the agency on metrics that map to money, not on impressions or clicks. Ask for qualified leads, cost per qualified lead, pipeline created, and how many leads turned into customers. If the agency cannot tie its work to your sales numbers, you do not have enough to judge it on.",
+    },
+    {
+        question: "What KPIs should a marketing agency report?",
+        answer: "A good report shows leading indicators (qualified leads, cost per qualified lead, lead quality) and lagging indicators (pipeline created, customers won, CAC, ROI). Spend and impressions can stay in the report, but they should never be the headline. The headline should always be what happened to your revenue.",
+    },
+    {
+        question: "How long before a marketing agency shows results?",
+        answer: "The first 30 days are setup and learning. By 60 days you should see lead volume and cost per lead stabilising. By 90 days you should be able to judge lead quality and early pipeline. Expecting profit in week two is the fastest way to kill a campaign that needs data to learn.",
+    },
+    {
+        question: "What are vanity metrics?",
+        answer: "Vanity metrics look good on a slide but do not inform any decision: impressions, reach, raw clicks, likes, and follower counts. They rise when spend rises, so they always look like progress. The test is simple. If the number changing would not change what you do next, it is a vanity metric.",
+    },
+    {
+        question: "How often should my agency send reports?",
+        answer: "Weekly during the first 90 days, because that is when decisions are being made fast and you need to catch problems early. After the account stabilises, a monthly deep review plus a short weekly pulse works well. Daily dashboards are useful, but a daily report usually means noise, not signal.",
+    },
 ];
-
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "How to Measure Your Marketing Agency's Performance",
-  description,
-  author: {
-    "@type": "Person",
-    name: "Radhesh Agrawal",
-    url: "https://www.doneforyou.in/company/about",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "Done For You",
-    url: "https://www.doneforyou.in",
-  },
-  datePublished: "2026-06-27",
-  dateModified: "2026-06-27",
-};
-
 export default function MeasureMarketingAgencyPerformanceArticle() {
-  return (
-    <>
-      <JsonLd data={webPageSchema(path, title, description)} />
-      <JsonLd data={articleSchema} />
-      <JsonLd data={faqSchema(faqs)} />
-      <JsonLd
-        data={breadcrumbSchema([
-          { name: "Home", path: "/" },
-          { name: "Resources", path: "/resources" },
-          { name: "Blog", path: "/resources/blog" },
-          { name: title, path },
-        ])}
-      />
-
-      <article>
-        <Section tone="white" eyebrow="Agency management" title="How to Measure Your Marketing Agency's Performance">
-          <div className="max-w-3xl space-y-5 text-lg leading-8 text-[#465163]">
-            <ArticleByline published="2026-06-27" />
-            <p>
-              Hiring an agency is the easy part. The hard part starts a month later, when a slide
-              deck lands in your inbox full of impressions and reach, and you still cannot answer
-              the only question that matters: is this working? I have sat on both sides of that
-              report, and I want to give you a way to judge an agency that does not rely on trust.
-            </p>
-            <p>
-              This is the companion to choosing an agency. Once you have picked one, you need a
-              method to check up on it. The good news is that the method is not complicated. You
-              separate the numbers that look like progress from the numbers that are progress, and
-              you hold the agency to the second list.
-            </p>
-            <p>
-              If you have not picked an agency yet, start with{" "}
-              <Link
-                href="/resources/blog/how-to-choose-b2b-meta-ads-agency-india"
-                className="font-medium text-[#164E50] underline decoration-[#CDEECD] underline-offset-4 transition hover:text-[#103D3F]"
-              >
-                how to choose a B2B Meta ads agency in India
-              </Link>
-              . If you already have one, read on.
-            </p>
-          </div>
-        </Section>
-
-        <Section tone="white" title="Why do most agency reports mislead you?">
+    return (<BlogArticle path={path} title={"How to Measure Your Marketing Agency's Performance"} description={description} category={"Agency management"} published="2026-06-27" updated="2026-10-18" summary={"Measure an agency against agreed business outcomes: qualified leads, pipeline, customers, and acquisition costs. Use campaign activity to diagnose performance, connect reports to CRM outcomes, and allow for your actual sales cycle before making a judgement."} contents={[
+            {
+                "id": "why-do-most-agency-reports-mislead-you",
+                "label": "Why do most agency reports mislead you?"
+            },
+            {
+                "id": "which-metrics-actually-matter-leading-versus-lagging",
+                "label": "Which metrics actually matter, leading versus lagging?"
+            },
+            {
+                "id": "how-do-you-tie-agency-work-to-revenue",
+                "label": "How do you tie agency work to revenue?"
+            },
+            {
+                "id": "what-is-the-right-review-cadence",
+                "label": "What is the right review cadence?"
+            },
+            {
+                "id": "what-should-you-expect-at-30-60-and-90-days",
+                "label": "What should you expect at 30, 60, and 90 days?"
+            },
+            {
+                "id": "what-are-the-reporting-red-flags",
+                "label": "What are the reporting red flags?"
+            },
+            {
+                "id": "what-the-data-says-about-measurement-and-revenue",
+                "label": "What the data says about measurement and revenue"
+            },
+            {
+                "id": "a-checklist-you-can-use-this-week",
+                "label": "A checklist you can use this week"
+            },
+            {
+                "id": "common-questions-about-measuring-agency-performance",
+                "label": "Common questions about measuring agency performance"
+            },
+            {
+                "id": "sources",
+                "label": "Sources"
+            }
+        ]} faqs={faqs} ctaTitle={"Review the numbers behind your agency reports"} ctaText={"Send us your last report and your numbers. We will tell you, plainly, what they say about whether your spend is turning into revenue, and where it is leaking."}>
+    <BlogSection id="why-do-most-agency-reports-mislead-you" title="Why do most agency reports mislead you?">
           <div className="max-w-3xl space-y-5 text-lg leading-8 text-[#465163]">
             <p>
               Most reports are built to make the agency look busy, not to help you make a decision.
@@ -128,9 +94,9 @@ export default function MeasureMarketingAgencyPerformanceArticle() {
               that follow the lead all the way to the sale.
             </p>
           </div>
-        </Section>
+        </BlogSection>
 
-        <Section tone="white" title="Which metrics actually matter, leading versus lagging?">
+    <BlogSection id="which-metrics-actually-matter-leading-versus-lagging" title="Which metrics actually matter, leading versus lagging?">
           <div className="max-w-3xl space-y-5 text-lg leading-8 text-[#465163]">
             <p>
               Split the metrics into two groups. Leading indicators tell you what is happening now
@@ -141,11 +107,8 @@ export default function MeasureMarketingAgencyPerformanceArticle() {
               Leading indicators worth tracking: qualified leads (not raw leads), cost per qualified
               lead, and lead quality as judged by your sales team. Raw cost per lead is a trap on its
               own. A cheap lead that never buys costs you more than an expensive lead that closes.
-              I wrote about that distinction in detail in{" "}
-              <Link
-                href="/resources/blog/qualified-leads-vs-cost-per-lead-b2b"
-                className="font-medium text-[#164E50] underline decoration-[#CDEECD] underline-offset-4 transition hover:text-[#103D3F]"
-              >
+              See the explanation in{" "}
+              <Link href="/resources/blog/qualified-leads-vs-cost-per-lead-b2b" className="font-medium text-[#164E50] underline decoration-[#CDEECD] underline-offset-4 transition hover:text-[#103D3F]">
                 qualified leads versus cost per lead
               </Link>
               .
@@ -158,18 +121,15 @@ export default function MeasureMarketingAgencyPerformanceArticle() {
             </p>
             <p>
               For a sense of what healthy numbers look like in your market, our{" "}
-              <Link
-                href="/resources/blog/b2b-lead-generation-benchmarks-india"
-                className="font-medium text-[#164E50] underline decoration-[#CDEECD] underline-offset-4 transition hover:text-[#103D3F]"
-              >
+              <Link href="/resources/blog/b2b-lead-generation-benchmarks-india" className="font-medium text-[#164E50] underline decoration-[#CDEECD] underline-offset-4 transition hover:text-[#103D3F]">
                 B2B lead generation benchmarks for India
               </Link>{" "}
               give you reference points so you are not judging in a vacuum.
             </p>
           </div>
-        </Section>
+        </BlogSection>
 
-        <Section tone="white" title="How do you tie agency work to revenue?">
+    <BlogSection id="how-do-you-tie-agency-work-to-revenue" title="How do you tie agency work to revenue?">
           <div className="max-w-3xl space-y-5 text-lg leading-8 text-[#465163]">
             <p>
               The link between an ad and a sale lives in your CRM, not in the ad platform. Without a
@@ -182,17 +142,11 @@ export default function MeasureMarketingAgencyPerformanceArticle() {
               leads became qualified and which became customers, it can optimise toward buyers
               instead of form fills. This closed loop is also where the returns sit. We build this
               for clients through our{" "}
-              <Link
-                href="/services/crm-tracking-nurture"
-                className="font-medium text-[#164E50] underline decoration-[#CDEECD] underline-offset-4 transition hover:text-[#103D3F]"
-              >
+              <Link href="/services/crm-tracking-nurture" className="font-medium text-[#164E50] underline decoration-[#CDEECD] underline-offset-4 transition hover:text-[#103D3F]">
                 CRM tracking and nurture service
               </Link>
               , and the mechanics are covered in{" "}
-              <Link
-                href="/resources/blog/crm-based-optimization-meta-ads-b2b"
-                className="font-medium text-[#164E50] underline decoration-[#CDEECD] underline-offset-4 transition hover:text-[#103D3F]"
-              >
+              <Link href="/resources/blog/crm-based-optimization-meta-ads-b2b" className="font-medium text-[#164E50] underline decoration-[#CDEECD] underline-offset-4 transition hover:text-[#103D3F]">
                 CRM-based optimization for B2B Meta ads
               </Link>
               .
@@ -203,9 +157,9 @@ export default function MeasureMarketingAgencyPerformanceArticle() {
               turns every future report from an opinion into a measurement.
             </p>
           </div>
-        </Section>
+        </BlogSection>
 
-        <Section tone="white" title="What is the right review cadence?">
+    <BlogSection id="what-is-the-right-review-cadence" title="What is the right review cadence?">
           <div className="max-w-3xl space-y-5 text-lg leading-8 text-[#465163]">
             <p>
               In the first 90 days, review weekly. This is when the account is learning and when most
@@ -225,9 +179,9 @@ export default function MeasureMarketingAgencyPerformanceArticle() {
               produces a decision, it is a status update, not a review.
             </p>
           </div>
-        </Section>
+        </BlogSection>
 
-        <Section tone="white" title="What should you expect at 30, 60, and 90 days?">
+    <BlogSection id="what-should-you-expect-at-30-60-and-90-days" title="What should you expect at 30, 60, and 90 days?">
           <div className="max-w-3xl space-y-5 text-lg leading-8 text-[#465163]">
             <p>
               Set expectations by phase, because a campaign that is punished for not being profitable
@@ -247,9 +201,9 @@ export default function MeasureMarketingAgencyPerformanceArticle() {
               qualified pipeline and no clear plan to improve it, that is a real conversation to have.
             </p>
           </div>
-        </Section>
+        </BlogSection>
 
-        <Section tone="white" title="What are the reporting red flags?">
+    <BlogSection id="what-are-the-reporting-red-flags" title="What are the reporting red flags?">
           <div className="max-w-3xl space-y-5 text-lg leading-8 text-[#465163]">
             <p>
               A few patterns reliably signal an agency hiding behind vanity numbers. The report leads
@@ -261,10 +215,7 @@ export default function MeasureMarketingAgencyPerformanceArticle() {
               Other warning signs: every metric is framed as a win even when revenue is flat, the
               account has no clear testing plan, and questions about cost per qualified lead get
               answered with cost per click. For a fuller list specific to ad agencies, see{" "}
-              <Link
-                href="/resources/blog/meta-ads-agency-red-flags"
-                className="font-medium text-[#164E50] underline decoration-[#CDEECD] underline-offset-4 transition hover:text-[#103D3F]"
-              >
+              <Link href="/resources/blog/meta-ads-agency-red-flags" className="font-medium text-[#164E50] underline decoration-[#CDEECD] underline-offset-4 transition hover:text-[#103D3F]">
                 Meta ads agency red flags
               </Link>
               .
@@ -274,9 +225,9 @@ export default function MeasureMarketingAgencyPerformanceArticle() {
               your signal to ask harder questions or get an outside read on the account.
             </p>
           </div>
-        </Section>
+        </BlogSection>
 
-        <Section tone="white" eyebrow="Evidence" title="What the data says about measurement and revenue">
+    <BlogSection id="what-the-data-says-about-measurement-and-revenue" title="What the data says about measurement and revenue">
           <div className="max-w-3xl space-y-5 text-lg leading-8 text-[#465163]">
             <p>
               The case for a CRM feedback loop is not just intuition. Nucleus Research found that CRM
@@ -306,24 +257,17 @@ export default function MeasureMarketingAgencyPerformanceArticle() {
               is exactly why you have to measure outcomes, not activity. These are US and global
               figures, but the direction holds in India too.
             </p>
-            <PullQuote
-              quote="Judge an agency on the numbers that change what you do next. Everything else is decoration."
-              attribution="Radhesh Agrawal, Founder, Done For You"
-            />
             <p>
               You can see how we report against these standards on our{" "}
-              <Link
-                href="/results"
-                className="font-medium text-[#164E50] underline decoration-[#CDEECD] underline-offset-4 transition hover:text-[#103D3F]"
-              >
+              <Link href="/results" className="font-medium text-[#164E50] underline decoration-[#CDEECD] underline-offset-4 transition hover:text-[#103D3F]">
                 results page
               </Link>
               .
             </p>
           </div>
-        </Section>
+        </BlogSection>
 
-        <Section tone="white" title="A checklist you can use this week">
+    <BlogSection id="a-checklist-you-can-use-this-week" title="A checklist you can use this week">
           <div className="max-w-3xl space-y-5 text-lg leading-8 text-[#465163]">
             <p>
               You do not need a new tool to start. Pull your last agency report and run it through
@@ -339,47 +283,33 @@ export default function MeasureMarketingAgencyPerformanceArticle() {
             <p>
               If you want a second opinion on what your numbers are really saying, that is exactly
               what our{" "}
-              <Link
-                href="/free-audit"
-                className="font-medium text-[#164E50] underline decoration-[#CDEECD] underline-offset-4 transition hover:text-[#103D3F]"
-              >
+              <Link href="/free-audit" className="font-medium text-[#164E50] underline decoration-[#CDEECD] underline-offset-4 transition hover:text-[#103D3F]">
                 free audit
               </Link>{" "}
               is for.
             </p>
           </div>
-        </Section>
+        </BlogSection>
 
-        <Section tone="white" eyebrow="FAQ" title="Common questions about measuring agency performance">
-          <FAQ faqs={faqs} />
-        </Section>
+    <BlogSection id="common-questions-about-measuring-agency-performance" title="Common questions about measuring agency performance">
+          <FAQ faqs={faqs}/>
+        </BlogSection>
 
-        <Section tone="white" eyebrow="Sources" title="Sources">
-          <SourceList
-            sources={[
-              {
+    <BlogSection id="sources" title="Sources">
+          <SourceList sources={[
+            {
                 label: "Nucleus Research, CRM returns $3.10 per dollar spent (2023) [US/global]",
                 href: "https://nucleusresearch.com/research/single/crm-returns-3-10-per-dollar-spent/",
-              },
-              {
+            },
+            {
                 label: "Google, Turning data into results with data-driven attribution [global]",
                 href: "https://blog.google/products/ads-commerce/turning-data-into-results-with-data-driven-attribution/",
-              },
-              {
+            },
+            {
                 label: "Gartner, The B2B Buying Journey [global]",
                 href: "https://www.gartner.com/en/sales/insights/b2b-buying-journey",
-              },
-            ]}
-          />
-        </Section>
-      </article>
-
-      <CTASection
-        title="Not sure your agency is actually working?"
-        text="Send us your last report and your numbers. We will tell you, plainly, what they say about whether your spend is turning into revenue, and where it is leaking."
-        buttonLabel="Book a Call"
-        buttonHref="/#free-audit-form"
-      />
-    </>
-  );
+            },
+        ]}/>
+        </BlogSection>
+ </BlogArticle>);
 }

@@ -61,7 +61,7 @@ export default function BlogPage() {
             >
               <div className="flex items-center gap-3 text-sm font-medium text-[#164E50]">
                 <span className="rounded-full bg-[#EEF8EE] px-3 py-1">{post.category}</span>
-                <span className="text-[#5f6877]">{formatDate(post.date)}</span>
+                <span className="text-[#5f6877]">{post.updated ? `Updated ${formatDate(post.updated)}` : formatDate(post.date)}</span>
               </div>
               <h2 className="mt-5 text-2xl font-black leading-tight tracking-[-0.02em] sm:text-3xl">
                 {post.title}

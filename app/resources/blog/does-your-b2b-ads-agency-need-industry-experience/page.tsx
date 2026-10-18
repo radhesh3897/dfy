@@ -1,111 +1,79 @@
+import { BlogArticle, BlogSection } from "@/components/BlogArticle";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArticleByline } from "@/components/ArticleByline";
-import { Cite, PullQuote, SourceList } from "@/components/Citations";
-import { CTASection } from "@/components/CTASection";
+import { Cite, SourceList } from "@/components/Citations";
 import { FAQ } from "@/components/FAQ";
-import { JsonLd } from "@/components/JsonLd";
-import { Section } from "@/components/Section";
-import { breadcrumbSchema, faqSchema, webPageSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/site";
-
 const path = "/resources/blog/does-your-b2b-ads-agency-need-industry-experience";
 const title = "Does a B2B Ads Agency Need Industry Experience?";
-const description =
-  "An honest take on industry experience marketing agency choices: where sector knowledge helps, where a strong process wins, and how to test an agency yourself.";
-
+const description = "An honest take on industry experience marketing agency choices: where sector knowledge helps, where a strong process wins, and how to test an agency yourself.";
 export const metadata: Metadata = pageMetadata({ title, description, path });
-
 const faqs = [
-  {
-    question: "Should I hire a marketing agency that knows my industry?",
-    answer:
-      "Sometimes, but not always. Industry experience helps an agency ramp faster, write sharper creative, and judge lead quality without a long education. A strong, transferable process can close that gap quickly, so weigh both rather than treating sector familiarity as the only signal.",
-  },
-  {
-    question: "Is a niche agency better than a generalist agency for B2B?",
-    answer:
-      "It depends on your sector and your buying cycle. Niche agencies start faster on complex or regulated buyers, while a strong generalist often brings fresher creative thinking and a tested process across markets. The real question is whether the team understands how your specific buyer makes decisions.",
-  },
-  {
-    question: "Does a Meta Ads agency need experience in my exact sector?",
-    answer:
-      "For most B2B lead generation, no. The mechanics of testing creative, qualifying leads, and feeding the platform good conversion data transfer across sectors. Exact-sector experience matters most in regulated or highly technical industries where the buyer language and compliance rules are unusual.",
-  },
-  {
-    question: "How do I test if an agency understands my buyer?",
-    answer:
-      "Ask them on the sales call to describe who clicks your ad, what makes a lead qualified versus junk, and what objection kills your deals. A team with real grasp answers in specifics, not slogans. If they cannot, ask how their process would learn your buyer in the first 60 days.",
-  },
-  {
-    question: "What are the risks of hiring a sector specialist?",
-    answer:
-      "Two main risks. They may recycle a playbook that worked for past clients instead of testing fresh angles for you, and they may already serve a direct competitor, which creates a conflict around ideas and attention. Ask directly who else in your space they work with.",
-  },
+    {
+        question: "Should I hire a marketing agency that knows my industry?",
+        answer: "Sometimes, but not always. Industry experience helps an agency ramp faster, write sharper creative, and judge lead quality without a long education. A strong, transferable process can close that gap quickly, so weigh both rather than treating sector familiarity as the only signal.",
+    },
+    {
+        question: "Is a niche agency better than a generalist agency for B2B?",
+        answer: "It depends on your sector and your buying cycle. Niche agencies start faster on complex or regulated buyers, while a strong generalist often brings fresher creative thinking and a tested process across markets. The real question is whether the team understands how your specific buyer makes decisions.",
+    },
+    {
+        question: "Does a Meta Ads agency need experience in my exact sector?",
+        answer: "For most B2B lead generation, no. The mechanics of testing creative, qualifying leads, and feeding the platform good conversion data transfer across sectors. Exact-sector experience matters most in regulated or highly technical industries where the buyer language and compliance rules are unusual.",
+    },
+    {
+        question: "How do I test if an agency understands my buyer?",
+        answer: "Ask them on the sales call to describe who clicks your ad, what makes a lead qualified versus junk, and what objection kills your deals. A team with real grasp answers in specifics, not slogans. If they cannot, ask how their process would learn your buyer in the first 60 days.",
+    },
+    {
+        question: "What are the risks of hiring a sector specialist?",
+        answer: "Two main risks. They may recycle a playbook that worked for past clients instead of testing fresh angles for you, and they may already serve a direct competitor, which creates a conflict around ideas and attention. Ask directly who else in your space they work with.",
+    },
 ];
-
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "Does Your B2B Ads Agency Need Industry Experience?",
-  author: {
-    "@type": "Person",
-    name: "Radhesh Agrawal",
-    url: "https://www.doneforyou.in/company/about",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "Done For You",
-    url: "https://www.doneforyou.in",
-  },
-  datePublished: "2026-06-27",
-  dateModified: "2026-06-27",
-  description,
-};
-
 export default function IndustryExperienceArticle() {
-  return (
-    <>
-      <JsonLd data={webPageSchema(path, title, description)} />
-      <JsonLd data={articleSchema} />
-      <JsonLd data={faqSchema(faqs)} />
-      <JsonLd
-        data={breadcrumbSchema([
-          { name: "Home", path: "/" },
-          { name: "Resources", path: "/resources" },
-          { name: "Blog", path: "/resources/blog" },
-          { name: "Does Your B2B Ads Agency Need Industry Experience?", path },
-        ])}
-      />
-
-      <article>
-        <Section
-          tone="white"
-          eyebrow="Hiring an agency"
-          title="Does Your B2B Ads Agency Need Industry Experience?"
-        >
-          <div className="max-w-3xl space-y-5 text-lg leading-8 text-[#465163]">
-            <ArticleByline published="2026-06-27" />
-            <p>
-              Almost every founder I speak with asks some version of the same question on the first
-              call. Have you run ads for a company exactly like mine before. It is a fair thing to
-              ask, and the honest answer is more interesting than a simple yes.
-            </p>
-            <p>
-              I run a generalist B2B performance agency, so I have a stake in this. That is exactly
-              why I want to give you the balanced version instead of the self-serving one. Industry
-              experience genuinely helps in a few specific places, and a strong process beats it in a
-              lot of others.
-            </p>
-            <p>
-              This piece walks through where sector knowledge earns its keep, where it is overrated,
-              the hidden risks on both sides, and a short set of questions you can use on a sales call
-              to judge any agency for yourself.
-            </p>
-          </div>
-        </Section>
-
-        <Section tone="white" title="Where industry experience genuinely helps">
+    return (<BlogArticle path={path} title={"Does Your B2B Ads Agency Need Industry Experience?"} description={description} category={"Hiring an agency"} published="2026-06-27" updated="2026-10-18" summary={"Relevant industry experience can help an agency understand buyers, constraints, and sales language. Evaluate that experience alongside its research, testing, tracking, and delivery process, with additional care for regulated or highly technical sectors."} contents={[
+            {
+                "id": "where-industry-experience-genuinely-helps",
+                "label": "Where industry experience genuinely helps"
+            },
+            {
+                "id": "where-it-is-overrated-and-process-wins",
+                "label": "Where it is overrated, and process wins"
+            },
+            {
+                "id": "the-hidden-risks-of-hiring-a-specialist",
+                "label": "The hidden risks of hiring a specialist"
+            },
+            {
+                "id": "the-risk-of-a-pure-generalist",
+                "label": "The risk of a pure generalist"
+            },
+            {
+                "id": "regulated-and-complex-sectors-are-the-real-exception",
+                "label": "Regulated and complex sectors are the real exception"
+            },
+            {
+                "id": "how-to-test-an-agencys-grasp-of-your-buyer",
+                "label": "How to test an agency's grasp of your buyer"
+            },
+            {
+                "id": "a-simple-recommendation-framework",
+                "label": "A simple recommendation framework"
+            },
+            {
+                "id": "what-the-buyer-research-actually-shows",
+                "label": "What the buyer research actually shows"
+            },
+            {
+                "id": "common-questions-founders-ask-us",
+                "label": "Common questions founders ask us"
+            },
+            {
+                "id": "sources",
+                "label": "Sources"
+            }
+        ]} faqs={faqs} ctaTitle={"Find the right approach for your business"} ctaText={"Book a call for a free read on your current ads and a straight answer on what your buyer actually responds to, sector experience or not."}>
+    <BlogSection id="where-industry-experience-genuinely-helps" title="Where industry experience genuinely helps">
           <div className="max-w-3xl space-y-5 text-lg leading-8 text-[#465163]">
             <p>
               Sector experience pays off most in the first 60 days. An agency that already knows your
@@ -119,28 +87,11 @@ export default function IndustryExperienceArticle() {
               it helps an agency tell a qualified lead from a tyre-kicker on day one, which is the
               difference between a campaign that looks busy and one that fills your pipeline.
             </p>
-            <p>
-              We have seen this firsthand building lead engines in specific sectors, from{" "}
-              <Link
-                href="/resources/blog/real-estate-lead-generation-india"
-                className="font-medium text-[#164E50] underline decoration-[#CDEECD] underline-offset-4 transition hover:text-[#103D3F]"
-              >
-                real estate
-              </Link>{" "}
-              to{" "}
-              <Link
-                href="/resources/blog/b2b-saas-lead-generation-india"
-                className="font-medium text-[#164E50] underline decoration-[#CDEECD] underline-offset-4 transition hover:text-[#103D3F]"
-              >
-                B2B SaaS
-              </Link>
-              . The pattern that repeats is that the buyer knowledge speeds you up, but it is the
-              process underneath that keeps you fast.
-            </p>
+            <p>Buyer knowledge can help shape relevant offers in sectors such as real estate and B2B SaaS. A documented research and testing process is still needed to adapt that knowledge to the individual business.</p>
           </div>
-        </Section>
+        </BlogSection>
 
-        <Section tone="white" title="Where it is overrated, and process wins">
+    <BlogSection id="where-it-is-overrated-and-process-wins" title="Where it is overrated, and process wins">
           <div className="max-w-3xl space-y-5 text-lg leading-8 text-[#465163]">
             <p>
               Here is the part most specialist agencies will not say out loud. The core engine of B2B
@@ -157,18 +108,15 @@ export default function IndustryExperienceArticle() {
             <p>
               This is also why measuring the right things matters more than pedigree. If you are not
               sure how to judge whether the work is actually moving your pipeline, our guide on{" "}
-              <Link
-                href="/resources/blog/how-to-measure-marketing-agency-performance"
-                className="font-medium text-[#164E50] underline decoration-[#CDEECD] underline-offset-4 transition hover:text-[#103D3F]"
-              >
+              <Link href="/resources/blog/how-to-measure-marketing-agency-performance" className="font-medium text-[#164E50] underline decoration-[#CDEECD] underline-offset-4 transition hover:text-[#103D3F]">
                 how to measure marketing agency performance
               </Link>{" "}
               is a better filter than asking how many clients they have had in your niche.
             </p>
           </div>
-        </Section>
+        </BlogSection>
 
-        <Section tone="white" title="The hidden risks of hiring a specialist">
+    <BlogSection id="the-hidden-risks-of-hiring-a-specialist" title="The hidden risks of hiring a specialist">
           <div className="max-w-3xl space-y-5 text-lg leading-8 text-[#465163]">
             <p>
               A specialist can fall into two traps. The first is the recycled playbook. When an agency
@@ -189,19 +137,11 @@ export default function IndustryExperienceArticle() {
               versus build a new one.
             </p>
           </div>
-        </Section>
+        </BlogSection>
 
-        <Section tone="white" title="The risk of a pure generalist">
+    <BlogSection id="the-risk-of-a-pure-generalist" title="The risk of a pure generalist">
           <div className="max-w-3xl space-y-5 text-lg leading-8 text-[#465163]">
-            <p>
-              I will not pretend generalists are risk free. A generalist with no relevant experience
-              and no real process can burn your first month learning things a specialist already knew.{" "}
-              <Cite href="https://filament.digital/b2b-tech-marketing-specialist-vs-generalist-agency/">
-                Industry write-ups put that learning curve at roughly three to six months for a team
-                starting cold, against days for one that already knows the sector
-              </Cite>
-              .
-            </p>
+            <p>A generalist with little relevant knowledge needs a credible research and validation plan. Ask how the team will learn the buyer, review sector constraints, and test its assumptions before committing a substantial budget.</p>
             <p>
               That gap is only dangerous if the generalist has no method for closing it. The fix is
               not pretending to be an expert on day one. It is having a structured onboarding that
@@ -213,12 +153,12 @@ export default function IndustryExperienceArticle() {
               quickly. A strong generalist with a real process usually beats a coasting specialist.
             </p>
           </div>
-        </Section>
+        </BlogSection>
 
-        <Section tone="white" title="Regulated and complex sectors are the real exception">
+    <BlogSection id="regulated-and-complex-sectors-are-the-real-exception" title="Regulated and complex sectors are the real exception">
           <div className="max-w-3xl space-y-5 text-lg leading-8 text-[#465163]">
             <p>
-              There is one place where I will tell you to favour domain knowledge without hesitation.
+              There is one place where domain knowledge needs particular attention.
               Heavily regulated or highly technical sectors. Financial services, healthcare and pharma,
               insurance, legal, and anything with strict advertising rules or specialised buyer
               language all reward an agency that has lived inside the compliance and the jargon.
@@ -236,9 +176,9 @@ export default function IndustryExperienceArticle() {
               pedigree.
             </p>
           </div>
-        </Section>
+        </BlogSection>
 
-        <Section tone="white" title="How to test an agency's grasp of your buyer">
+    <BlogSection id="how-to-test-an-agencys-grasp-of-your-buyer" title="How to test an agency's grasp of your buyer">
           <div className="max-w-3xl space-y-5 text-lg leading-8 text-[#465163]">
             <p>
               You do not need years of marketing experience to judge this. You need a few sharp
@@ -255,18 +195,15 @@ export default function IndustryExperienceArticle() {
             <p>
               Then ask the process question. If they do not know your sector cold, how would their
               first 60 days learn it. The agencies worth hiring have a clear answer, and the{" "}
-              <Link
-                href="/resources/blog/meta-ads-agency-red-flags"
-                className="font-medium text-[#164E50] underline decoration-[#CDEECD] underline-offset-4 transition hover:text-[#103D3F]"
-              >
+              <Link href="/resources/blog/meta-ads-agency-red-flags" className="font-medium text-[#164E50] underline decoration-[#CDEECD] underline-offset-4 transition hover:text-[#103D3F]">
                 red flags to avoid
               </Link>{" "}
               tend to deflect with case-study name drops instead.
             </p>
           </div>
-        </Section>
+        </BlogSection>
 
-        <Section tone="white" title="A simple recommendation framework">
+    <BlogSection id="a-simple-recommendation-framework" title="A simple recommendation framework">
           <div className="max-w-3xl space-y-5 text-lg leading-8 text-[#465163]">
             <p>
               Pull it together with three questions. Is your sector regulated or highly technical. If
@@ -281,25 +218,19 @@ export default function IndustryExperienceArticle() {
             </p>
             <p>
               For the wider hiring decision, our full guide on{" "}
-              <Link
-                href="/resources/blog/how-to-choose-b2b-meta-ads-agency-india"
-                className="font-medium text-[#164E50] underline decoration-[#CDEECD] underline-offset-4 transition hover:text-[#103D3F]"
-              >
+              <Link href="/resources/blog/how-to-choose-b2b-meta-ads-agency-india" className="font-medium text-[#164E50] underline decoration-[#CDEECD] underline-offset-4 transition hover:text-[#103D3F]">
                 how to choose a B2B Meta Ads agency in India
               </Link>{" "}
               covers the rest, and you can see how this plays out across sectors in our{" "}
-              <Link
-                href="/results"
-                className="font-medium text-[#164E50] underline decoration-[#CDEECD] underline-offset-4 transition hover:text-[#103D3F]"
-              >
+              <Link href="/results" className="font-medium text-[#164E50] underline decoration-[#CDEECD] underline-offset-4 transition hover:text-[#103D3F]">
                 results
               </Link>
               .
             </p>
           </div>
-        </Section>
+        </BlogSection>
 
-        <Section tone="white" eyebrow="Evidence" title="What the buyer research actually shows">
+    <BlogSection id="what-the-buyer-research-actually-shows" title="What the buyer research actually shows">
           <div className="max-w-3xl space-y-5 text-lg leading-8 text-[#465163]">
             <p>
               The reason process matters so much is that your buyer barely spends time with any
@@ -317,46 +248,28 @@ export default function IndustryExperienceArticle() {
               more than a sector trivia skill. These are US and global figures, but the direction
               holds in India too.
             </p>
-            <PullQuote
-              quote="Industry experience buys you a faster start. A real process buys you a system that keeps improving after the head start is gone."
-              attribution="Radhesh Agrawal, Founder, Done For You"
-            />
           </div>
-        </Section>
+        </BlogSection>
 
-        <Section tone="white" eyebrow="FAQ" title="Common questions founders ask us">
-          <FAQ faqs={faqs} />
-        </Section>
+    <BlogSection id="common-questions-founders-ask-us" title="Common questions founders ask us">
+          <FAQ faqs={faqs}/>
+        </BlogSection>
 
-        <Section tone="white" eyebrow="Sources" title="Sources">
-          <SourceList
-            sources={[
-              {
-                label:
-                  "Gartner, The B2B Buying Journey (17% of buying time with suppliers) [global]",
+    <BlogSection id="sources" title="Sources">
+          <SourceList sources={[
+            {
+                label: "Gartner, The B2B Buying Journey (17% of buying time with suppliers) [global]",
                 href: "https://www.gartner.com/en/sales/insights/b2b-buying-journey",
-              },
-              {
-                label:
-                  "Filament Digital, B2B Tech Marketing Specialist vs Generalist Agency (ramp time)",
+            },
+            {
+                label: "Filament Digital, B2B Tech Marketing Specialist vs Generalist Agency (ramp time)",
                 href: "https://filament.digital/b2b-tech-marketing-specialist-vs-generalist-agency/",
-              },
-              {
-                label:
-                  "Databox, Should Agencies Niche (balanced view on specialist and generalist trade-offs)",
+            },
+            {
+                label: "Databox, Should Agencies Niche (balanced view on specialist and generalist trade-offs)",
                 href: "https://databox.com/should-agencies-niche",
-              },
-            ]}
-          />
-        </Section>
-      </article>
-
-      <CTASection
-        title="Not sure if your sector needs a specialist?"
-        text="Book a call for a free read on your current ads and a straight answer on what your buyer actually responds to, sector experience or not."
-        buttonLabel="Book a Call"
-        buttonHref="/#free-audit-form"
-      />
-    </>
-  );
+            },
+        ]}/>
+        </BlogSection>
+ </BlogArticle>);
 }

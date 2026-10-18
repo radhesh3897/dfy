@@ -1,32 +1,30 @@
 import { Resend } from "resend";
 import { NextRequest, NextResponse } from "next/server";
+import { escapeHtml, normalizePhone, parseAuditSubmission } from "@/lib/audit-submission";
 
 const TO_EMAIL = "radhesh3897@gmail.com";
 const INGEST_URL = "https://rkmngnkgesteohigvsxe.supabase.co/functions/v1/ingest-lead";
 
-// Normalise an India-first phone number to E.164 (+<country><number>).
-function normalizePhone(raw: string): string | null {
-  const digits = (raw || "").replace(/\D/g, "");
-  if (!digits) return null;
-  const d = digits.length === 10 ? "91" + digits : digits; // assume India if 10 digits
-  return d.length >= 11 ? "+" + d : null;
-}
-
 // Push a website lead into the WABA CRM (creates the contact, fires the WhatsApp
-// welcome + alert). Best-effort — never blocks the form response or the email.
-async function pushToWabaCrm(body: Record<string, unknown>, isHomepageForm: boolean) {
+// welcome + alert). Best-effort, with a bounded wait before sending the email.
+async function pushToWabaCrm(body: Record<string, string>, sourcePath: string) {
   const phone = normalizePhone((body.phoneNumber as string) || (body.phone as string) || "");
   if (!phone) return; // no WhatsApp number → can't create a WhatsApp contact
+  if (!process.env.INGEST_SECRET) {
+    console.error("WABA ingest skipped: INGEST_SECRET is not configured");
+    return;
+  }
   try {
-    await fetch(INGEST_URL, {
+    const response = await fetch(INGEST_URL, {
       method: "POST",
+      signal: AbortSignal.timeout(5000),
       headers: { "Content-Type": "application/json", "x-ingest-secret": process.env.INGEST_SECRET ?? "" },
       body: JSON.stringify({
         phone,
         name: (body.fullName as string) || (body.businessName as string) || (body.name as string) || undefined,
         company: (body.businessName as string) || (body.company as string) || undefined,
         email: (body.email as string) || undefined,
-        source: isHomepageForm ? "Website - Homepage" : "Website - Free Audit",
+        source: sourcePath === "/" ? "Website - Homepage" : "Website - Free Audit",
         monthly_ad_spend: (body.monthlyAdSpend as string) || (body.adSpend as string) || undefined,
         vertical: (body.vertical as string) || undefined,
         running_ads: (body.runningAds as string) || undefined,
@@ -34,19 +32,37 @@ async function pushToWabaCrm(body: Record<string, unknown>, isHomepageForm: bool
         main_problem: (body.mainProblem as string) || undefined,
       }),
     });
+    if (!response.ok) console.error("WABA ingest failed with status", response.status);
   } catch (e) {
     console.error("WABA ingest failed", e);
   }
 }
 
 export async function POST(request: NextRequest) {
-  const resend = new Resend(process.env.RESEND_API_KEY);
   try {
-    const body = await request.json();
-    const isHomepageForm = "businessName" in body;
+    const raw = await request.text();
+    if (new TextEncoder().encode(raw).length > 20000) {
+      return NextResponse.json({ success: false, error: "Submission is too large." }, { status: 413 });
+    }
+    let input: unknown;
+    try {
+      input = JSON.parse(raw);
+    } catch {
+      return NextResponse.json({ success: false, error: "Invalid submission." }, { status: 400 });
+    }
+    const submission = parseAuditSubmission(input);
+    if (!submission) {
+      return NextResponse.json({ success: false, error: "Please check your form details." }, { status: 400 });
+    }
+    if (!process.env.RESEND_API_KEY) {
+      console.error("Audit submit unavailable: RESEND_API_KEY is not configured");
+      return NextResponse.json({ success: false }, { status: 503 });
+    }
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    const { body, isHomepageForm, sourcePath } = submission;
 
     // Fire the CRM push (awaited but wrapped so it can't break the form).
-    await pushToWabaCrm(body, isHomepageForm);
+    await pushToWabaCrm(body, sourcePath);
 
     const subject = isHomepageForm
       ? `New Call Booking — ${body.fullName || body.businessName || "Unknown"}`
@@ -61,7 +77,7 @@ export async function POST(request: NextRequest) {
           ["Monthly Ad Spend", body.monthlyAdSpend],
           ["Vertical", body.vertical],
           ["Phone Number", body.phoneNumber],
-          ["Source", "Homepage form (/#free-audit-form)"],
+          ["Source", sourcePath === "/" ? "Homepage form (/#free-audit-form)" : "/free-audit page"],
         ]
       : [
           ["Name", body.name],
@@ -70,7 +86,8 @@ export async function POST(request: NextRequest) {
           ["Website", body.website],
           ["Monthly Ad Spend", body.adSpend],
           ["Main Problem", body.mainProblem],
-          ["Source", "/free-audit page"],
+          ["Phone Number", body.phone],
+          ["Source", sourcePath],
         ];
 
     const tableRows = rows
@@ -78,7 +95,7 @@ export async function POST(request: NextRequest) {
         ([label, value]) => `
         <tr>
           <td style="padding:10px 14px;background:#f6f5f1;font-weight:600;font-size:14px;color:#111827;border-bottom:1px solid #e5e7eb;white-space:nowrap;vertical-align:top">${label}</td>
-          <td style="padding:10px 14px;font-size:14px;color:#374151;border-bottom:1px solid #e5e7eb">${value || "—"}</td>
+          <td style="padding:10px 14px;font-size:14px;color:#374151;border-bottom:1px solid #e5e7eb">${escapeHtml(value || "—")}</td>
         </tr>`,
       )
       .join("");
@@ -107,7 +124,7 @@ export async function POST(request: NextRequest) {
 
     if (error) {
       console.error("Resend error:", error);
-      return NextResponse.json({ success: false, error: error.message }, { status: 502 });
+      return NextResponse.json({ success: false }, { status: 502 });
     }
 
     return NextResponse.json({ success: true, id: data?.id });

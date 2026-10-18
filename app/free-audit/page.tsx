@@ -110,7 +110,7 @@ export default function GetFreeLeadQualityAuditPage() {
               </p>
             </div>
           </div>
-          <AuditStartCard />
+          <AuditStartCard sourcePath="/free-audit" />
         </div>
       </section>
 
