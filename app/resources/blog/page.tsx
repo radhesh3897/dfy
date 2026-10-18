@@ -27,6 +27,7 @@ const blogSchema = {
     description: post.description,
     url: absoluteUrl(post.href),
     datePublished: post.date,
+    dateModified: post.updated ?? post.date,
     author: { "@type": "Person", name: "Radhesh Agrawal" },
   })),
 };
