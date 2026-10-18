@@ -75,3 +75,11 @@ After making a change:
 3. Check mobile at 375px width.
 4. Confirm no horizontal overflow.
 5. Confirm footer is not overlapping or appearing early.
+
+## Blog Article Layout
+
+- `components/BlogArticle.tsx` provides the shared article header, quick answer, author dates, server-rendered Article/WebPage/FAQ/Breadcrumb schemas, contents navigation, related reading, CTA, and previous/next article links.
+- `BlogSection` renders each article section with its stable ID and H2. Use H3 for actual subsections; deeper levels are optional.
+- Each `app/resources/blog/<slug>/page.tsx` retains its metadata, FAQs, article content, and contents list. `data/blogPosts.ts` supplies index descriptions, categories, publication/updated dates, related reading, and article order.
+- Keep article updated dates and the corresponding `app/sitemap.ts` lastModified values consistent after substantive edits.
+- The installed personal skill is `dfy-seo-aeo-updater` (DFY SEO & AEO Updater).
