@@ -4,6 +4,7 @@ import { CTASection } from "@/components/CTASection";
 import { Hero } from "@/components/Hero";
 import { JsonLd } from "@/components/JsonLd";
 import { Section } from "@/components/Section";
+import { PlanningGuides } from "@/components/PlanningGuides";
 import { resourceCards } from "@/data/marketingPages";
 import { blogPosts, formatPostDate } from "@/data/blogPosts";
 import { breadcrumbSchema, webPageSchema } from "@/lib/schema";
@@ -16,7 +17,7 @@ export const metadata: Metadata = pageMetadata({
   path: "/resources",
 });
 
-const latestArticles = blogPosts.slice(0, 3);
+const latestArticles = [...blogPosts].sort((a, b) => (b.updated ?? b.date).localeCompare(a.updated ?? a.date)).slice(0, 3);
 const guides = resourceCards.filter((item) =>
   ["Lead Quality Checklist", "Meta Ads Guide", "Google Ads Guide"].includes(item.title),
 );
@@ -57,7 +58,7 @@ export default function ResourcesPage() {
             >
               <div className="flex items-center gap-3 text-sm font-medium text-[#164E50]">
                 <span className="rounded-full bg-[#EEF8EE] px-3 py-1">{post.category}</span>
-                <span className="text-[#5f6877]">{formatPostDate(post.date)}</span>
+                <span className="text-[#5f6877]">{post.updated ? `Updated ${formatPostDate(post.updated)}` : formatPostDate(post.date)}</span>
               </div>
               <h2 className="mt-5 text-2xl font-black leading-tight tracking-[-0.02em]">{post.title}</h2>
               <p className="mt-4 text-base leading-7 text-[#4b4b4b]">{post.description}</p>
@@ -83,6 +84,15 @@ export default function ResourcesPage() {
         items={guides}
         tone="light"
       />
+
+      <PlanningGuides title="Find the guide for your next acquisition decision." slugs={[
+        "b2b-saas-lead-generation-india",
+        "meta-ads-vs-google-ads-b2b-india",
+        "how-to-improve-lead-quality-meta-ads",
+        "landing-page-conversion-rate-service-businesses",
+        "whatsapp-lead-nurture-service-businesses",
+        "b2b-meta-ads-agency-cost-india",
+      ]} />
 
       <CTASection
         title="Want us to review your funnel instead?"
