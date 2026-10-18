@@ -5,6 +5,7 @@ import { ButtonLink } from "@/components/ButtonLink";
 import { CTASection } from "@/components/CTASection";
 import { JsonLd } from "@/components/JsonLd";
 import { Section } from "@/components/Section";
+import { PlanningGuides } from "@/components/PlanningGuides";
 import { breadcrumbSchema, faqSchema, serviceSchema, webPageSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/site";
 
@@ -314,6 +315,12 @@ export default function B2BMetaAdsAgencyPage() {
           </ButtonLink>
         </div>
       </section>
+
+      <PlanningGuides title="Plan for better leads before increasing spend." slugs={[
+        "how-to-improve-lead-quality-meta-ads",
+        "b2b-saas-lead-generation-india",
+        "meta-ads-vs-google-ads-b2b-india",
+      ]} />
 
       <CTASection
         title="Want a B2B Meta Ads agency that optimizes for pipeline?"
