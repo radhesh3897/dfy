@@ -4,7 +4,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { AuditFormAnchorScroll } from "@/components/AuditFormAnchorScroll";
 import { JsonLd } from "@/components/JsonLd";
-import { founderPersonSchema, homepageFaqSchema, organizationSchema, webSiteSchema } from "@/lib/schema";
+import { founderPersonSchema, organizationSchema, webSiteSchema } from "@/lib/schema";
 import { absoluteUrl, indexableRobots, site } from "@/lib/site";
 import "./globals.css";
 
@@ -77,7 +77,6 @@ export default function RootLayout({
         <JsonLd data={organizationSchema()} />
         <JsonLd data={webSiteSchema()} />
         <JsonLd data={founderPersonSchema()} />
-        <JsonLd data={homepageFaqSchema()} />
         <AuditFormAnchorScroll />
         <SiteHeader />
         <main className="pt-[86px] sm:pt-[104px]">{children}</main>
