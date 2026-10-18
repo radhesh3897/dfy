@@ -33,6 +33,11 @@ const routes: Route[] = [
   { path: "/results/reliance-animation", changeFrequency: "monthly", priority: 0.74, lastModified: "2026-06-27" },
   { path: "/resources", changeFrequency: "monthly", priority: 0.76, lastModified: "2026-10-19" },
   { path: "/resources/blog", changeFrequency: "monthly", priority: 0.6, lastModified: "2026-10-19" },
+  // New editorial guides.
+  { path: "/resources/blog/google-ads-vs-meta-ads-clinics-india", changeFrequency: "monthly", priority: 0.65, lastModified: "2026-10-19" },
+  { path: "/resources/blog/good-leads-but-no-sales", changeFrequency: "monthly", priority: 0.65, lastModified: "2026-10-19" },
+  { path: "/resources/blog/freelancer-vs-marketing-agency-india", changeFrequency: "monthly", priority: 0.65, lastModified: "2026-10-19" },
+  { path: "/resources/blog/broad-vs-interest-targeting-meta-ads", changeFrequency: "monthly", priority: 0.65, lastModified: "2026-10-19" },
   // Blog articles previously missing from the sitemap.
   {
     path: "/resources/blog/how-to-improve-lead-quality-meta-ads",
