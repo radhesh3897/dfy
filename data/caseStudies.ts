@@ -20,6 +20,7 @@ export type CaseStudy = {
   heroImage: CaseStudyImage;
   proofImages: CaseStudyImage[];
   datePublished: string;
+  dateModified?: string;
 };
 
 export const caseStudies: CaseStudy[] = [
@@ -62,6 +63,7 @@ export const caseStudies: CaseStudy[] = [
       { src: "/case-studies/hobfit-account.png", alt: "Hobfit live Meta Ads account showing ₹6.8L+ ad spend managed" },
     ],
     datePublished: "2026-06-27",
+    dateModified: "2026-10-19",
   },
   {
     slug: "tranzission",
