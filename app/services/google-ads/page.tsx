@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { GoogleAdsServicePage } from "@/components/GoogleAdsServicePage";
+import { PlanningGuides } from "@/components/PlanningGuides";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema, faqSchema, serviceSchema, webPageSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/site";
@@ -142,7 +143,13 @@ export default function GoogleAdsPage() {
       />
       <JsonLd data={faqSchema(faqs)} />
       <JsonLd data={googleAdsFaqPageSchema} />
-      <GoogleAdsServicePage faqs={faqs} />
+      <GoogleAdsServicePage faqs={faqs} planningGuides={
+        <PlanningGuides title="Connect search intent to qualified outcomes." slugs={[
+          "broad-phrase-exact-match-google-ads",
+          "google-ads-search-terms-clinics",
+          "qualified-leads-vs-cost-per-lead-b2b",
+        ]} />
+      } />
     </>
   );
 }

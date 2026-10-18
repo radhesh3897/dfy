@@ -34,6 +34,11 @@ const routes: Route[] = [
   { path: "/resources", changeFrequency: "monthly", priority: 0.76, lastModified: "2026-10-19" },
   { path: "/resources/blog", changeFrequency: "monthly", priority: 0.6, lastModified: "2026-10-19" },
   // New editorial guides.
+  { path: "/resources/blog/clinic-landing-page-conversion", changeFrequency: "monthly", priority: 0.65, lastModified: "2026-10-19" },
+  { path: "/resources/blog/google-ads-search-terms-clinics", changeFrequency: "monthly", priority: 0.65, lastModified: "2026-10-19" },
+  { path: "/resources/blog/broad-phrase-exact-match-google-ads", changeFrequency: "monthly", priority: 0.65, lastModified: "2026-10-19" },
+  { path: "/resources/blog/whatsapp-business-api-tools-india", changeFrequency: "monthly", priority: 0.65, lastModified: "2026-10-19" },
+
   { path: "/resources/blog/google-ads-vs-meta-ads-clinics-india", changeFrequency: "monthly", priority: 0.65, lastModified: "2026-10-19" },
   { path: "/resources/blog/good-leads-but-no-sales", changeFrequency: "monthly", priority: 0.65, lastModified: "2026-10-19" },
   { path: "/resources/blog/freelancer-vs-marketing-agency-india", changeFrequency: "monthly", priority: 0.65, lastModified: "2026-10-19" },

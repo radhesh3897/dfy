@@ -10,6 +10,10 @@ export type BlogPost = {
 // Single source of truth for published blog posts, newest first.
 // Used by the blog index (/resources/blog) and the resources hub (/resources).
 export const blogPosts: BlogPost[] = [
+  {"title": "Clinic Landing Pages: How to Turn Ad Clicks into Booked Consultations", "description": "Build a clinic landing page around service intent, verified doctor information and easy appointment requests. Measure conversion, bookings and attendance together.", "href": "/resources/blog/clinic-landing-page-conversion", "category": "Clinic marketing", "date": "2026-10-19"},
+  {"title": "Google Ads Search Terms for Clinics: Find Appointment Intent and Cut Irrelevant Clicks", "description": "Review clinic Google Ads search terms by service, location and appointment intent. Use a dental query worksheet, negative-match examples and booking outcomes.", "href": "/resources/blog/google-ads-search-terms-clinics", "category": "Google Ads", "date": "2026-10-19"},
+  {"title": "Broad Match vs Phrase and Exact Match in Google Ads: A Lead Generation Guide", "description": "Compare Google Ads broad, phrase and exact match for lead generation. Learn how intent, Smart Bidding, negatives and qualified conversion tracking affect your test.", "href": "/resources/blog/broad-phrase-exact-match-google-ads", "category": "Google Ads", "date": "2026-10-19"},
+  {"title": "10 WhatsApp Business API Tools for Lead Follow-Up in India", "description": "Compare 10 WhatsApp Business API tools for Indian service teams by inbox, automation, CRM fit and cost structure. Includes a practical follow-up pilot checklist.", "href": "/resources/blog/whatsapp-business-api-tools-india", "category": "Lead nurture", "date": "2026-10-19"},
   {"title": "Google Ads vs Meta Ads for Clinics in India: Which Should You Start With?", "description": "Choose a clinic advertising channel using patient intent, search terms, booking-page conversion and attended consultations. Compare Google Search, calls and Meta Ads.", "href": "/resources/blog/google-ads-vs-meta-ads-clinics-india", "category": "Clinic marketing", "date": "2026-10-19"},
   {"title": "Getting Good Leads but No Sales? How to Find the Conversion Problem", "description": "Find where qualified enquiries stop becoming customers. Check contact, meetings, proposals, lost reasons and CRM data before changing your ad budget.", "href": "/resources/blog/good-leads-but-no-sales", "category": "Lead quality", "date": "2026-10-19"},
   {"title": "Freelancer vs Marketing Agency in India: Who Should Manage Your Ads?", "description": "Compare a freelancer and marketing agency by scope, expertise, total cost, accountability and account ownership. Use a practical hiring checklist for your paid ads.", "href": "/resources/blog/freelancer-vs-marketing-agency-india", "category": "Agency selection", "date": "2026-10-19"},
@@ -217,7 +221,11 @@ export function formatPostDate(iso: string) {
 // Curated reading paths connect budgeting, qualification, and follow-up topics.
 // These are ordinary server-rendered links, including to less-discovered guides.
 export const relatedArticleSlugs: Record<string, string[]> = {
-  "google-ads-vs-meta-ads-clinics-india": ["meta-ads-vs-google-ads-b2b-india", "landing-page-conversion-rate-service-businesses", "good-leads-but-no-sales"],
+  "clinic-landing-page-conversion": ["google-ads-search-terms-clinics", "google-ads-vs-meta-ads-clinics-india", "landing-page-conversion-rate-service-businesses"],
+  "google-ads-search-terms-clinics": ["clinic-landing-page-conversion", "broad-phrase-exact-match-google-ads", "google-ads-vs-meta-ads-clinics-india"],
+  "broad-phrase-exact-match-google-ads": ["google-ads-search-terms-clinics", "qualified-leads-vs-cost-per-lead-b2b", "broad-vs-interest-targeting-meta-ads"],
+  "whatsapp-business-api-tools-india": ["whatsapp-lead-nurture-service-businesses", "crm-tracking-setup-for-service-businesses", "good-leads-but-no-sales"],
+  "google-ads-vs-meta-ads-clinics-india": ["clinic-landing-page-conversion", "google-ads-search-terms-clinics", "meta-ads-vs-google-ads-b2b-india"],
   "good-leads-but-no-sales": ["qualified-leads-vs-cost-per-lead-b2b", "whatsapp-lead-nurture-service-businesses", "crm-tracking-setup-for-service-businesses"],
   "freelancer-vs-marketing-agency-india": ["full-service-vs-ads-only-marketing-agency", "how-to-choose-b2b-meta-ads-agency-india", "b2b-meta-ads-agency-cost-india"],
   "broad-vs-interest-targeting-meta-ads": ["how-to-improve-lead-quality-meta-ads", "crm-based-optimization-meta-ads-b2b", "qualified-leads-vs-cost-per-lead-b2b"],
@@ -228,7 +236,7 @@ export const relatedArticleSlugs: Record<string, string[]> = {
   "how-to-choose-b2b-meta-ads-agency-india": ["freelancer-vs-marketing-agency-india", "b2b-meta-ads-agency-cost-india", "b2b-saas-lead-generation-india"],
   "how-to-improve-lead-quality-meta-ads": ["broad-vs-interest-targeting-meta-ads", "good-leads-but-no-sales", "qualified-leads-vs-cost-per-lead-b2b"],
   "b2b-saas-lead-generation-india": ["b2b-lead-generation-benchmarks-india", "meta-ads-vs-google-ads-b2b-india", "crm-based-optimization-meta-ads-b2b"],
-  "meta-ads-vs-google-ads-b2b-india": ["google-ads-vs-meta-ads-clinics-india", "b2b-saas-lead-generation-india", "b2b-meta-ads-agency-cost-india"],
-  "landing-page-conversion-rate-service-businesses": ["how-to-improve-lead-quality-meta-ads", "qualified-leads-vs-cost-per-lead-b2b", "whatsapp-lead-nurture-service-businesses"],
-  "whatsapp-lead-nurture-service-businesses": ["crm-tracking-setup-for-service-businesses", "how-to-improve-lead-quality-meta-ads", "qualified-leads-vs-cost-per-lead-b2b"],
+  "meta-ads-vs-google-ads-b2b-india": ["broad-phrase-exact-match-google-ads", "google-ads-vs-meta-ads-clinics-india", "b2b-saas-lead-generation-india"],
+  "landing-page-conversion-rate-service-businesses": ["clinic-landing-page-conversion", "qualified-leads-vs-cost-per-lead-b2b", "whatsapp-lead-nurture-service-businesses"],
+  "whatsapp-lead-nurture-service-businesses": ["whatsapp-business-api-tools-india", "crm-tracking-setup-for-service-businesses", "good-leads-but-no-sales"],
 };

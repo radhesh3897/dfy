@@ -3,6 +3,7 @@ import { ButtonLink } from "@/components/ButtonLink";
 import { CTASection } from "@/components/CTASection";
 import { JsonLd } from "@/components/JsonLd";
 import { Section } from "@/components/Section";
+import { PlanningGuides } from "@/components/PlanningGuides";
 import { breadcrumbSchema, serviceSchema, webPageSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/site";
 
@@ -227,6 +228,12 @@ export default function ClinicLeadGenerationPage() {
           ))}
         </div>
       </Section>
+
+      <PlanningGuides title="Plan your clinic’s appointment journey." slugs={[
+        "google-ads-vs-meta-ads-clinics-india",
+        "clinic-landing-page-conversion",
+        "google-ads-search-terms-clinics",
+      ]} />
 
       <CTASection
         title="Ready to bring more qualified patients through your clinic doors?"
