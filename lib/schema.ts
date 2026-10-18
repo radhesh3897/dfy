@@ -66,38 +66,7 @@ export function organizationSchema() {
   };
 }
 
-// Render only on the homepage, where these testimonials can be read.
-export function homepageReviewsSchema() {
-  return {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Review",
-        itemReviewed: { "@id": absoluteUrl("/#organization") },
-        author: { "@type": "Person", name: "Kritika Gupta" },
-        publisher: { "@type": "Organization", name: "Talent Z" },
-        reviewBody:
-          "DFY helped us improve lead quality, not just lead volume. We started getting more relevant enquiries, stronger sales conversations, and a much clearer path to revenue. Their process is structured, reliable, and built for real growth.",
-      },
-      {
-        "@type": "Review",
-        itemReviewed: { "@id": absoluteUrl("/#organization") },
-        author: { "@type": "Person", name: "Manish Agrawal" },
-        publisher: { "@type": "Organization", name: "NMIMS" },
-        reviewBody:
-          "What stood out most was the quality of the system DFY built for us. Lead quality improved, wasted spend reduced, and the revenue impact became much more visible. Their processes and execution are phenomenal.",
-      },
-      {
-        "@type": "Review",
-        itemReviewed: { "@id": absoluteUrl("/#organization") },
-        author: { "@type": "Person", name: "Raja Sharma" },
-        publisher: { "@type": "Organization", name: "CaseEase" },
-        reviewBody:
-          "DFY brought real structure to our acquisition process. We started seeing better-quality leads, more serious prospects, and stronger revenue outcomes. The team is process-driven, sharp, and excellent at what they do.",
-      },
-    ],
-  };
-}
+// Testimonials remain visible content; self-serving Organization reviews are not rich-result markup.
 
 export function founderPersonSchema() {
   return {
