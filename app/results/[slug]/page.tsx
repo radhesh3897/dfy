@@ -57,25 +57,14 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
     author: { "@type": "Organization", name: "Done For You", url: "https://www.doneforyou.in" },
     publisher: { "@type": "Organization", name: "Done For You", url: "https://www.doneforyou.in" },
     datePublished: study.datePublished,
-    dateModified: study.datePublished,
+    dateModified: study.dateModified ?? study.datePublished,
     about: study.brand,
   };
-
-  const reviewSchema = study.quote
-    ? {
-        "@context": "https://schema.org",
-        "@type": "Review",
-        reviewBody: study.quote.text,
-        author: { "@type": "Person", name: study.quote.name },
-        itemReviewed: { "@type": "Organization", name: "Done For You", url: "https://www.doneforyou.in" },
-      }
-    : null;
 
   return (
     <>
       <JsonLd data={webPageSchema(path, study.title, study.metaDescription)} />
       <JsonLd data={articleSchema} />
-      {reviewSchema ? <JsonLd data={reviewSchema} /> : null}
       <JsonLd
         data={breadcrumbSchema([
           { name: "Home", path: "/" },
