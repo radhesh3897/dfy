@@ -28,6 +28,7 @@ export function organizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": ["Organization", "ProfessionalService"],
+    "@id": absoluteUrl("/#organization"),
     name: site.name,
     url: site.url,
     email: site.email,
@@ -62,9 +63,17 @@ export function organizationSchema() {
       "Lead nurture",
       "Marketing analytics",
     ],
-    review: [
+  };
+}
+
+// Render only on the homepage, where these testimonials can be read.
+export function homepageReviewsSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
       {
         "@type": "Review",
+        itemReviewed: { "@id": absoluteUrl("/#organization") },
         author: { "@type": "Person", name: "Kritika Gupta" },
         publisher: { "@type": "Organization", name: "Talent Z" },
         reviewBody:
@@ -72,6 +81,7 @@ export function organizationSchema() {
       },
       {
         "@type": "Review",
+        itemReviewed: { "@id": absoluteUrl("/#organization") },
         author: { "@type": "Person", name: "Manish Agrawal" },
         publisher: { "@type": "Organization", name: "NMIMS" },
         reviewBody:
@@ -79,6 +89,7 @@ export function organizationSchema() {
       },
       {
         "@type": "Review",
+        itemReviewed: { "@id": absoluteUrl("/#organization") },
         author: { "@type": "Person", name: "Raja Sharma" },
         publisher: { "@type": "Organization", name: "CaseEase" },
         reviewBody:
