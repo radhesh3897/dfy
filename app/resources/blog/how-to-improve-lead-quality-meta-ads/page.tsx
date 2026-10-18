@@ -1,186 +1,102 @@
+import { BlogArticle, BlogSection } from "@/components/BlogArticle";
 import type { Metadata } from "next";
-import { ArticleByline } from "@/components/ArticleByline";
-import { Cite, PullQuote, SourceList } from "@/components/Citations";
-import { CTASection } from "@/components/CTASection";
+import { Cite, SourceList } from "@/components/Citations";
 import { FAQ } from "@/components/FAQ";
-import { JsonLd } from "@/components/JsonLd";
-import { Section } from "@/components/Section";
-import { breadcrumbSchema, faqSchema, webPageSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/site";
-
 const path = "/resources/blog/how-to-improve-lead-quality-meta-ads";
-const description =
-  "Poor lead quality from Meta Ads is almost always fixable. Here are the five specific changes that improve lead quality for B2B service businesses in India.";
-
+const description = "Poor lead quality from Meta Ads is almost always fixable. Here are the five specific changes that improve lead quality for B2B service businesses in India.";
 export const metadata: Metadata = pageMetadata({
-  title: "How to Improve Lead Quality from Meta Ads",
-  description,
-  path,
+    title: "How to Improve Lead Quality from Meta Ads",
+    description,
+    path,
 });
-
 const faqs = [
-  {
-    question: "How long does it take to improve lead quality after changing Meta Ads targeting?",
-    answer:
-      "Most B2B service businesses see clearer lead quality signals within 14 to 21 days, but stable improvement usually takes 45 to 60 days because Meta needs enough qualified conversion data to learn from.",
-  },
-  {
-    question: "What CPL should I expect after fixing lead quality on Meta Ads?",
-    answer:
-      "For B2B service businesses in India, a qualified Meta Ads lead often costs ₹800 to ₹2,500 after filters are added. The CPL may rise, but cost per useful sales conversation should fall.",
-  },
-  {
-    question: "Should I use Lead Ads or website conversion campaigns for B2B leads?",
-    answer:
-      "Use Lead Ads when speed and mobile completion matter, and use website conversion campaigns when the landing page can qualify intent better. Many B2B accounts test both for 30 days before deciding.",
-  },
-  {
-    question: "How do I tell Meta which leads converted in my CRM?",
-    answer:
-      "You can send qualified lead, booked call, or customer events back to Meta using CAPI, offline conversions, or CRM integrations. The key is sending the event within 24 to 72 hours when possible.",
-  },
+    {
+        "question": "How long does lead-quality improvement take?",
+        "answer": "Timing depends on lead volume, the sales cycle, and the changes being tested. Agree on a review window that gives leads enough time to be contacted and qualified; there is no guaranteed improvement date."
+    },
+    {
+        "question": "What CPL should I target?",
+        "answer": "Set the target from customer economics and measured conversion rates. A lower CPL is useful only if the resulting enquiries also qualify and become customers at a sustainable cost."
+    },
+    {
+        "question": "Are instant forms always worse than website forms?",
+        "answer": "No. Compare the offer, questions, follow-up, and resulting CPQL under consistent measurement. Either format can generate suitable or unsuitable enquiries."
+    },
+    {
+        "question": "How can Meta receive CRM outcomes?",
+        "answer": "A supported CRM integration with the Conversions API can connect later outcomes to campaigns. Validate event definitions, matching, permissions, and coverage before relying on the data."
+    }
 ];
-
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "How to Improve Lead Quality from Meta Ads",
-  author: {
-    "@type": "Person",
-    name: "Radhesh Agrawal",
-    url: "https://www.doneforyou.in/company/about",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "Done For You",
-    url: "https://www.doneforyou.in",
-  },
-  datePublished: "2026-06-13",
-  dateModified: "2026-06-20",
-  description: "How to fix poor lead quality from Meta Ads for B2B service businesses in India.",
-};
-
 export default function ImproveLeadQualityMetaAdsArticle() {
-  return (
-    <>
-      <JsonLd data={webPageSchema(path, "How to Improve Lead Quality from Meta Ads", description)} />
-      <JsonLd data={articleSchema} />
-      <JsonLd data={faqSchema(faqs)} />
-      <JsonLd
-        data={breadcrumbSchema([
-          { name: "Home", path: "/" },
-          { name: "Resources", path: "/resources" },
-          { name: "Blog", path: "/resources/blog" },
-          { name: "How to Improve Lead Quality from Meta Ads", path },
-        ])}
-      />
+    return (<BlogArticle path={path} title={"How to Improve Lead Quality from Meta Ads"} description={description} category={"Meta Ads guide"} published="2026-06-13" updated="2026-10-18" summary={"Improve Meta Ads lead quality by reviewing offer clarity, buyer fit, form qualification, sales follow-up, and CRM feedback together. Define a qualified lead first, then compare cost per qualified lead and customer outcomes as changes are tested."} contents={[
+            {
+                "id": "why-does-meta-ads-attract-low-quality-leads-for-service-businesses",
+                "label": "Why does Meta Ads attract low-quality leads for service businesses?"
+            },
+            {
+                "id": "how-does-audience-targeting-affect-lead-quality-on-meta-ads",
+                "label": "How does audience targeting affect lead quality on Meta Ads?"
+            },
+            {
+                "id": "what-should-a-lead-qualification-landing-page-include",
+                "label": "What should a lead qualification landing page include?"
+            },
+            {
+                "id": "how-does-crm-feedback-improve-meta-ads-lead-quality-over-time",
+                "label": "How does CRM feedback improve Meta Ads lead quality over time?"
+            },
+            {
+                "id": "what-is-meta-capi-and-why-does-it-matter-for-lead-quality",
+                "label": "What is Meta CAPI and why does it matter for lead quality?"
+            },
+            {
+                "id": "what-the-data-says-about-lead-quality-and-tracking",
+                "label": "What the data says about lead quality and tracking"
+            },
+            {
+                "id": "what-should-you-know-before-fixing-meta-ads-lead-quality",
+                "label": "What should you know before fixing Meta Ads lead quality?"
+            },
+            {
+                "id": "sources",
+                "label": "Sources"
+            }
+        ]} faqs={faqs} ctaTitle={"Review your Meta Ads lead quality"} ctaText={"Book a call and we will review your targeting, landing page, CRM feedback loop, and CAPI setup."}>
+    <BlogSection id="why-does-meta-ads-attract-low-quality-leads-for-service-businesses" title="Why does Meta Ads attract low-quality leads for service businesses?">
+    <p>Lead quality can suffer when the offer attracts unsuitable enquiries, qualification is unclear, follow-up is weak, or the campaign has little reliable information about later sales outcomes. Diagnose the leak before changing targeting or budgets.</p><p>Start with a written qualification rule and track leads through contact, qualification, opportunities, and customers.</p>
+    </BlogSection>
 
-      <article>
-        <Section tone="white" eyebrow="Meta Ads guide" title="How to Improve Lead Quality from Meta Ads">
-          <div className="max-w-3xl space-y-6 text-lg leading-8 text-[#465163]">
-            <ArticleByline published="2026-06-13" updated="2026-06-20" />
-            <p>
-              Poor lead quality from Meta Ads is caused by three fixable problems: audience targeting that is too broad, landing pages that do not qualify the visitor, and no feedback loop between your CRM and your ad account. This guide covers each one with specific actions you can take this week.
-            </p>
-          </div>
-        </Section>
+    <BlogSection id="how-does-audience-targeting-affect-lead-quality-on-meta-ads" title="How does audience targeting affect lead quality on Meta Ads?">
+    <p>Use your buyer profile and campaign data to identify relevant audience and creative hypotheses. Review location, message, placement, and lead outcomes together; broad targeting alone does not prove that a campaign is attracting poor-fit buyers.</p><p>Give each test enough relevant data for the decision you want to make. There is no universal impression count or elapsed time that proves lead quality.</p>
+    </BlogSection>
 
-        <Section tone="white" title="Why does Meta Ads attract low-quality leads for service businesses?">
-          <div className="max-w-3xl space-y-5 text-lg leading-8 text-[#465163]">
-            <p>
-              Meta Ads attracts low-quality leads when the campaign optimizes for the easiest form fill instead of a qualified buyer action. In most B2B service accounts, this happens within the first 7 to 14 days if the ad set has broad targeting, weak exclusions, and no downstream conversion signal.
-            </p>
-            <p>
-              A campaign can produce 50 leads in a week and still fail if only 5 to 10 percent become useful conversations. The fix starts by defining what a qualified lead means before changing budgets.
-            </p>
-          </div>
-        </Section>
+    <BlogSection id="what-should-a-lead-qualification-landing-page-include" title="What should a lead qualification landing page include?">
+    <p>Explain who the offer serves, the problem it solves, relevant proof, and what happens after an enquiry. Ask only the questions that materially help qualification or routing.</p><ul className="list-disc space-y-3 pl-5 marker:text-[#164E50]"><li>Check business need and location where these determine fit.</li><li>Ask budget or timing questions when they help the sales team act.</li><li>Review mobile completion and the downstream qualification rate together.</li></ul>
+    </BlogSection>
 
-        <Section tone="white" title="How does audience targeting affect lead quality on Meta Ads?">
-          <div className="max-w-3xl space-y-5 text-lg leading-8 text-[#465163]">
-            <p>
-              Audience targeting affects lead quality because Meta needs enough buyer context to separate serious prospects from casual browsers. For B2B service businesses, start with 2 to 4 audience hypotheses and test each for at least 10,000 impressions before making a decision.
-            </p>
-            <p>
-              Use exclusions for students, job seekers, and irrelevant locations when they distort lead quality. Review age, city, device, placement, and form completion patterns every 7 days during the first month.
-            </p>
-          </div>
-        </Section>
+    <BlogSection id="how-does-crm-feedback-improve-meta-ads-lead-quality-over-time" title="How does CRM feedback improve Meta Ads lead quality over time?">
+    <p>CRM feedback links initial enquiries to later qualification and sales stages. Reliable outcome data can support reporting and campaign optimisation where the platform and integration support those signals.</p><p>Record source, campaign, qualification status, and outcome. Validate matching and event coverage before changing the optimisation goal.</p>
+    </BlogSection>
 
-        <Section tone="white" title="What should a lead qualification landing page include?">
-          <div className="max-w-3xl space-y-5 text-lg leading-8 text-[#465163]">
-            <p>
-              A lead qualification landing page should explain who the offer is for, who it is not for, and what happens after the enquiry. For B2B services, the page should include 3 to 5 qualifying signals such as budget range, company size, location, timeline, and service need.
-            </p>
-            <p>
-              The form should not ask 12 questions on the first step, but it should ask enough to prevent poor-fit submissions. A practical target is a 10 to 25 percent landing page conversion rate with better lead-to-call quality.
-            </p>
-          </div>
-        </Section>
+    <BlogSection id="what-is-meta-capi-and-why-does-it-matter-for-lead-quality" title="What is Meta CAPI and why does it matter for lead quality?">
+    <p>Meta’s Conversions API supports sending conversion information from business systems to Meta. The CRM integration can help connect qualified-lead outcomes to advertising decisions.</p><p>Choose events that your team records reliably. Sending more events is not a substitute for accurate stages, appropriate data handling, and enough usable signal.</p>
+    </BlogSection>
 
-        <Section tone="white" title="How does CRM feedback improve Meta Ads lead quality over time?">
-          <div className="max-w-3xl space-y-5 text-lg leading-8 text-[#465163]">
-            <p>
-              CRM feedback improves Meta Ads lead quality by telling the ad account which form fills became qualified conversations, booked calls, or customers. Without this loop, Meta may optimize toward the cheapest 20 percent of leads instead of the best 20 percent.
-            </p>
-            <p>
-              Tag every lead with source, campaign, ad, qualification status, and sales outcome. Review the pattern weekly for the first 90 days so creative, targeting, and budget changes are based on sales reality.
-            </p>
-          </div>
-        </Section>
+    <BlogSection id="what-the-data-says-about-lead-quality-and-tracking" title="What the data says about lead quality and tracking">
+    <p>Use current platform documentation when designing the feedback loop. <Cite href="https://www.facebookblueprint.com/student/activity/603002-improve-lead-quality-with-meta-conversions-api-for-crm">Meta Blueprint explains CRM integration and qualified-lead optimisation</Cite>.</p><p>Historical studies on browser tracking or follow-up are background context. They do not establish a fixed improvement rate, CPL, or learning period for your business.</p>
+    </BlogSection>
 
-        <Section tone="white" title="What is Meta CAPI and why does it matter for lead quality?">
-          <div className="max-w-3xl space-y-5 text-lg leading-8 text-[#465163]">
-            <p>
-              Meta CAPI is a server-side way to send conversion events from your website or CRM back to Meta with more reliable tracking than browser pixels alone. It matters because iOS privacy changes and cookie loss can hide 15 to 40 percent of useful conversion signals.
-            </p>
-            <p>
-              For lead quality, send events such as qualified lead, booked call, attended call, and customer. These signals usually need 30 to 60 days of clean volume before they meaningfully guide optimization.
-            </p>
-          </div>
-        </Section>
+    <BlogSection id="what-should-you-know-before-fixing-meta-ads-lead-quality" title="What should you know before fixing Meta Ads lead quality?">
+          <FAQ faqs={faqs}/>
+        </BlogSection>
 
-        <Section tone="white" eyebrow="Evidence" title="What the data says about lead quality and tracking">
-          <div className="max-w-3xl space-y-5 text-lg leading-8 text-[#465163]">
-            <p>
-              Server-side tracking is no longer optional. After Apple introduced App Tracking Transparency, Meta estimated the change would cost its business around{" "}
-              <Cite href="https://www.cnbc.com/2022/02/02/facebook-says-apple-ios-privacy-change-will-cost-10-billion-this-year.html">10 billion dollars in 2022 alone</Cite>, because browser-based signals became far less reliable. Sending qualified conversions from your CRM through CAPI is how you restore the signal Meta needs to find real buyers.
-            </p>
-            <p>
-              Follow-up speed compounds everything upstream. Firms that contact a new lead within an hour are nearly{" "}
-              <Cite href="https://hbr.org/2011/03/the-short-life-of-online-sales-leads">seven times more likely to qualify it</Cite> than those that wait even one hour longer (Harvard Business Review). A strong lead with a slow response still converts like a weak one.
-            </p>
-            <p>
-              Nurture pays for itself too. Companies that excel at lead nurturing generate{" "}
-              <Cite href="https://blog.hubspot.com/blog/tabid/6307/bid/30901/30-thought-provoking-lead-nurturing-stats-you-can-t-ignore.aspx">50 percent more sales-ready leads at 33 percent lower cost</Cite> (Forrester). Lead quality is built after the click, not only at the targeting stage.
-            </p>
-            <PullQuote
-              quote="Most accounts do not have a lead quality problem. They have a feedback problem. Until the ad platform knows which leads actually became customers, it keeps optimising for the cheapest form fill."
-              attribution="Radhesh Agrawal, Founder, Done For You"
-            />
-          </div>
-        </Section>
-
-        <Section tone="white" eyebrow="FAQ" title="What should you know before fixing Meta Ads lead quality?">
-          <FAQ faqs={faqs} />
-        </Section>
-        <Section tone="white" eyebrow="Sources" title="Sources">
-          <SourceList
-            sources={[
-              { label: "Meta says Apple iOS privacy change will cost $10 billion this year — CNBC (2022)", href: "https://www.cnbc.com/2022/02/02/facebook-says-apple-ios-privacy-change-will-cost-10-billion-this-year.html" },
-              { label: "The Short Life of Online Sales Leads — Harvard Business Review (2011)", href: "https://hbr.org/2011/03/the-short-life-of-online-sales-leads" },
-              { label: "Lead nurturing statistics (Forrester) — HubSpot", href: "https://blog.hubspot.com/blog/tabid/6307/bid/30901/30-thought-provoking-lead-nurturing-stats-you-can-t-ignore.aspx" },
-            ]}
-          />
-        </Section>
-      </article>
-
-      <CTASection
-        title="Want DFY to review your Meta Ads lead quality?"
-        text="Book a call and we will review your targeting, landing page, CRM feedback loop, and CAPI setup."
-        buttonLabel="Book a Call"
-        buttonHref="/#free-audit-form"
-      />
-    </>
-  );
+    <BlogSection id="sources" title="Sources">
+          <SourceList sources={[
+            { label: "Meta says Apple iOS privacy change will cost $10 billion this year — CNBC (2022)", href: "https://www.cnbc.com/2022/02/02/facebook-says-apple-ios-privacy-change-will-cost-10-billion-this-year.html" },
+            { label: "The Short Life of Online Sales Leads — Harvard Business Review (2011)", href: "https://hbr.org/2011/03/the-short-life-of-online-sales-leads" },
+            { label: "Lead nurturing statistics (Forrester) — HubSpot", href: "https://blog.hubspot.com/blog/tabid/6307/bid/30901/30-thought-provoking-lead-nurturing-stats-you-can-t-ignore.aspx" },
+        ]}/>
+        </BlogSection>
+ </BlogArticle>);
 }
