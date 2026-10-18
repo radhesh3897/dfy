@@ -20,13 +20,13 @@ export const blogPosts: BlogPost[] = [
     updated: "2026-10-18",
   },
   {
-    title: "How Much Does a B2B Meta Ads Agency Cost in India?",
+    title: "Meta Ads Agency Cost in India: Fees, Ad Spend & Budget",
     description:
-      "Compare Meta Ads agency fees, media budgets, delivery scope, and billing considerations before choosing an agency in India.",
+      "Separate agency fees from ad spend, compare pricing models, and build your budget with an itemized rupee example and a quote checklist.",
     href: "/resources/blog/b2b-meta-ads-agency-cost-india",
     category: "Agency selection",
     date: "2026-06-27",
-    updated: "2026-10-18",
+    updated: "2026-10-19",
   },
   {
     title: "Qualified Leads vs Cost Per Lead for B2B",
@@ -209,3 +209,18 @@ export function formatPostDate(iso: string) {
     timeZone: "UTC",
   });
 }
+
+// Curated reading paths connect budgeting, qualification, and follow-up topics.
+// These are ordinary server-rendered links, including to less-discovered guides.
+export const relatedArticleSlugs: Record<string, string[]> = {
+  "b2b-meta-ads-agency-cost-india": ["meta-ads-vs-google-ads-b2b-india", "landing-page-conversion-rate-service-businesses", "how-to-improve-lead-quality-meta-ads"],
+  "qualified-leads-vs-cost-per-lead-b2b": ["how-to-improve-lead-quality-meta-ads", "b2b-saas-lead-generation-india", "whatsapp-lead-nurture-service-businesses"],
+  "b2b-lead-generation-benchmarks-india": ["b2b-saas-lead-generation-india", "meta-ads-vs-google-ads-b2b-india", "landing-page-conversion-rate-service-businesses"],
+  "crm-based-optimization-meta-ads-b2b": ["whatsapp-lead-nurture-service-businesses", "how-to-improve-lead-quality-meta-ads", "crm-tracking-setup-for-service-businesses"],
+  "how-to-choose-b2b-meta-ads-agency-india": ["b2b-meta-ads-agency-cost-india", "b2b-saas-lead-generation-india", "meta-ads-vs-google-ads-b2b-india"],
+  "how-to-improve-lead-quality-meta-ads": ["qualified-leads-vs-cost-per-lead-b2b", "landing-page-conversion-rate-service-businesses", "whatsapp-lead-nurture-service-businesses"],
+  "b2b-saas-lead-generation-india": ["b2b-lead-generation-benchmarks-india", "meta-ads-vs-google-ads-b2b-india", "crm-based-optimization-meta-ads-b2b"],
+  "meta-ads-vs-google-ads-b2b-india": ["b2b-meta-ads-agency-cost-india", "b2b-saas-lead-generation-india", "how-to-improve-lead-quality-meta-ads"],
+  "landing-page-conversion-rate-service-businesses": ["how-to-improve-lead-quality-meta-ads", "qualified-leads-vs-cost-per-lead-b2b", "whatsapp-lead-nurture-service-businesses"],
+  "whatsapp-lead-nurture-service-businesses": ["crm-tracking-setup-for-service-businesses", "how-to-improve-lead-quality-meta-ads", "qualified-leads-vs-cost-per-lead-b2b"],
+};
