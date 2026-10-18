@@ -10,6 +10,10 @@ export type BlogPost = {
 // Single source of truth for published blog posts, newest first.
 // Used by the blog index (/resources/blog) and the resources hub (/resources).
 export const blogPosts: BlogPost[] = [
+  {"title": "Google Ads vs Meta Ads for Clinics in India: Which Should You Start With?", "description": "Choose a clinic advertising channel using patient intent, search terms, booking-page conversion and attended consultations. Compare Google Search, calls and Meta Ads.", "href": "/resources/blog/google-ads-vs-meta-ads-clinics-india", "category": "Clinic marketing", "date": "2026-10-19"},
+  {"title": "Getting Good Leads but No Sales? How to Find the Conversion Problem", "description": "Find where qualified enquiries stop becoming customers. Check contact, meetings, proposals, lost reasons and CRM data before changing your ad budget.", "href": "/resources/blog/good-leads-but-no-sales", "category": "Lead quality", "date": "2026-10-19"},
+  {"title": "Freelancer vs Marketing Agency in India: Who Should Manage Your Ads?", "description": "Compare a freelancer and marketing agency by scope, expertise, total cost, accountability and account ownership. Use a practical hiring checklist for your paid ads.", "href": "/resources/blog/freelancer-vs-marketing-agency-india", "category": "Agency selection", "date": "2026-10-19"},
+  {"title": "Broad vs Interest Targeting on Meta Ads: How to Choose and Test", "description": "Choose and test Meta audiences using buyer fit, creative, CRM feedback and cost per qualified lead. Learn when interest inputs or broader reach deserve a test.", "href": "/resources/blog/broad-vs-interest-targeting-meta-ads", "category": "Meta Ads", "date": "2026-10-19"},
   {
     title: "How to Choose a B2B Meta Ads Agency in India",
     description:
@@ -213,14 +217,18 @@ export function formatPostDate(iso: string) {
 // Curated reading paths connect budgeting, qualification, and follow-up topics.
 // These are ordinary server-rendered links, including to less-discovered guides.
 export const relatedArticleSlugs: Record<string, string[]> = {
+  "google-ads-vs-meta-ads-clinics-india": ["meta-ads-vs-google-ads-b2b-india", "landing-page-conversion-rate-service-businesses", "good-leads-but-no-sales"],
+  "good-leads-but-no-sales": ["qualified-leads-vs-cost-per-lead-b2b", "whatsapp-lead-nurture-service-businesses", "crm-tracking-setup-for-service-businesses"],
+  "freelancer-vs-marketing-agency-india": ["full-service-vs-ads-only-marketing-agency", "how-to-choose-b2b-meta-ads-agency-india", "b2b-meta-ads-agency-cost-india"],
+  "broad-vs-interest-targeting-meta-ads": ["how-to-improve-lead-quality-meta-ads", "crm-based-optimization-meta-ads-b2b", "qualified-leads-vs-cost-per-lead-b2b"],
   "b2b-meta-ads-agency-cost-india": ["meta-ads-vs-google-ads-b2b-india", "landing-page-conversion-rate-service-businesses", "how-to-improve-lead-quality-meta-ads"],
   "qualified-leads-vs-cost-per-lead-b2b": ["how-to-improve-lead-quality-meta-ads", "b2b-saas-lead-generation-india", "whatsapp-lead-nurture-service-businesses"],
   "b2b-lead-generation-benchmarks-india": ["b2b-saas-lead-generation-india", "meta-ads-vs-google-ads-b2b-india", "landing-page-conversion-rate-service-businesses"],
   "crm-based-optimization-meta-ads-b2b": ["whatsapp-lead-nurture-service-businesses", "how-to-improve-lead-quality-meta-ads", "crm-tracking-setup-for-service-businesses"],
-  "how-to-choose-b2b-meta-ads-agency-india": ["b2b-meta-ads-agency-cost-india", "b2b-saas-lead-generation-india", "meta-ads-vs-google-ads-b2b-india"],
-  "how-to-improve-lead-quality-meta-ads": ["qualified-leads-vs-cost-per-lead-b2b", "landing-page-conversion-rate-service-businesses", "whatsapp-lead-nurture-service-businesses"],
+  "how-to-choose-b2b-meta-ads-agency-india": ["freelancer-vs-marketing-agency-india", "b2b-meta-ads-agency-cost-india", "b2b-saas-lead-generation-india"],
+  "how-to-improve-lead-quality-meta-ads": ["broad-vs-interest-targeting-meta-ads", "good-leads-but-no-sales", "qualified-leads-vs-cost-per-lead-b2b"],
   "b2b-saas-lead-generation-india": ["b2b-lead-generation-benchmarks-india", "meta-ads-vs-google-ads-b2b-india", "crm-based-optimization-meta-ads-b2b"],
-  "meta-ads-vs-google-ads-b2b-india": ["b2b-meta-ads-agency-cost-india", "b2b-saas-lead-generation-india", "how-to-improve-lead-quality-meta-ads"],
+  "meta-ads-vs-google-ads-b2b-india": ["google-ads-vs-meta-ads-clinics-india", "b2b-saas-lead-generation-india", "b2b-meta-ads-agency-cost-india"],
   "landing-page-conversion-rate-service-businesses": ["how-to-improve-lead-quality-meta-ads", "qualified-leads-vs-cost-per-lead-b2b", "whatsapp-lead-nurture-service-businesses"],
   "whatsapp-lead-nurture-service-businesses": ["crm-tracking-setup-for-service-businesses", "how-to-improve-lead-quality-meta-ads", "qualified-leads-vs-cost-per-lead-b2b"],
 };
