@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArticleByline } from "@/components/ArticleByline";
 import { ButtonLink } from "@/components/ButtonLink";
 import { JsonLd } from "@/components/JsonLd";
-import { blogPosts } from "@/data/blogPosts";
+import { blogPosts, relatedArticleSlugs } from "@/data/blogPosts";
 import { breadcrumbSchema, faqSchema, webPageSchema, type Faq } from "@/lib/schema";
 import { absoluteUrl } from "@/lib/site";
 
@@ -44,7 +44,11 @@ export function BlogArticle({
   const previous = currentIndex > 0 ? blogPosts[currentIndex - 1] : undefined;
   const next = currentIndex >= 0 ? blogPosts[currentIndex + 1] : undefined;
   const categoryMatches = blogPosts.filter(post => post.href !== path && post.category === (blogPosts[currentIndex]?.category ?? category));
-  const related = [...categoryMatches, ...blogPosts.filter(post => post.href !== path && !categoryMatches.includes(post))].slice(0, 3);
+  const curated = (relatedArticleSlugs[path.split("/").pop() ?? ""] ?? [])
+    .flatMap(slug => blogPosts.filter(post => post.href === `/resources/blog/${slug}`));
+  const related = [...new Map([...curated, ...categoryMatches, ...blogPosts]
+    .filter(post => post.href !== path)
+    .map(post => [post.href, post])).values()].slice(0, 3);
   const articleSchema = {
     "@context": "https://schema.org", "@type": "Article",
     headline: title, description, mainEntityOfPage: absoluteUrl(path),

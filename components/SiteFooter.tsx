@@ -6,11 +6,13 @@ const links = [
   { label: "Home", href: "/" },
   { label: "Results", href: "/results" },
   { label: "Resources", href: "/resources" },
+  { label: "All Blog Articles", href: "/resources/blog" },
   { label: "Company", href: "/company" },
   { label: "B2B Lead Generation Agency", href: "/b2b-lead-generation-agency" },
   { label: "B2B Meta Ads Agency", href: "/services/b2b-meta-ads-agency" },
   { label: "Meta Ads for Service Businesses", href: "/services/meta-ads" },
   { label: "Google Ads for Service Businesses", href: "/services/google-ads" },
+  { label: "CRM, Tracking & Nurture", href: "/services/crm-tracking-nurture" },
   { label: "Lead Quality Improvement", href: "/lead-quality-improvement" },
   { label: "Lead Quality Checklist", href: "/resources/lead-quality-checklist" },
   { label: "About Done For You", href: "/company/about" },
@@ -64,6 +66,7 @@ export function SiteFooter() {
           </div>
           <div>
             <p className="text-sm font-black uppercase tracking-[0.16em] text-[#164E50]">Locations</p>
+            <Link href="/locations" className="mt-3 inline-block text-sm font-semibold text-[#164E50] underline underline-offset-4">All locations</Link>
             <div className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2 sm:grid-cols-4 lg:grid-cols-2">
               {locationPages.map((location) => (
                 <Link

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PuneLocationPage, punePage } from "@/components/PuneLocationPage";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -25,6 +26,8 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
   if (!location) {
     return {};
   }
+
+  if (slug === "pune") return pageMetadata(punePage);
 
   return pageMetadata({
     title: `B2B Lead Generation Company in ${location.city}`,
@@ -77,6 +80,8 @@ export default async function CityLocationPage({ params }: LocationPageProps) {
   if (!location) {
     notFound();
   }
+
+  if (slug === "pune") return <PuneLocationPage />;
 
   const keyword = `lead generation agency in ${location.city}`;
   const cityIndustries = [...new Set([...location.sectors, ...defaultIndustries])].slice(0, 8);

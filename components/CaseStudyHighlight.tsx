@@ -5,7 +5,7 @@ import { getCaseStudy } from "@/data/caseStudies";
 // Compact proof band: drop into a service page (as the second section) to show
 // one real client result with metrics + a screenshot + a link to the full case
 // study. Internal link + crawlable metrics help SEO/AEO; the full case study
-// page carries the Article/Review schema.
+// page carries the Article schema.
 export function CaseStudyHighlight({ slug }: { slug: string }) {
   const study = getCaseStudy(slug);
   if (!study) return null;

@@ -83,3 +83,9 @@ After making a change:
 - Each `app/resources/blog/<slug>/page.tsx` retains its metadata, FAQs, article content, and contents list. `data/blogPosts.ts` supplies index descriptions, categories, publication/updated dates, related reading, and article order.
 - Keep article updated dates and the corresponding `app/sitemap.ts` lastModified values consistent after substantive edits.
 - The installed personal skill is `dfy-seo-aeo-updater` (DFY SEO & AEO Updater).
+
+## Search discovery and Pune
+
+- `components/PlanningGuides.tsx` renders topic links from the blog catalogue on resource and service pages. `data/blogPosts.ts` also holds curated related-article paths, used by `BlogArticle`.
+- `components/PuneLocationPage.tsx` is the Pune-specific service page returned by `app/locations/[city]/page.tsx`. Its metadata, visible FAQs and Service schema share the same content; it describes remote service coverage, not a Pune branch office.
+- Homepage testimonials remain visible without Review/AggregateRating structured data. Do not add self-serving Organization review markup to try to obtain review stars.
