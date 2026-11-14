@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ButtonLink } from "@/components/ButtonLink";
+import { CityHeroLeadForm } from "@/components/CityHeroLeadForm";
 import { CTASection } from "@/components/CTASection";
 import { JsonLd } from "@/components/JsonLd";
 import { Section } from "@/components/Section";
@@ -84,6 +85,7 @@ export default async function CityLocationPage({ params }: LocationPageProps) {
   if (slug === "pune") return <PuneLocationPage />;
 
   const keyword = `lead generation agency in ${location.city}`;
+  const heroFormSource = slug === "bangalore" ? "/locations/bangalore" : slug === "chennai" ? "/locations/chennai" : null;
   const cityIndustries = [...new Set([...location.sectors, ...defaultIndustries])].slice(0, 8);
   const localBusinessSchema = {
     "@context": "https://schema.org",
@@ -124,7 +126,7 @@ export default async function CityLocationPage({ params }: LocationPageProps) {
       <JsonLd data={localBusinessSchema} />
 
       <section className="bg-[#fbfbf8] py-16 text-[#050505] sm:py-24">
-        <div className="container-wide grid gap-8 lg:grid-cols-[minmax(0,1fr)_390px] lg:items-center">
+        <div className={`container-wide grid gap-8 lg:grid-cols-[minmax(0,1fr)_390px] ${heroFormSource ? "lg:items-start" : "lg:items-center"}`}>
           <div>
             <p className="eyebrow text-[#164E50]">Serving businesses in {location.city}</p>
             <h1 className="mt-5 text-[clamp(2.65rem,7vw,5.25rem)] font-black leading-[0.96] tracking-[-0.055em]">
@@ -134,20 +136,25 @@ export default async function CityLocationPage({ params }: LocationPageProps) {
               Done For You helps service businesses in {location.city} generate better-quality leads through Google Ads,
               Meta Ads, landing pages, CRM tracking, nurture systems, creative strategy, and sales feedback loops.
             </p>
+            {heroFormSource && <p className="mt-4 max-w-3xl text-base leading-7 text-[#465163]">{location.uniqueAngle}</p>}
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href="/free-audit" variant="primary">Book a Call</ButtonLink>
+              <ButtonLink href={heroFormSource ? "#city-lead-form" : "/free-audit"} variant="primary">{heroFormSource ? "Request a Call" : "Book a Call"}</ButtonLink>
               <ButtonLink href="/results" variant="secondary">See Results</ButtonLink>
             </div>
           </div>
-          <aside className="rounded-[18px] border border-[#CDEECD] bg-white p-6 shadow-[0_22px_70px_rgba(22,78,80,0.08)]">
-            <p className="text-sm font-black uppercase tracking-[0.18em] text-[#164E50]">Local focus</p>
-            <p className="mt-4 text-2xl font-black leading-tight tracking-[-0.03em] text-[#164E50]">
-              {location.uniqueAngle}
-            </p>
-            <p className="mt-5 text-sm leading-6 text-[#667085]">
-              A {keyword} should help you understand lead quality, not only campaign volume.
-            </p>
-          </aside>
+          {heroFormSource ? (
+            <CityHeroLeadForm city={location.city} sourcePath={heroFormSource} />
+          ) : (
+            <aside className="rounded-[18px] border border-[#CDEECD] bg-white p-6 shadow-[0_22px_70px_rgba(22,78,80,0.08)]">
+              <p className="text-sm font-black uppercase tracking-[0.18em] text-[#164E50]">Local focus</p>
+              <p className="mt-4 text-2xl font-black leading-tight tracking-[-0.03em] text-[#164E50]">
+                {location.uniqueAngle}
+              </p>
+              <p className="mt-5 text-sm leading-6 text-[#667085]">
+                A {keyword} should help you understand lead quality, not only campaign volume.
+              </p>
+            </aside>
+          )}
         </div>
       </section>
 
@@ -185,7 +192,7 @@ export default async function CityLocationPage({ params }: LocationPageProps) {
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {serviceLinks.map((service) => (
             <Link
-              key={service.href}
+              key={service.title}
               href={service.href}
               className="rounded-[14px] border border-[#050505]/10 bg-white p-5 shadow-[0_18px_45px_rgba(5,5,5,0.05)] transition hover:-translate-y-0.5 hover:border-[#88DE7B]"
             >
@@ -271,8 +278,8 @@ export default async function CityLocationPage({ params }: LocationPageProps) {
       <CTASection
         title={`Want better-quality leads in ${location.city}?`}
         text="Book a call about your current ads, landing page, tracking, and follow-up system. We'll show you where the lead quality gaps are and what to fix first."
-        buttonLabel="Book a Call"
-        buttonHref="/free-audit"
+        buttonLabel={heroFormSource ? "Request a Call" : "Book a Call"}
+        buttonHref={heroFormSource ? "#city-lead-form" : "/free-audit"}
       />
     </>
   );
@@ -332,7 +339,7 @@ function FaqLinks({ question }: { question: string }) {
       : lowerQuestion.includes("crm") || lowerQuestion.includes("tracking") || lowerQuestion.includes("nurture")
         ? [{ label: "CRM, Tracking & Nurture", href: "/services/crm-tracking-nurture" }]
         : [
-            { label: "B2B Lead Generation", href: "/services/b2b-lead-generation" },
+            { label: "B2B Lead Generation", href: "/b2b-lead-generation-agency" },
             { label: "Free Audit", href: "/free-audit" },
           ];
 

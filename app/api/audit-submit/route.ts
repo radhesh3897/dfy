@@ -4,6 +4,12 @@ import { escapeHtml, normalizePhone, parseAuditSubmission } from "@/lib/audit-su
 
 const TO_EMAIL = "radhesh3897@gmail.com";
 const INGEST_URL = "https://rkmngnkgesteohigvsxe.supabase.co/functions/v1/ingest-lead";
+const CRM_SOURCES: Record<string, string> = {
+  "/": "Website - Homepage",
+  "/free-audit": "Website - Free Audit",
+  "/locations/bangalore": "Website - Bangalore Page",
+  "/locations/chennai": "Website - Chennai Page",
+};
 
 // Push a website lead into the WABA CRM (creates the contact, fires the WhatsApp
 // welcome + alert). Best-effort, with a bounded wait before sending the email.
@@ -24,7 +30,7 @@ async function pushToWabaCrm(body: Record<string, string>, sourcePath: string) {
         name: (body.fullName as string) || (body.businessName as string) || (body.name as string) || undefined,
         company: (body.businessName as string) || (body.company as string) || undefined,
         email: (body.email as string) || undefined,
-        source: sourcePath === "/" ? "Website - Homepage" : "Website - Free Audit",
+        source: CRM_SOURCES[sourcePath],
         monthly_ad_spend: (body.monthlyAdSpend as string) || (body.adSpend as string) || undefined,
         vertical: (body.vertical as string) || undefined,
         running_ads: (body.runningAds as string) || undefined,
@@ -59,17 +65,28 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ success: false }, { status: 503 });
     }
     const resend = new Resend(process.env.RESEND_API_KEY);
-    const { body, isHomepageForm, sourcePath } = submission;
+    const { body, isHomepageForm, isCityForm, sourcePath } = submission;
 
     // Fire the CRM push (awaited but wrapped so it can't break the form).
     await pushToWabaCrm(body, sourcePath);
 
-    const subject = isHomepageForm
-      ? `New Call Booking — ${body.fullName || body.businessName || "Unknown"}`
-      : `New Call Booking — ${body.name || "Unknown"} (${body.company || "Unknown"})`;
+    const cityName = sourcePath === "/locations/bangalore" ? "Bangalore" : "Chennai";
+    const subject = isCityForm
+      ? `New Call Request — ${body.fullName} (${cityName})`
+      : isHomepageForm
+        ? `New Call Booking — ${body.fullName || body.businessName || "Unknown"}`
+        : `New Call Booking — ${body.name || "Unknown"} (${body.company || "Unknown"})`;
 
-    const rows: [string, string][] = isHomepageForm
+    const rows: [string, string][] = isCityForm
       ? [
+          ["Name", body.fullName],
+          ["Business Name", body.businessName],
+          ["Email", body.email],
+          ["Phone Number", body.phoneNumber],
+          ["Source", sourcePath],
+        ]
+      : isHomepageForm
+        ? [
           ["Name", body.fullName],
           ["Business Name", body.businessName],
           ["Email", body.email],
@@ -78,8 +95,8 @@ export async function POST(request: NextRequest) {
           ["Vertical", body.vertical],
           ["Phone Number", body.phoneNumber],
           ["Source", sourcePath === "/" ? "Homepage form (/#free-audit-form)" : "/free-audit page"],
-        ]
-      : [
+          ]
+        : [
           ["Name", body.name],
           ["Business Email", body.email],
           ["Company Name", body.company],
@@ -104,7 +121,7 @@ export async function POST(request: NextRequest) {
       <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:600px;margin:0 auto">
         <div style="background:#164E50;padding:24px 28px;border-radius:8px 8px 0 0">
           <p style="margin:0;font-size:12px;font-weight:600;letter-spacing:0.08em;color:#88DE7B;text-transform:uppercase">Done For You</p>
-          <h1 style="margin:8px 0 0;font-size:22px;font-weight:700;color:#ffffff">New Call Booking</h1>
+          <h1 style="margin:8px 0 0;font-size:22px;font-weight:700;color:#ffffff">${isCityForm ? "New Call Request" : "New Call Booking"}</h1>
         </div>
         <div style="border:1px solid #e5e7eb;border-top:none;border-radius:0 0 8px 8px;overflow:hidden">
           <table style="width:100%;border-collapse:collapse">

@@ -26,7 +26,7 @@ const services = [
   { title: "B2B lead generation", text: "Define the buyer profile and connect acquisition to qualified conversations and opportunities.", href: "/b2b-lead-generation-agency" },
   { title: "Landing pages", text: "Explain fit, proof and next steps before asking a visitor to enquire.", href: "/services/landing-page-cro" },
   { title: "CRM and follow-up", text: "Record source, qualification, owner and next action so enquiries do not stop at the form.", href: "/services/crm-tracking-nurture" },
-  { title: "Creative strategy", text: "Turn buyer objections and sales feedback into messages worth testing.", href: "/services/creative-strategy" },
+  { title: "Creative strategy", text: "Turn buyer objections and sales feedback into messages worth testing.", href: "/services/meta-ads" },
 ];
 const buyerExamples = [
   { title: "SaaS and B2B services", text: "For a Pune team selling across India, qualify company fit, use case and decision-making role. Track attended demos and opportunities rather than judging every demo form as sales-ready.", href: "/resources/blog/b2b-saas-lead-generation-india", label: "Read the B2B SaaS guide" },
