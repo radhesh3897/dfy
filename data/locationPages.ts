@@ -22,7 +22,7 @@ export const serviceLinks = [
   },
   {
     title: "B2B Lead Generation",
-    href: "/services/b2b-lead-generation",
+    href: "/b2b-lead-generation-agency",
     description: "Build qualified pipeline instead of chasing raw leads.",
   },
   {
@@ -37,7 +37,7 @@ export const serviceLinks = [
   },
   {
     title: "Creative Strategy",
-    href: "/services/creative-strategy",
+    href: "/services/meta-ads",
     description: "Build ad creatives around buyer intent, objections, and sales feedback.",
   },
 ];

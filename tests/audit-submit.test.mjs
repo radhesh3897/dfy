@@ -87,6 +87,37 @@ test("attributes identical forms to their actual pages and escapes notification 
   assert.doesNotMatch(app.emails[0].html, /<a href=/);
 });
 
+test("city hero forms accept short enquiries and attribute CRM and email leads", async () => {
+  const app = setup();
+  for (const [sourcePath, city] of [["/locations/bangalore", "Bangalore"], ["/locations/chennai", "Chennai"]]) {
+    const response = await app.submit({
+      fullName: "Test Person", businessName: "Test Business", email: "test@example.com",
+      phoneNumber: "98765 43210", sourcePath,
+    });
+    assert.equal(response.status, 200);
+    assert.equal((await response.json()).success, true);
+    assert.equal(app.leads.at(-1).source, `Website - ${city} Page`);
+    assert.equal(app.leads.at(-1).phone, "+919876543210");
+    assert.match(app.emails.at(-1).subject, new RegExp(city));
+    assert.match(app.emails.at(-1).html, new RegExp(sourcePath));
+  }
+});
+
+test("city hero forms reject incomplete or malformed contact details before side effects", async () => {
+  const app = setup();
+  const cityLead = { fullName: "Test Person", businessName: "Test Business", email: "test@example.com",
+    phoneNumber: "98765 43210", sourcePath: "/locations/bangalore" };
+  for (const body of [
+    { ...cityLead, phoneNumber: "abc" },
+    { ...cityLead, businessName: "" },
+    { ...cityLead, sourcePath: "/locations/unknown" },
+  ]) {
+    assert.equal((await app.submit(body)).status, 400);
+  }
+  assert.equal(app.leads.length, 0);
+  assert.equal(app.emails.length, 0);
+});
+
 test("legacy audit payload still sends email without requiring a phone", async () => {
   const app = setup();
   const response = await app.submit({ name: "Test", email: "test@example.com", company: "Example",

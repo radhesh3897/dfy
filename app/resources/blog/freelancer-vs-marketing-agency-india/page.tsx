@@ -126,7 +126,7 @@ export default function ArticlePage() {
           <li><strong>Performance expectations:</strong> allow enough relevant activity and time for leads to progress before judging acquisition outcomes.</li>
           <li><strong>Limits:</strong> neither an agency nor a freelancer can guarantee every market response.</li>
         </ul>
-        <p>Choose the provider who can show the capability, capacity and responsibility your scope requires at an affordable total cost. If your team already covers most of the system, a specialist may be sufficient. If several areas need coordinated work, discuss a defined <Link className={articleLink} href="/services/b2b-lead-generation">B2B lead-generation scope</Link> rather than buying an unspecified “full-service” label.</p>
+        <p>Choose the provider who can show the capability, capacity and responsibility your scope requires at an affordable total cost. If your team already covers most of the system, a specialist may be sufficient. If several areas need coordinated work, discuss a defined <Link className={articleLink} href="/b2b-lead-generation-agency">B2B lead-generation scope</Link> rather than buying an unspecified “full-service” label.</p>
       </BlogSection>
       <BlogSection id="faqs" title="Frequently asked questions"><FAQ faqs={faqs} /></BlogSection>
       <BlogSection id="sources" title="Sources and further reading"><p>Google’s references describe platform permissions and manager access. The hiring framework is editorial guidance, and the cost comparison is hypothetical rather than a market survey.</p><SourceList sources={sources} /></BlogSection>
