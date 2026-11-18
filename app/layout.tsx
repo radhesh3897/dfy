@@ -3,6 +3,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { AuditFormAnchorScroll } from "@/components/AuditFormAnchorScroll";
+import { LeadAttributionCapture } from "@/components/LeadAttributionCapture";
 import { JsonLd } from "@/components/JsonLd";
 import { founderPersonSchema, organizationSchema, webSiteSchema } from "@/lib/schema";
 import { absoluteUrl, indexableRobots, site } from "@/lib/site";
@@ -78,6 +79,7 @@ export default function RootLayout({
         <JsonLd data={webSiteSchema()} />
         <JsonLd data={founderPersonSchema()} />
         <AuditFormAnchorScroll />
+        <LeadAttributionCapture />
         <SiteHeader />
         <main className="pt-[86px] sm:pt-[104px]">{children}</main>
         <SiteFooter />

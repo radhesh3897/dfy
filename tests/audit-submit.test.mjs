@@ -16,6 +16,7 @@ function loadModule(path, globals = {}) {
 }
 
 const helpers = loadModule("../lib/audit-submission.ts");
+const attribution = loadModule("../lib/lead-attribution.ts");
 const valid = {
   fullName: "Test Person", businessName: "Test Business", email: "test@example.com",
   runningAds: "Yes", monthlyAdSpend: "Below INR 1L", vertical: "Service Business",
@@ -35,6 +36,7 @@ function setup({ env = { RESEND_API_KEY: "test-only", INGEST_SECRET: "test-only"
     },
     require: (name) => {
       if (name === "@/lib/audit-submission") return helpers;
+      if (name === "@/lib/lead-attribution") return attribution;
       if (name === "next/server") return { NextResponse: { json: (body, init) => Response.json(body, init) } };
       if (name === "resend") return { Resend: class {
         emails = { send: async (message) => { emails.push(message); return { data: { id: "test-email" }, error: emailError }; } };
@@ -94,6 +96,41 @@ test("legacy audit payload still sends email without requiring a phone", async (
   assert.equal(response.status, 200);
   assert.equal(app.leads.length, 0);
   assert.equal(app.emails.length, 1);
+});
+
+test("carries a tagged landing visit into the booking email after navigation", async () => {
+  const entry = attribution.attributionForEntry(
+    new URL("https://www.doneforyou.in/locations/bangalore?utm_source=google&utm_medium=cpc&utm_campaign=lead-gen&utm_term=marketing+agency&gclid=click_123&secret=ignored"),
+    "https://www.google.co.in/search?q=private+search",
+    null,
+  );
+  const fromNextPage = attribution.attributionForEntry(
+    new URL("https://www.doneforyou.in/free-audit"),
+    "https://doneforyou.in/locations/bangalore",
+    entry,
+  );
+  assert.equal(fromNextPage, entry);
+  const app = setup();
+  assert.equal((await app.submit({ ...valid, sourcePath: "/free-audit", attribution: fromNextPage })).status, 200);
+  const { html } = app.emails[0];
+  for (const value of ["google / cpc", "lead-gen", "marketing agency", "click_123", "/locations/bangalore", "/free-audit page"]) {
+    assert.ok(html.includes(value), value);
+  }
+  assert.doesNotMatch(html, /private\+search|secret=|ignored/);
+  assert.equal(app.leads[0].source, "Website - Free Audit");
+});
+
+test("labels an untagged Google visit as organic and keeps attribution optional", async () => {
+  const entry = attribution.attributionForEntry(
+    new URL("https://www.doneforyou.in/services/google-ads"),
+    "https://www.google.com/",
+    null,
+  );
+  const app = setup();
+  assert.equal((await app.submit({ ...valid, attribution: entry })).status, 200);
+  assert.match(app.emails[0].html, /google \/ organic/);
+  assert.equal((await app.submit({ ...valid, attribution: { landingPath: "//example.com" } })).status, 200);
+  assert.match(app.emails[1].html, /Unavailable/);
 });
 
 test("CRM errors are logged while email capture continues", async () => {

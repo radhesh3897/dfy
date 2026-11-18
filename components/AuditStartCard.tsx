@@ -2,6 +2,7 @@
 
 import { sendGAEvent } from "@next/third-parties/google";
 import { useState } from "react";
+import { captureLeadAttribution } from "@/lib/lead-attribution";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -33,7 +34,7 @@ export function AuditStartCard({ sourcePath = "/" }: { sourcePath?: "/" | "/free
       const res = await fetch("/api/audit-submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, attribution: captureLeadAttribution() }),
       });
       if (res.ok) {
         // GA4 lead-conversion event. Mark "generate_lead" as a Key Event in

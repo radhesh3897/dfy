@@ -44,7 +44,7 @@ export function parseAuditSubmission(input: unknown) {
   }
   if (body.sourcePath && !["/", "/free-audit"].includes(body.sourcePath)) return null;
   const sourcePath = body.sourcePath || (isHomepageForm ? "/" : "/free-audit");
-  return { body, isHomepageForm, sourcePath };
+  return { body, isHomepageForm, sourcePath, rawAttribution: raw.attribution };
 }
 
 export function escapeHtml(value: string) {
