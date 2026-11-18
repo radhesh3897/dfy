@@ -1,6 +1,7 @@
 import { Resend } from "resend";
 import { NextRequest, NextResponse } from "next/server";
 import { escapeHtml, normalizePhone, parseAuditSubmission } from "@/lib/audit-submission";
+import { attributionRows, parseLeadAttribution } from "@/lib/lead-attribution";
 
 const TO_EMAIL = "radhesh3897@gmail.com";
 const INGEST_URL = "https://rkmngnkgesteohigvsxe.supabase.co/functions/v1/ingest-lead";
@@ -59,7 +60,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ success: false }, { status: 503 });
     }
     const resend = new Resend(process.env.RESEND_API_KEY);
-    const { body, isHomepageForm, sourcePath } = submission;
+    const { body, isHomepageForm, sourcePath, rawAttribution } = submission;
 
     // Fire the CRM push (awaited but wrapped so it can't break the form).
     await pushToWabaCrm(body, sourcePath);
@@ -89,6 +90,8 @@ export async function POST(request: NextRequest) {
           ["Phone Number", body.phone],
           ["Source", sourcePath],
         ];
+
+    rows.push(...attributionRows(parseLeadAttribution(rawAttribution)));
 
     const tableRows = rows
       .map(

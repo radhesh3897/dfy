@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { captureLeadAttribution } from "@/lib/lead-attribution";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -23,7 +24,7 @@ export function AuditForm() {
       const res = await fetch("/api/audit-submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, attribution: captureLeadAttribution() }),
       });
       setStatus(res.ok ? "success" : "error");
     } catch {
