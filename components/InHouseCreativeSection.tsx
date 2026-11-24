@@ -8,34 +8,14 @@ const creativeCards = [
     src: "/creative/in-house-creative-01.png",
   },
   {
-    id: "caseease-decode",
-    title: "Legal intelligence demo ad creative",
-    src: "/creative/in-house-creative-02.png",
-  },
-  {
-    id: "caseease-clarity",
-    title: "Strategic reasoning ad creative",
-    src: "/creative/in-house-creative-03.png",
-  },
-  {
     id: "nmims-reporting",
     title: "Online MBA lead ad creative",
     src: "/creative/in-house-creative-04.png",
   },
   {
-    id: "caseease-faster",
-    title: "Case analysis product ad creative",
-    src: "/creative/in-house-creative-05.png",
-  },
-  {
     id: "nmims-admissions",
     title: "Admissions open ad creative",
     src: "/creative/in-house-creative-06.png",
-  },
-  {
-    id: "caseease-begins",
-    title: "IBC case research ad creative",
-    src: "/creative/in-house-creative-07.png",
   },
   {
     id: "recent-edtech-square",
@@ -75,8 +55,8 @@ const creativeCards = [
 ];
 
 const mobileCreativeRows = [
-  [creativeCards[0], creativeCards[1], creativeCards[2], creativeCards[3], creativeCards[4]],
-  [creativeCards[5], creativeCards[6], creativeCards[7], creativeCards[8], creativeCards[9]],
+  creativeCards.slice(0, 5),
+  creativeCards.slice(5),
 ];
 
 export function InHouseCreativeSection() {

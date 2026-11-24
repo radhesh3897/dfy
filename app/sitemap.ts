@@ -28,7 +28,7 @@ const routes: Route[] = [
   { path: "/lead-quality-improvement", changeFrequency: "monthly", priority: 0.82 },
   { path: "/results", changeFrequency: "monthly", priority: 0.78 },
   { path: "/results/hobfit", changeFrequency: "monthly", priority: 0.75, lastModified: "2026-10-19" },
-  { path: "/results/tranzission", changeFrequency: "monthly", priority: 0.74, lastModified: "2026-06-27" },
+  { path: "/results/nmims", changeFrequency: "monthly", priority: 0.74, lastModified: "2026-11-24" },
   { path: "/results/talentz", changeFrequency: "monthly", priority: 0.74, lastModified: "2026-06-27" },
   { path: "/results/reliance-animation", changeFrequency: "monthly", priority: 0.74, lastModified: "2026-06-27" },
   { path: "/resources", changeFrequency: "monthly", priority: 0.76, lastModified: "2026-10-19" },

@@ -114,7 +114,7 @@ export default function LocationsPage() {
             title="Meta Ads Snapshot"
             label="Meta Ads + CRM Review"
             imageSrc="/proof/meta-ads-account-snapshot.png"
-            imageAlt="Tranzission Meta Ads dashboard snapshot showing lead and qualification data"
+            imageAlt="Meta Ads dashboard snapshot showing lead and qualification data"
             metrics={["47% qualified leads", "159 qualified leads", "333 total leads"]}
           />
           <SnapshotCard

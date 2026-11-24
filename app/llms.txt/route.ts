@@ -79,7 +79,7 @@ const pages = [
     title: "Results and Case Studies",
     path: "/results",
     description:
-      "Real Done For You client results: Hobfit (Shark Tank India fitness brand) at 3.8x ROAS and ₹28L+ profit, Tranzission revenue doubled (+152%) in a month, TalentZ qualified leads 23% to 63%, and Reliance Animation at 14x ROAS on enrolment leads.",
+      "Real Done For You client results: Hobfit (Shark Tank India fitness brand) at 3.8x ROAS and ₹28L+ profit, NMIMS online MBA ad creative and client feedback, TalentZ qualified leads 23% to 63%, and Reliance Animation at 14x ROAS on enrolment leads.",
   },
   {
     title: "Hobfit Case Study (Shark Tank India)",
@@ -88,10 +88,10 @@ const pages = [
       "Fitness brand featured on Shark Tank India reached 3.8x ROAS, ₹28L+ profit, and ₹15L+ managed ad spend with Meta Ads optimized for real member sign-ups.",
   },
   {
-    title: "Tranzission Case Study",
-    path: "/results/tranzission",
+    title: "NMIMS Case Study",
+    path: "/results/nmims",
     description:
-      "Monthly net sales doubled (+152%, ₹1.45L to ₹2.88L) as Google Ads conversion rate rose from 3.76% to 9.24% and qualified leads passed 60%.",
+      "Online MBA ad creative and client feedback on lead quality, wasted spend, and revenue visibility.",
   },
   {
     title: "TalentZ Case Study",

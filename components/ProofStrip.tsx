@@ -6,10 +6,6 @@ const proofLogos = [
     src: "/logos/processed/326783019-703457867948060-239923304616414274-n-dfy-gray-web-256.png",
   },
   {
-    name: "Client logo 02",
-    src: "/logos/processed/image-1-dfy-gray-web-256.png",
-  },
-  {
     name: "NMIMS",
     src: "/logos/processed/narsee-monjee-institute-of-management-studies-logo-dfy-gray-web-256.png",
   },

@@ -13,7 +13,7 @@ import { absoluteUrl, pageMetadata } from "@/lib/site";
 export const metadata: Metadata = pageMetadata({
   title: "Results and Case Studies",
   description:
-    "Real Done For You results: a Shark Tank India fitness brand at 3.8x ROAS, revenue doubled in a month, 14x ROAS on EdTech enrolment leads, and more, with verified ad-account proof.",
+    "Real Done For You results: a Shark Tank India fitness brand at 3.8x ROAS, NMIMS online MBA ad creative, and 14x ROAS on EdTech enrolment leads.",
   path: "/results",
   keywords: [
     "done for you results",

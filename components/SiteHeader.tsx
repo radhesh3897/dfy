@@ -86,11 +86,11 @@ const resultCards: ResultCard[] = [
     icon: "education",
   },
   {
-    title: "Tranzission",
-    tag: "+152% net sales",
-    text: "Monthly revenue doubled as conversion rate climbed.",
-    href: "/results/tranzission",
-    icon: "bars",
+    title: "NMIMS",
+    tag: "Online MBA",
+    text: "Ad creative for career progression and admissions enquiries.",
+    href: "/results/nmims",
+    icon: "education",
   },
   {
     title: "TalentZ",

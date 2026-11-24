@@ -149,7 +149,7 @@ export default function LandingPageCroPage() {
       <JsonLd data={croFaqSchema} />
 
       <HeroSection />
-      <CaseStudyHighlight slug="tranzission" />
+      <CaseStudyHighlight slug="nmims" />
 
       <section className="bg-[#08111F] py-16 text-white sm:py-20 lg:py-24">
         <div className="container-wide">

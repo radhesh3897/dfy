@@ -148,14 +148,15 @@ const campaignTypes = [
 
 const results = [
   {
-    brand: "Tranzission",
-    headline: "Google Ads conversion rate more than doubled, and monthly net sales jumped 152%.",
-    text: "We rebuilt the campaign structure and conversion path and reviewed weekly against net sales, lifting Google Ads conversion rate from 3.76% to 9.24% and pushing qualified leads past 60%.",
+    brand: "NMIMS",
+    headline: "Online MBA ads focused on career progression and admissions.",
+    text: "The ads spoke to working professionals considering their next career step. Client feedback reported better lead quality, less wasted spend, and clearer revenue impact.",
     metrics: [
-      ["+152%", "net sales in 30 days"],
-      ["3.76% → 9.24%", "Google Ads conversion rate"],
-      ["60%+", "qualified leads"],
+      ["Improved", "lead quality"],
+      ["Reduced", "wasted spend"],
+      ["Clearer", "revenue impact"],
     ],
+    creative: "/creative/in-house-creative-04.png",
     icon: "A",
   },
   {
@@ -634,7 +635,17 @@ function ResultsSection() {
                   <span aria-hidden="true">-&gt;</span>
                 </Link>
               </div>
-              <DashboardVisual />
+              {active.creative ? (
+                <Image
+                  src={active.creative}
+                  alt="NMIMS Online MBA ad creative"
+                  width={1080}
+                  height={1080}
+                  className="mx-auto h-auto w-full max-w-[420px] rounded-[14px]"
+                />
+              ) : (
+                <DashboardVisual />
+              )}
             </div>
           </article>
           <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">

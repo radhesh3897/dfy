@@ -11,10 +11,6 @@ const accountSnapshot = {
     src: "/proof/meta-ads-account-snapshot.png",
     alt: "Meta Ads campaign table showing lead quality and cost per lead metrics",
   },
-  clientLogo: {
-    src: "/logos/processed/image-1-dfy-gray-original-size.png",
-    alt: "Tranzission logo",
-  },
   results: [
     {
       value: "45%",
@@ -80,20 +76,9 @@ function SnapshotCopy() {
 function SnapshotVisual() {
   return (
     <div className="order-2 min-w-0 rounded-[16px] border border-[#dfe4ec] bg-white p-3 shadow-[0_20px_55px_rgba(15,23,42,0.07)] sm:p-4 lg:order-1">
-      <div className="mb-4 flex items-center gap-3 px-1 sm:mb-5">
-        <div className="relative h-10 w-36 shrink-0">
-          <Image
-            src={accountSnapshot.clientLogo.src}
-            alt={accountSnapshot.clientLogo.alt}
-            fill
-            sizes="144px"
-            className="object-contain object-left"
-          />
-        </div>
-        <div>
-          <p className="text-base font-medium tracking-[-0.02em] text-[#111827]">Account reviewed</p>
-          <p className="mt-0.5 text-sm text-[#5f6877]">Meta Ads + CRM</p>
-        </div>
+      <div className="mb-4 px-1 sm:mb-5">
+        <p className="text-base font-medium tracking-[-0.02em] text-[#111827]">Account reviewed</p>
+        <p className="mt-0.5 text-sm text-[#5f6877]">Meta Ads + CRM</p>
       </div>
 
       <div className="overflow-hidden rounded-[12px] border border-[#dfe4ec] bg-[#f8fafc]">
