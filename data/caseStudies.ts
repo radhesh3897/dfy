@@ -66,37 +66,45 @@ export const caseStudies: CaseStudy[] = [
     dateModified: "2026-10-19",
   },
   {
-    slug: "tranzission",
-    brand: "Tranzission",
-    sector: "Google and Meta Ads revenue growth",
-    title: "Tranzission: revenue doubled (+152%) in one month",
-    metaTitle: "Tranzission Case Study: Revenue Doubled in One Month",
+    slug: "nmims",
+    brand: "NMIMS",
+    sector: "Online MBA lead generation",
+    title: "NMIMS: Ad creative for online MBA enquiries",
+    metaTitle: "NMIMS Case Study: Online MBA Ad Creative",
     metaDescription:
-      "How Done For You doubled Tranzission's monthly net sales by +152%, lifting Google Ads conversion rate from 3.76% to 9.24% and qualified leads past 60%.",
+      "See Done For You's NMIMS online MBA ad creative and client feedback on lead quality, ad spend, and revenue visibility.",
     summary:
-      "Higher Google and Meta Ads conversion rates and 60%+ qualified leads doubled monthly net sales from ₹1.45L to ₹2.88L in a single month.",
-    cardMetric: "+152% net sales in 30 days",
+      "Online MBA ads used career progression and admissions messaging. Client feedback reported better lead quality, less wasted spend, and clearer revenue impact.",
+    cardMetric: "Online MBA campaign",
     metrics: [
-      { value: "+152%", label: "Net sales growth" },
-      { value: "3.76% → 9.24%", label: "Google Ads conversion rate" },
-      { value: "60%+", label: "Qualified leads" },
+      { value: "Improved", label: "Lead quality" },
+      { value: "Reduced", label: "Wasted spend" },
+      { value: "Clearer", label: "Revenue impact" },
     ],
     challenge:
-      "Tranzission had steady traffic but a low conversion rate and inconsistent lead quality, which capped how much revenue the same ad spend could produce. The account was generating leads, but not enough of them were qualified or converting.",
+      "The ads needed to communicate why an online MBA was relevant to working professionals considering their next career step.",
     approach: [
-      "Rebuilt the campaign structure to separate intent and reduce wasted spend.",
-      "Improved the landing and conversion path to lift Google Ads conversion rate.",
-      "Tightened qualification so a larger share of leads were genuinely sales-ready.",
-      "Reviewed performance weekly against net sales, not just lead volume.",
+      "Showed how an online MBA could support career progression and a move into leadership.",
+      "Used different angles for working professionals and people already looking for admissions information.",
+      "Gave prospective students a clear next step with an application or enquiry call to action.",
     ],
     result:
-      "In one month, monthly net sales went from ₹1.45L to ₹2.88L, a +152% increase. Google Ads conversion rate more than doubled from 3.76% to 9.24%, and over 60% of leads came through qualified.",
-    heroImage: {
-      src: "/case-studies/tranzission-dashboard.png",
-      alt: "Tranzission before and after dashboards showing net sales doubling and conversion rate rising from 3.76% to 9.24%",
+      "Client feedback highlighted improved lead quality, less wasted spend, and a clearer view of the campaign’s revenue impact.",
+    quote: {
+      text:
+        "What stood out most was the quality of the system DFY built for us. Lead quality improved, wasted spend reduced, and the revenue impact became much more visible. Their processes and execution are phenomenal.",
+      name: "Manish Agrawal",
+      role: "NMIMS",
     },
-    proofImages: [],
-    datePublished: "2026-06-27",
+    heroImage: {
+      src: "/creative/in-house-creative-04.png",
+      alt: "NMIMS Online MBA ad with the headline Stop Reporting, Start Leading",
+    },
+    proofImages: [
+      { src: "/creative/in-house-creative-01.png", alt: "NMIMS Online MBA career progression ad" },
+      { src: "/creative/in-house-creative-06.png", alt: "NMIMS Online MBA admissions open ad" },
+    ],
+    datePublished: "2026-11-24",
   },
   {
     slug: "talentz",

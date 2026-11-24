@@ -7,22 +7,23 @@ import { ButtonLink } from "@/components/ButtonLink";
 
 const caseStudies = [
   {
-    id: "tranzission",
-    brand: "Tranzission",
-    logo: "T",
-    logoSrc: "/logos/processed/image-1-dfy-gray-web-256.png",
+    id: "nmims",
+    brand: "NMIMS",
+    logo: "N",
+    logoSrc: "/logos/processed/narsee-monjee-institute-of-management-studies-logo-dfy-gray-web-256.png",
     eyebrow: "RESULTS",
-    title: "Better lead quality and lower CPL for Tranzission.",
+    title: "Ad creative for NMIMS online MBA enquiries.",
     description:
-      "DFY helped Tranzission improve campaign structure, creative-message clarity, and lead capture flow so the team could focus on qualified enquiries instead of raw lead volume. By tightening targeting, improving ad-to-form continuity, and reducing friction in the funnel, the account started generating stronger lead quality at a more efficient cost.",
-    metric1Value: "45%",
-    metric1Label: "lower CPL",
-    metric2Value: "47%",
-    metric2Label: "qualified lead rate",
-    supportLine: "More sales-ready leads, better visibility into what is actually working.",
+      "The ads focused on career progression and admissions, giving prospective students a clear next step.",
+    metric1Value: "Improved",
+    metric1Label: "lead quality",
+    metric2Value: "Reduced",
+    metric2Label: "wasted spend",
+    supportLine: "Client feedback also reported a clearer view of the campaign’s revenue impact.",
     ctaLabel: "Read full case study",
-    tags: ["Meta Ads", "Lead Quality", "Funnel Optimisation"],
-    image: "tranzission",
+    href: "/results/nmims",
+    tags: ["Online MBA", "Lead Quality", "Ad Creative"],
+    image: "nmims",
   },
   {
     id: "crm-feedback",
@@ -73,7 +74,7 @@ export function ResultsSection() {
               Results
             </p>
             <h2 className="mt-5 max-w-[980px] text-[clamp(2.25rem,5.7vw,4.55rem)] font-medium leading-[0.98] tracking-[-0.06em]">
-              Better lead quality and lower CPL for Tranzission.
+              Ad creative for NMIMS online MBA enquiries.
             </h2>
           </div>
           <ButtonLink
@@ -191,7 +192,7 @@ function ActiveCaseStudyCard({ caseStudy }: { caseStudy: (typeof caseStudies)[nu
           </div>
 
           <Link
-            href="#results"
+            href={caseStudy.href ?? "#results"}
             className="mt-7 inline-flex w-fit items-center gap-2 text-base font-medium text-[#164E50] transition hover:text-[#103D3F]"
           >
             {caseStudy.ctaLabel}
@@ -224,60 +225,15 @@ function ResultsVisual({ variant }: { variant: string }) {
         ? ["Hook test", "Offer angle", "Static ad", "Landing copy", "Form filter", "Buyer intent"]
         : ["Offer page", "Proof block", "Lead form", "Nurture card", "CAC view", "Quality notes"];
 
-  if (variant === "tranzission") {
+  if (variant === "nmims") {
     return (
-      <div className="min-h-[320px] overflow-hidden rounded-[14px] bg-[#f5f7f3] p-4 sm:min-h-[365px] sm:p-5">
-        <div className="relative h-full min-h-[290px] rounded-[12px] border border-[#e0e6df] bg-white p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:min-h-[325px] sm:p-5">
-          <div className="flex items-center justify-between">
-            <Image
-              src="/logos/processed/image-1-dfy-gray-web-256.png"
-              alt="Tranzission logo"
-              width={150}
-              height={70}
-              className="h-10 w-auto object-contain opacity-80"
-            />
-            <span className="rounded-full bg-[#EEF8EE] px-3 py-1 text-xs font-medium text-[#164E50]">Proof snapshot</span>
-          </div>
-
-          <div className="mt-5 grid gap-3 sm:grid-cols-[1.1fr_0.9fr]">
-            <div className="rounded-[12px] bg-[#164E50] p-4 text-white shadow-[0_16px_34px_rgba(22,78,80,0.2)]">
-              <p className="text-xs font-medium uppercase tracking-[0.16em] text-[#88DE7B]">Campaign signal</p>
-              <p className="mt-3 text-3xl font-medium tracking-[-0.06em]">47%</p>
-              <p className="mt-1 text-sm text-white/75">qualified lead rate</p>
-              <div className="mt-5 space-y-2">
-                {["Message match", "Lead capture", "Follow-up clarity"].map((item, index) => (
-                  <div key={item} className="rounded-md bg-white/10 p-2">
-                    <div className="flex items-center justify-between text-xs">
-                      <span>{item}</span>
-                      <span>{index === 0 ? "84%" : index === 1 ? "76%" : "71%"}</span>
-                    </div>
-                    <div className="mt-2 h-1.5 rounded-full bg-white/14">
-                      <div
-                        className="h-full rounded-full bg-[#88DE7B]"
-                        style={{ width: index === 0 ? "84%" : index === 1 ? "76%" : "71%" }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="grid gap-3">
-              {["Meta Ads", "Lead Quality", "Lower CPL"].map((item, index) => (
-                <div key={item} className="rounded-[12px] border border-[#e0e6df] bg-[#fbfbf8] p-4">
-                  <p className="text-xs font-medium uppercase tracking-[0.14em] text-[#667085]">{item}</p>
-                  <div className="mt-4 h-2 rounded-full bg-[#e4eadf]">
-                    <div
-                      className="h-full rounded-full bg-[#164E50]"
-                      style={{ width: index === 0 ? "72%" : index === 1 ? "82%" : "64%" }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
+      <Image
+        src="/creative/in-house-creative-04.png"
+        alt="NMIMS Online MBA ad creative"
+        width={1080}
+        height={1080}
+        className="mx-auto h-auto w-full max-w-[480px] rounded-[14px]"
+      />
     );
   }
 
