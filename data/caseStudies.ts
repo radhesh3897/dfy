@@ -102,7 +102,6 @@ export const caseStudies: CaseStudy[] = [
     },
     proofImages: [
       { src: "/creative/in-house-creative-01.png", alt: "NMIMS Online MBA career progression ad" },
-      { src: "/creative/in-house-creative-06.png", alt: "NMIMS Online MBA admissions open ad" },
     ],
     datePublished: "2026-11-24",
   },
